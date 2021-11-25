@@ -4,3 +4,4 @@
 qtile|symlink|.config/
 starship.toml|symlink|.config/
 rofi|symlink|.config/
+.vimrc|symlink|
