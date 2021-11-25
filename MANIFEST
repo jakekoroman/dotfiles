@@ -1,0 +1,6 @@
+.Xresources|symlink|
+.zshrc|symlink|
+.doom.d|symlink|
+qtile|symlink|.config/
+starship.toml|symlink|.config/
+rofi|symlink|.config/
