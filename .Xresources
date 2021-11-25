@@ -1,5 +1,6 @@
 ! Sets font
 URxvt*font: xft:Iosevka Nerd Font Mono:size=11:antialias=true
+URxvt*boldFont: xft:Iosevka Nerd Font Mono:bold:size=11:antialias=true
 
 ! Removes stupid scrollbar
 URxvt.scrollBar: false
@@ -9,6 +10,7 @@ URxvt.scrollBar: false
 ! (Ctrl + Shift + V) - Paste
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
 ! Disables other stupid (Ctrl + Shift) iso shit that is so dumb I can"'"t even comprehend
 URxvt.iso14755: false
 URxvt.iso14755_52: false
@@ -32,3 +34,13 @@ URxvt.color6:     #8BE9FD
 URxvt.color14:    #9AEDFE
 URxvt.color7:     #BFBFBF
 URxvt.color15:    #E6E6E6
+
+! Perl Stuff
+URxvt.perl-ext-common: default,matcher,resize-font
+
+! Url Configuration
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg6
+
+! End of Perl Stuff
