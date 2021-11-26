@@ -14,3 +14,4 @@ My configs for my commonly used software.
 # Deployment #
 
 Clone and run `deploy.sh`.
+If you don't have starship simply run `install_starship.sh`
