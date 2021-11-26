@@ -16,5 +16,5 @@ My configs for my commonly used software.
 Clone and run `deploy.sh`.
 If you don't have starship simply run `install_starship.sh`
 
-## Customization ##
+# Customization #
 To change what is symlinked simply edit the `MANIFEST` file.
