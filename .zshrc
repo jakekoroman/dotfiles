@@ -4,6 +4,8 @@
 # Shows neofetch on launch
 #neofetch
 
+echo "¯\_(ツ)_/¯"
+
 # enables the starship prompt
 eval "$(starship init zsh)"
 
