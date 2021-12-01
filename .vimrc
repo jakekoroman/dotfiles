@@ -17,7 +17,7 @@ colorscheme synthwave84
 set bg=dark
 
 " sets
-set number
+set relativenumber
 set expandtab
 set tabstop=4
 set shiftwidth=4

@@ -56,3 +56,6 @@
 
 ;; Removes exit confirmation
 (setq confirm-kill-emacs nil)
+
+;; Suppresses the package cl is deprecated
+(setq byte-compile-warnings '(cl-functions))
