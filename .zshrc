@@ -33,15 +33,17 @@ compinit
 alias ll="ls -al --color=auto"
 alias ls="ls --color=auto"
 alias la='ls -A --color=auto'
-alias rm='rm -i'
-alias rmd='rm -rfi'
-alias mv='mv -i'
 alias ..='cd ..'
 alias gs='git status'
 alias gl='git log'
 alias gc='git commit -m'
 alias blueon='bluetoothctl power on'
 alias blueoff='bluetoothctl power off'
+
+# Safety aliases
+#alias rm='rm -i'
+#alias rmd='rm -rfi'
+#alias mv='mv -i'
 
 # Path vars
 export PATH=~/.emacs.d/bin/:~/.local/bin:$PATH

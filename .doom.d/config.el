@@ -59,3 +59,9 @@
 
 ;; Suppresses the package cl is deprecated
 (setq byte-compile-warnings '(cl-functions))
+
+;; Disables eslint bc i have no idea how to remove this piece of shit
+(setq lsp-disabled-clients '(eslint))
+
+;; Increase javascript and json tabsize to 4
+'(js-indent-level 2)
