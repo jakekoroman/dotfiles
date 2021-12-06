@@ -213,7 +213,7 @@ for i in groups:
 layouts = get_layouts()
 
 widget_defaults = dict(
-    font='sans',
+    font='Ubuntu',
     fontsize=12,
     padding=3,
 )
