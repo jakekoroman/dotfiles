@@ -33,3 +33,6 @@ symbol = " "
 
 [cmake]
 symbol = "cmake "
+
+[golang]
+symbol = "go "
