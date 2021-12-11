@@ -150,9 +150,6 @@ keys = [
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.window.toggle_floating()),
 
-    # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
@@ -187,6 +184,14 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], 'Tab', lazy.next_layout(), desc='Toggle between layouts'),
     Key([mod, 'shift'], 'c', lazy.window.kill(), desc='Kill focused window'),
+
+    # Monadtall Windows Binds
+    Key([mod], "g", lazy.layout.grow()),
+    Key([mod], "s", lazy.layout.shrink()),
+    Key([mod], "m", lazy.layout.maximize()),
+    Key([mod], "n", lazy.layout.normalize()),
+    Key([mod, "shift"], "n", lazy.layout.reset()),
+    Key([mod, "shift"], "space", lazy.layout.flip()),
 
     # Qtile options
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
