@@ -2,7 +2,6 @@
 
 xbindkeys
 #emacs --daemon &
-emacs &
 volumeicon &
 nm-applet &
 picom --no-vsync &
