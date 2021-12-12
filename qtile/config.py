@@ -178,7 +178,8 @@ keys = [
     Key([mod], 'f', lazy.spawn('pcmanfm'), desc='Launch Pcmanfm'),
     Key([mod], 'b', lazy.spawn('firefox'), desc='Launch firefox'),
     Key([mod], 'v', lazy.spawn('vieb'), desc='Launch Vieb'),
-    Key([mod], 'e', lazy.spawn('emacsclient -c -a emacs'), desc='Launch emacs'),
+    #Key([mod], 'e', lazy.spawn('emacsclient -c -a emacs'), desc='Launch emacs'),
+    Key([mod], 'e', lazy.spawn('emacs'), desc='Launch emacs'),
     Key([mod, 'shift'], 's', lazy.spawn('escrotum -s -C'), desc='Screenshot tool'),
 
     # Toggle between different layouts as defined below

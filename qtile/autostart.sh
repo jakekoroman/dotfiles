@@ -1,7 +1,8 @@
 #!/bin/sh
 
 xbindkeys
-emacs --daemon &
+#emacs --daemon &
+emacs &
 volumeicon &
 nm-applet &
 picom --no-vsync &
