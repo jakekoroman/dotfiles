@@ -36,7 +36,6 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type `relative)
 
-
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -56,12 +55,6 @@
 
 ;; Removes exit confirmation
 (setq confirm-kill-emacs nil)
-
-;; Suppresses the package cl is deprecated
-(setq byte-compile-warnings '(cl-functions))
-
-;; Disables eslint bc i have no idea how to remove this piece of shit
-(setq lsp-disabled-clients '(eslint))
 
 ;; Increase javascript and json tabsize to 4
 '(js-indent-level 2)
