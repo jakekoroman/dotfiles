@@ -5,7 +5,7 @@ My configs for my commonly used software.
 # Software #
 
 * Doom Emacs
-* vim (Emacs and Vim!?!?!?!?! make up your mind) 
+* vim 
 * zsh - with the starship shell theme
 * urxvt
 * qtile

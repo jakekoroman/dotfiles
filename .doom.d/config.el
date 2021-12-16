@@ -56,5 +56,3 @@
 ;; Removes exit confirmation
 (setq confirm-kill-emacs nil)
 
-;; Increase javascript and json tabsize to 4
-'(js-indent-level 2)
