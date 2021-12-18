@@ -149,6 +149,7 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.window.toggle_floating()),
+    Key([mod], "f", lazy.window.toggle_fullscreen()),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -175,7 +176,7 @@ keys = [
     Key([mod], "Return", lazy.spawn('urxvt'), desc="Launch terminal"),
     Key([mod], 'r', lazy.spawn('rofi -icon-theme "Papirus" -show-icons -show drun'),
         desc="Launch rofi"),
-    Key([mod], 'f', lazy.spawn('pcmanfm'), desc='Launch Pcmanfm'),
+    Key([mod], 'v', lazy.spawn('pcmanfm'), desc='Launch Pcmanfm'),
     Key([mod], 'b', lazy.spawn('firefox'), desc='Launch firefox'),
     #Key([mod], 'e', lazy.spawn('emacsclient -c -a emacs'), desc='Launch emacs'),
     Key([mod], 'e', lazy.spawn('emacs'), desc='Launch emacs'),
