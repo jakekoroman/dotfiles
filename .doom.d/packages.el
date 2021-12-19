@@ -52,3 +52,4 @@
 ;(unpin! t)
 
 (package! gruber-darker-theme)
+(package! zenburn-theme)
