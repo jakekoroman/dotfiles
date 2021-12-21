@@ -6,7 +6,7 @@ My configs for my commonly used software.
 
 * Doom Emacs
 * vim 
-* zsh - with the starship shell theme
+* zsh - with the starship prompt
 * urxvt
 * qtile
 * rofi
