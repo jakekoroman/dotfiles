@@ -136,6 +136,14 @@ def autostart():
     subprocess.call([autostart])
 
 
+def toscreen(qtile, group_name):
+    if group_name == qtile.current_screen.group.name:
+        return qtile.current_screen.set_group(qtile.current_screen.previous_group)
+    for i, group in enumerate(qtile.groups):
+        if group_name == group.name:
+            return qtile.current_screen.set_group(qtile.groups[i])
+
+
 ##############
 
 
@@ -206,7 +214,7 @@ groups = [Group(i) for i in "123456789"]
 for i in groups:
     keys.extend([
         # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(),
+        Key([mod], i.name, lazy.function(toscreen, i.name),
             desc="Switch to group {}".format(i.name)),
 
         # mod1 + shift + letter of group = switch to & move focused window to group
