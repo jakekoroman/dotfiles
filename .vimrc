@@ -16,6 +16,8 @@ set termguicolors
 colorscheme synthwave84
 set bg=dark
 
+"colors zenburn
+
 " sets
 set relativenumber
 set expandtab

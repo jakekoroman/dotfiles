@@ -7,3 +7,4 @@ rofi|symlink|.config/
 .vimrc|symlink|
 .vim|symlink|
 .zsh_addons|symlink|
+alacritty|symlink|.config/

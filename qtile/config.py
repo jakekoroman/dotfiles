@@ -181,7 +181,7 @@ keys = [
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
     # Launchers
-    Key([mod], "Return", lazy.spawn('urxvt'), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn('alacritty'), desc="Launch terminal"),
     Key([mod], 'r', lazy.spawn('rofi -icon-theme "Papirus" -show-icons -show drun'),
         desc="Launch rofi"),
     Key([mod], 'v', lazy.spawn('pcmanfm'), desc='Launch Pcmanfm'),
