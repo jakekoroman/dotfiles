@@ -19,8 +19,12 @@ setopt HIST_IGNORE_ALL_DUPS
 bindkey -e
 bindkey \^U backward-kill-line
 bindkey "^[[3~" delete-char
+# for urxvt
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
+# for alacritty
+bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
