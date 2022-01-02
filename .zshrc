@@ -44,6 +44,10 @@ alias gc='git commit -m'
 alias blueon='bluetoothctl power on'
 alias blueoff='bluetoothctl power off'
 
+# SSH alias for alacritty to use the right colours
+# terminfo pepehands
+alias ssh='TERM=xterm-256color ssh'
+
 # Safety aliases
 #alias rm='rm -i'
 #alias rmd='rm -rfi'
