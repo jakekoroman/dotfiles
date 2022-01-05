@@ -4,5 +4,5 @@ xbindkeys
 #emacs --daemon &
 volumeicon &
 nm-applet &
-picom --no-vsync &
+picom &
 nitrogen --restore &
