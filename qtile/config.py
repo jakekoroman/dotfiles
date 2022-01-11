@@ -192,7 +192,7 @@ keys = [
     # Super scary scrot cmd :)
     #Key([mod, 'shift'], 's', lazy.spawn('scrot -s -e \'xclip -selection clipboard -t image/png -i $f; rm $f\''), desc='Screenshot tool'),
     # Not so scary maim command :)
-    Key([mod, 'shift'], 's', lazy.spawn('maim -s -u | xclip -selection clipboard -t image/png -i'), desc='Screenshot tool'),
+    Key([mod, 'shift'], 's', lazy.spawn(['sh', '-c', 'maim -s -u | xclip -selection clipboard -t image/png -i']), desc='Screenshot tool'),
 
     # Toggle between different layouts as defined below
     Key([mod], 'Tab', lazy.next_layout(), desc='Toggle between layouts'),
