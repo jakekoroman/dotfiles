@@ -54,7 +54,8 @@ alias ssh='TERM=xterm-256color ssh'
 #alias mv='mv -i'
 
 # Path vars
-export PATH=~/.emacs.d/bin/:~/.local/bin:$PATH
+export PATH=~/go/bin:~/.emacs.d/bin/:~/.local/bin:$PATH
+export GOPATH=~/go
 
 # addons
 source ~/.zsh_addons/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
