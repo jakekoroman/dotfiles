@@ -268,10 +268,12 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(wm_class='feh'),  # feh
+    Match(wm_class='steam_app_1794680'), # vampire slayer, the best game ever created
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
     Match(title='Friends List'),  # Steam friends list
     Match(title='Android Emulator - Pixel_4_API_30:5554'),  # Android Studio Emulator
+    Match(title='Add', wm_class="anki"),  # Anki add flashcard menu
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"

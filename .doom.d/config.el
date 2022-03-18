@@ -55,4 +55,3 @@
 
 ;; Removes exit confirmation
 (setq confirm-kill-emacs nil)
-
