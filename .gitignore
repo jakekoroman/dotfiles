@@ -1,2 +1,5 @@
 qtile/__pycache__
 .vim/.netrwhist
+dwm/*.o
+dwm/dwm
+dwm/*.diff
