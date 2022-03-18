@@ -11,6 +11,7 @@ My configs for my commonly used software.\
 * zsh - with the starship prompt
 * urxvt
 * qtile
+* dwm
 * rofi
 
 # Deployment #
