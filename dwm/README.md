@@ -1,3 +1,11 @@
+# My config
+
+## Patches
+
+* [systray](https://dwm.suckless.org/patches/systray/)
+* [noborder](https://dwm.suckless.org/patches/noborder/)
+
+## dwm README from [original repo](https://git.suckless.org/dwm/)
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
