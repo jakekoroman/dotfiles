@@ -68,7 +68,7 @@ static const char *roficmd[]	= { "rofi", "-icon-theme", "\"Papirus\"", "-show-ic
 static const char *termcmd[]	= { "alacritty", NULL };
 static const char *emacscmd[]	= { "emacs", NULL };
 static const char *firefoxcmd[]	= { "firefox", NULL };
-static const char *pcmanfmcmd[]    = { "pcmanfm", NULL };
+static const char *pcmanfmcmd[] = { "pcmanfm", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
