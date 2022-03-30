@@ -55,3 +55,7 @@
 
 ;; Removes exit confirmation
 (setq confirm-kill-emacs nil)
+
+;; Forces rust lsp to be disabled
+(after! rustic
+  (setq rustic-lsp-client nil))
