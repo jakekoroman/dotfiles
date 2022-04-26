@@ -48,6 +48,9 @@ alias blueoff='bluetoothctl power off'
 # terminfo pepehands
 alias ssh='TERM=xterm-256color ssh'
 
+# tmux alias to keep the right colours
+alias tmux='tmux new "export TERM=xterm-256color; zsh"'
+
 # Safety aliases
 #alias rm='rm -i'
 #alias rmd='rm -rfi'
