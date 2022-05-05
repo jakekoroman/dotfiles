@@ -4,7 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/org-basics.org"))
- '(package-selected-packages '(gruber-darker-theme)))
+ '(package-selected-packages '(gruber-darker-theme))
+ '(warning-suppress-types '(((defvaralias losing-value woman-topic-history)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
