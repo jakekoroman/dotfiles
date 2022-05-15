@@ -3,3 +3,4 @@ qtile/__pycache__
 dwm/*.o
 dwm/dwm
 dwm/*.diff
+.doom.d/custom.el
