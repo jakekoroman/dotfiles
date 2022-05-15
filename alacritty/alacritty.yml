@@ -141,4 +141,4 @@ schemes:
       cyan: '#a4ffff'
       white: '#ffffff'
 
-colors: *tokyo-night
+colors: *tokyo-night-storm
