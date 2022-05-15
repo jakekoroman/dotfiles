@@ -53,4 +53,4 @@
 
 (package! gruber-darker-theme)
 (package! zenburn-theme)
-(package! prisma-mode :recipe (:host github :repo "pimeys/emacs-prisma-mode" :branch "main"))
+(package! dashboard)
