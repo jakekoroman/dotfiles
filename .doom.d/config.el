@@ -58,6 +58,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(setq emojify-user-emojis '((":pepehands:" . (("name" . "Pepe Hands")
+                                              ("image" . "~/dotfiles/assets/pepehands.jpg")
+                                              ("style" . "github")))))
+
 ;; Dashboard Settings
 (dashboard-setup-startup-hook)
 (setq dashboard-banner-logo-title "Bonjour et Bienvenue!")
@@ -70,6 +74,7 @@
                         (projects . 5)
                         (agenda . 5)
                         ))
+(setq dashboard-footer-messages '("Mon français est marde 🇫🇷"))
 
 ;; Removes exit confirmation
 (setq confirm-kill-emacs nil)
