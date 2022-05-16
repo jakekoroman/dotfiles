@@ -58,6 +58,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(load! "thirdparty.el")
+
 (setq emojify-user-emojis '((":pepehands:" . (("name" . "Pepe Hands")
                                               ("image" . "~/dotfiles/assets/pepehands.jpg")
                                               ("style" . "github")))))
@@ -89,3 +91,4 @@
   (setq org-todo-keywords '((sequence "TODO(t)" "PROG(p)" "WAIT(w)" "|" "DONE(d)" "CANCELLED(c)")))
   (setq org-log-done 'time)
   )
+
