@@ -62,7 +62,7 @@
 
 (setq emojify-user-emojis '((":pepehands:" . (("name" . "Pepe Hands")
                                               ("image" . "~/dotfiles/assets/pepehands.jpg")
-                                              ("style" . "github")))))
+                                              ("style" . "unicode")))))
 
 ;; Dashboard Settings
 (dashboard-setup-startup-hook)
@@ -76,7 +76,7 @@
                         (projects . 5)
                         (agenda . 5)
                         ))
-(setq dashboard-footer-messages '("Mon français est marde 🇫🇷"))
+(setq dashboard-footer-messages '("Mon français est marde :pepehands:"))
 
 ;; Removes exit confirmation
 (setq confirm-kill-emacs nil)
@@ -92,3 +92,4 @@
   (setq org-log-done 'time)
   )
 
+(add-hook 'after-init-hook #'global-emojify-mode)
