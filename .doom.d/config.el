@@ -92,4 +92,10 @@
   (setq org-log-done 'time)
   )
 
+;; Starts emojify immediately
 (add-hook 'after-init-hook #'global-emojify-mode)
+
+;; Adds support for odin lang errors in the compilation buffer
+(after! compile
+  (add-to-list 'compilation-error-regexp-alist-alist '(odin "\\(.+?\\)\(\\([0-9]+\\):\\([0-9]+\\\).*" 1 2 3))
+  (add-to-list 'compilation-error-regexp-alist 'odin))

@@ -54,3 +54,7 @@
 (package! gruber-darker-theme)
 (package! zenburn-theme)
 (package! dashboard)
+(package! jai-mode
+  :recipe (:host github :repo "krig/jai-mode"))
+(package! odin-mode
+  :recipe (:host github :repo "mattt-b/odin-mode"))
