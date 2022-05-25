@@ -1,3 +1,12 @@
 [submodule ".vim/pack/themes/start/Zenburn"]
 	path = .vim/pack/themes/start/Zenburn
 	url = https://github.com/jnurmine/Zenburn
+[submodule ".vim/pack/themes/start/.vim/pack/themes/start/truedark-vim"]
+	path = .vim/pack/themes/start/.vim/pack/themes/start/truedark-vim
+	url = https://github.com/bratpeki/truedark-vim
+[submodule ".vim/pack/themes/start/truedark-vim"]
+	path = .vim/pack/themes/start/truedark-vim
+	url = https://github.com/bratpeki/truedark-vim
+[submodule ".vim/pack/themes/start/gruber-darker-vim"]
+	path = .vim/pack/themes/start/gruber-darker-vim
+	url = https://github.com/drsooch/gruber-darker-vim/

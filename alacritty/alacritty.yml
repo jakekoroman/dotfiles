@@ -29,6 +29,62 @@ font:
 
 # Colour Schemes
 schemes:
+  my_theme: &my_theme
+    # Default colors
+    primary:
+      background: '0x181818'
+      foreground: '0xe4e4ef'
+
+    # Normal colors
+    normal:
+      black: '#21222c'
+      red: '#ff5555'
+      green: '#50fa7b'
+      yellow: '#f1fa8c'
+      blue: '#bd93f9'
+      magenta: '#ff79c6'
+      cyan: '#8be9fd'
+      white: '#f8f8f2'
+
+    # Bright colors
+    bright:
+      black:   '0x65737e'
+      red:     '0xd08770'
+      green:   '0x343d46'
+      yellow:  '0x4f5b66'
+      blue:    '0xa7adba'
+      magenta: '0xdfe1e8'
+      cyan:    '0xab7967'
+      white:   '0xeff1f5'
+
+  blood_moon: &blood_moon
+    # Default colors
+    primary:
+      background: '0x10100E'
+      foreground: '0xC6C6C4'
+
+    # Normal colors
+    normal:
+      black:   '0x10100E'
+      red:     '0xC40233'
+      green:   '0x009F6B'
+      yellow:  '0xFFD700'
+      blue:    '0x0087BD'
+      magenta: '0x9A4EAE'
+      cyan:    '0x20B2AA'
+      white:   '0xC6C6C4'
+
+    # Bright colors
+    bright:
+      black:   '0x696969'
+      red:     '0xFF2400'
+      green:   '0x03C03C'
+      yellow:  '0xFDFF00'
+      blue:    '0x007FFF'
+      magenta: '0xFF1493'
+      cyan:    '0x00CCCC'
+      white:   '0xFFFAFA'
+
   # Tokyo Night theme, based on both:
   #   https://github.com/ghifarit53/tokyonight-vim
   #   https://github.com/enkia/tokyo-night-vscode-theme
@@ -141,4 +197,4 @@ schemes:
       cyan: '#a4ffff'
       white: '#ffffff'
 
-colors: *tokyo-night-storm
+colors: *my_theme

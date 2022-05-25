@@ -58,3 +58,5 @@
   :recipe (:host github :repo "krig/jai-mode"))
 (package! odin-mode
   :recipe (:host github :repo "mattt-b/odin-mode"))
+(package! rust-mode)
+(package! yaml-mode)
