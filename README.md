@@ -10,7 +10,7 @@ My configs for my commonly used software.\
 * vim 
 * zsh - with the starship prompt
 * urxvt
-* qtile
+* Alacritty
 * dwm
 * rofi
 
