@@ -9,8 +9,8 @@ My configs for my commonly used software.\
 * Doom Emacs
 * vim 
 * zsh - with the starship prompt
-* urxvt
 * Alacritty
+* qtile
 * dwm
 * rofi
 
