@@ -29,3 +29,15 @@ function! ToggleGUICruft()
 endfunction
 
 map <F11> <Esc>:call ToggleGUICruft()<cr>
+
+" Plug Stuff
+call plug#begin()
+
+Plug 'vim-airline/vim-airline'
+
+call plug#end()
+
+" Clipboard stuff
+if has('unnamedplus')
+    set clipboard=unnamedplus
+endif
