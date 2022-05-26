@@ -4,3 +4,4 @@ dwm/*.o
 dwm/dwm
 dwm/*.diff
 .doom.d/custom.el
+.vim/plugged/

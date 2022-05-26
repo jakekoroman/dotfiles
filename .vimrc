@@ -19,6 +19,11 @@ let &t_ut=''
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48:2;%lu;%lu;%lum"
 
+" Clipboard stuff
+if has('unnamedplus')
+    set clipboard=unnamedplus
+endif
+
 " Toggles the GUI stuff on and off, defaults to off
 function! ToggleGUICruft()
     if &guioptions=='i'
@@ -28,16 +33,25 @@ function! ToggleGUICruft()
     endif
 endfunction
 
-map <F11> <Esc>:call ToggleGUICruft()<cr>
-
 " Plug Stuff
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
+Plug 'h-225/odin.vim'
+Plug 'zig-lang/zig.vim'
+Plug 'romainl/vim-qf'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-" Clipboard stuff
-if has('unnamedplus')
-    set clipboard=unnamedplus
-endif
+" Key Binds
+" Gui toggle
+map <F11> <Esc>:call ToggleGUICruft()<cr>
+
+" Goes to next error in copen, going to previous is so rare
+" that if I ever need to use previous I will just type :cprevious
+map <C-n> <Plug>(qf_qf_next)
+
+" Autocmds
+" Sets :make to be 'zig build run' by default in zig files
+autocmd FileType zig :set makeprg=zig\ build\ run
