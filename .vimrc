@@ -32,7 +32,7 @@ function! ToggleGUICruft()
       exec('set guioptions=i')
     endif
 endfunction
-
+ 
 " Plug Stuff
 call plug#begin()
 
@@ -41,6 +41,7 @@ Plug 'h-225/odin.vim'
 Plug 'zig-lang/zig.vim'
 Plug 'romainl/vim-qf'
 Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -55,3 +56,6 @@ map <C-n> <Plug>(qf_qf_next)
 " Autocmds
 " Sets :make to be 'zig build run' by default in zig files
 autocmd FileType zig :set makeprg=zig\ build\ run
+
+" Autoformat rust on save
+let g:rustfmt_autosave = 1

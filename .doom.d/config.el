@@ -81,10 +81,6 @@
 ;; Removes exit confirmation
 (setq confirm-kill-emacs nil)
 
-;; Forces rust lsp to be disabled
-(after! rustic
-  (setq rustic-lsp-client nil))
-
 ;; Org settings
 (after! org
   (setq org-agenda-files '("~/org"))
@@ -94,8 +90,12 @@
 
 ;; Starts emojify immediately
 (add-hook 'after-init-hook #'global-emojify-mode)
+(add-hook 'after-init-hook #'ido-mode)
 
 ;; Adds support for odin lang errors in the compilation buffer
 (after! compile
   (add-to-list 'compilation-error-regexp-alist-alist '(odin "\\(.+?\\)\(\\([0-9]+\\):\\([0-9]+\\\).*" 1 2 3))
   (add-to-list 'compilation-error-regexp-alist 'odin))
+
+;; Allows ido to open dired in pwd
+(setq ido-show-dot-for-dired t)
