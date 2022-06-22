@@ -60,3 +60,4 @@
   :recipe (:host github :repo "mattt-b/odin-mode"))
 (package! rust-mode)
 (package! yaml-mode)
+(package! smex)

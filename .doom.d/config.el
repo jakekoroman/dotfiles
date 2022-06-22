@@ -99,3 +99,9 @@
 
 ;; Allows ido to open dired in pwd
 (setq ido-show-dot-for-dired t)
+
+(map! :nv
+  "M-x" #'smex
+  "M-X" #'smex-major-mode-commands
+  "C-c C-c M-x" #'execute-extended-command
+  :leader ":" #'smex)
