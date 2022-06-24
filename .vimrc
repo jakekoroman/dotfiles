@@ -37,6 +37,7 @@ endfunction
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'h-225/odin.vim'
 Plug 'zig-lang/zig.vim'
 Plug 'romainl/vim-qf'
@@ -59,3 +60,9 @@ autocmd FileType zig :set makeprg=zig\ build\ run
 
 " Autoformat rust on save
 let g:rustfmt_autosave = 1
+
+" Disable Whitespace checker for Airline
+let g:airline#extensions#whitespace#enabled = 0
+
+" Airline Theme
+let g:airline_theme='base16_atelier_cave_light'

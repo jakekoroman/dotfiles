@@ -83,7 +83,7 @@
 
 ;; Org settings
 (after! org
-  (setq org-agenda-files '("~/org"))
+  ;;(setq org-agenda-files '("~/org"))
   (setq org-todo-keywords '((sequence "TODO(t)" "PROG(p)" "WAIT(w)" "|" "DONE(d)" "CANCELLED(c)")))
   (setq org-log-done 'time)
   )
