@@ -3,5 +3,8 @@ qtile/__pycache__
 dwm/*.o
 dwm/dwm
 dwm/*.diff
+st/*.o
+st/st
+st/*.diff
 .doom.d/custom.el
 .vim/plugged/

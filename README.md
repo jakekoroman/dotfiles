@@ -6,8 +6,11 @@ My configs for my commonly used software.\
 
 # Software #
 
+* Emacs
 * Doom Emacs
+* st
 * vim 
+* zsh
 * Alacritty
 * qtile
 * dwm

@@ -1,6 +1,7 @@
 .Xresources|symlink|
 .zshrc|symlink|
 .doom.d|symlink|
+.emacs|symlink|
 qtile|symlink|.config/
 dwm|symlink|.config/
 .vimrc|symlink|
