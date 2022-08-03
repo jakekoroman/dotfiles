@@ -9,7 +9,6 @@ set relativenumber
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set termguicolors
 set guioptions=i
 
 " fixes vim bug in kitty terminal
@@ -63,6 +62,3 @@ let g:rustfmt_autosave = 1
 
 " Disable Whitespace checker for Airline
 let g:airline#extensions#whitespace#enabled = 0
-
-" Airline Theme
-let g:airline_theme='base16_atelier_cave_light'
