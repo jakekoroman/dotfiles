@@ -9,6 +9,8 @@ echo "¯\_(ツ)_/¯"
 # enables the starship prompt
 eval "$(starship init zsh)"
 
+#export PS1=$'[\e[0;32m%~\e[m] $ '
+
 # History stuff
 HISTFILE=~/.histfile
 HISTSIZE=10000

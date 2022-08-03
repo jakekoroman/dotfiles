@@ -6,8 +6,7 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Jake Koroman"
-      user-mail-address "jakekoroman@gmail.com")
+(setq user-full-name "Jake Koroman" user-mail-address "jakekoroman@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -19,18 +18,17 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Iosevka" :size 15 :weight 'Regular)
-      doom-variable-pitch-font (font-spec :family "sans" :size 13))
+(setq doom-font (font-spec :family "Iosevka"
+                           :size 14
+                           :weight 'Regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'gruber-darker)
+;;(setq doom-theme 'gruber-darker)
 ;;(setq doom-theme 'doom-zenburn)
+(setq doom-theme 'doom-wilmersdorf)
 ;;(setq doom-theme 'doom-tokyo-night)
-;;(setq doom-theme 'doom-Iosvkem)
-;;(setq doom-theme 'doom-old-hope)
-;;(setq doom-theme 'doom-opera)
 ;;(setq doom-theme 'doom-vibrant)
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -71,11 +69,9 @@
 (setq dashboard-startup-banner 'logo)
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
-(setq dashboard-items '(
-                        (recents . 10)
+(setq dashboard-items '((recents . 10)
                         (projects . 5)
-                        (agenda . 5)
-                        ))
+                        (agenda . 5)))
 (setq dashboard-footer-messages '("Mon français est marde :pepehands:"))
 
 ;; Removes exit confirmation
@@ -85,23 +81,33 @@
 (after! org
   ;;(setq org-agenda-files '("~/org"))
   (setq org-todo-keywords '((sequence "TODO(t)" "PROG(p)" "WAIT(w)" "|" "DONE(d)" "CANCELLED(c)")))
-  (setq org-log-done 'time)
-  )
+  (setq org-log-done 'time))
 
 ;; Starts emojify immediately
 (add-hook 'after-init-hook #'global-emojify-mode)
 (add-hook 'after-init-hook #'ido-mode)
 
 ;; Adds support for odin lang errors in the compilation buffer
-(after! compile
-  (add-to-list 'compilation-error-regexp-alist-alist '(odin "\\(.+?\\)\(\\([0-9]+\\):\\([0-9]+\\\).*" 1 2 3))
+(after! compile (add-to-list 'compilation-error-regexp-alist-alist '(odin
+                                                                     "\\(.+?\\)\(\\([0-9]+\\):\\([0-9]+\\\).*"
+                                                                     1 2 3))
   (add-to-list 'compilation-error-regexp-alist 'odin))
 
 ;; Allows ido to open dired in pwd
 (setq ido-show-dot-for-dired t)
 
-(map! :nv
-  "M-x" #'smex
-  "M-X" #'smex-major-mode-commands
-  "C-c C-c M-x" #'execute-extended-command
-  :leader ":" #'smex)
+;; Sets global word wrap
+(+global-word-wrap-mode +1)
+
+;; Smex keybinds
+(map! :nv "M-x"
+      #'smex
+      :nv "M-X"
+      #'smex-major-mode-commands
+      :nv "C-c C-c M-x"
+      #'execute-extended-command
+      :leader ":" #'smex)
+
+(map! :nv "<f5>"
+      #'rustic-cargo-run
+      :nv "<f8>" #'rustic-cargo-fmt)
