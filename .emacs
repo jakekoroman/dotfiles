@@ -17,7 +17,8 @@
   blink-cursor-mode nil
   ring-bell-function 'ignore
   display-line-numbers-type 'relative
-  transient-mark-mode nil)
+  transient-mark-mode nil
+  )
 (global-display-line-numbers-mode)
 
 ;;; Package installs and configuration
@@ -38,10 +39,14 @@
   ;;(load-theme 'zenburn t)
   )
 
+(use-package undo-fu
+  :ensure)
+
 (use-package evil
   :ensure
   :init
   (setq evil-want-keybinding nil)
+  (setq evil-undo-system 'undo-fu)
   :config
   (evil-mode 1))
 
@@ -95,7 +100,13 @@
       c-basic-offset 4)
 (c-set-offset 'case-label '+)
 
+(font-lock-add-keywords 'c-mode
+			'(("internal" . font-lock-keyword-face)
+			  ("global" . 'font-lock-keyword-face)))
+
 ;;; Keybinds
+
+;; Binds with SPC prefix
 (nvmap :prefix "SPC"
   "."   '(find-file :which-key "Find File")
   ","   '(ido-switch-buffer :which-key "Switch Buffer")
@@ -122,3 +133,7 @@
   "b p" '(previous-buffer :which-key "Open previous buffer")
   "b n" '(next-buffer :which-key "Open next buffer")
   )
+
+;; Binds without SPC prefix
+(general-define-key
+ "M-n" 'next-error)
