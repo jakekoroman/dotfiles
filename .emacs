@@ -107,7 +107,7 @@
 ;;; Keybinds
 
 ;; Binds with SPC prefix
-(nvmap :prefix "SPC"
+(nvmap :keymaps 'override :prefix "SPC"
   "."   '(find-file :which-key "Find File")
   ","   '(ido-switch-buffer :which-key "Switch Buffer")
   "g g" '(magit :which-key "Magit")
