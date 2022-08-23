@@ -29,6 +29,15 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package quelpa :ensure)
+
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
+(setq use-package-ensure-function 'quelpa)
+
 (use-package gruber-darker-theme
   :ensure)
 
@@ -90,9 +99,17 @@
   
 (use-package magit :ensure)
 
+(use-package odin-mode
+  :ensure
+  :quelpa (odin-mode :fetcher github :repo "mattt-b/odin-mode")
+  :config
+  (require 'compile)
+  (add-to-list 'compilation-error-regexp-alist '("\\(.+?\\)\(\\([0-9]+\\):\\([0-9]+\\\).*"
+                                                 1 2 3)))
+
 ;;; Ido
 (setq ido-enable-flex-matching t
-  ido-everywhere t)
+      ido-everywhere t)
 (ido-mode 1)
 
 ;;; C-mode
@@ -136,4 +153,5 @@
 
 ;; Binds without SPC prefix
 (general-define-key
+ "M-p" 'previous-error
  "M-n" 'next-error)
