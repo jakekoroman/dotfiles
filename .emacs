@@ -8,6 +8,8 @@
 (scroll-bar-mode -1)
 (set-frame-font "Iosevka 10" nil t)
 
+(setq-default inhibit-tabs-mode nil)
+(setq-default tab-width 4)
 (setq
   inhibit-splash-screen t
   inhibit-startup-message t	
@@ -44,7 +46,8 @@
 (use-package zenburn-theme
   :ensure
   :config
-  (load-theme 'gruber-darker t)
+  ;;(load-theme 'gruber-darker t)
+  (load-theme 'tango-dark t)
   ;;(load-theme 'zenburn t)
   )
 
@@ -98,6 +101,11 @@
   (global-hl-todo-mode))
   
 (use-package magit :ensure)
+
+(use-package evil-commentary
+  :ensure
+  :config
+  (evil-commentary-mode))
 
 (use-package odin-mode
   :ensure

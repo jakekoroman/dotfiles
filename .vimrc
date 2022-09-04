@@ -6,9 +6,10 @@ colors GruberDarker
 
 " sets
 set relativenumber
-set expandtab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+set expandtab
 set guioptions=i
 
 " fixes vim bug in kitty terminal
