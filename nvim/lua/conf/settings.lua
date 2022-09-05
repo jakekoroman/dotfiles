@@ -7,6 +7,7 @@ o.termguicolors = true
 o.background = 'dark'
 vim.cmd('colorscheme base16-onedark')
 
+o.mouse = 'a'
 o.relativenumber = true
 o.tabstop = 4
 o.shiftwidth = 4

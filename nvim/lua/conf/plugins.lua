@@ -21,6 +21,7 @@ return require('packer').startup({
 
         -- Editor
         use('tpope/vim-commentary')
+        use('mg979/vim-visual-multi')
 
         -- Misc
         use('sheerun/vim-polyglot')
