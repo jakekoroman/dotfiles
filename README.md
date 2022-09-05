@@ -9,6 +9,7 @@ My configs for my commonly used software.\
 * Emacs
 * Doom Emacs
 * st
+* neovim
 * vim 
 * zsh
 * Alacritty
