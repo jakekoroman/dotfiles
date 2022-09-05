@@ -1,20 +1,25 @@
 # dotfiles #
 
-My configs for my commonly used software.\
+My configs for my 'commonly' used software.\
 \
 **Contains Submodules** clone with ```--recursive```
 
 # Software #
 
-* Emacs
-* Doom Emacs
+Most used
+* dwm
 * st
+* Emacs
 * neovim
+
+
+Mainly just here for archiving purposes on the off chance I want to return to
+them
+* Doom Emacs
 * vim 
 * zsh
 * Alacritty
 * qtile
-* dwm
 
 # Deployment #
 
