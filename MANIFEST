@@ -8,3 +8,4 @@ dwm|symlink|.config/
 .vim|symlink|
 .zsh_addons|symlink|
 alacritty|symlink|.config/
+nvim|symlink|.config/
