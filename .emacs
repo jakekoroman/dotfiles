@@ -8,6 +8,10 @@
 (scroll-bar-mode -1)
 (set-frame-font "Iosevka 10" nil t)
 
+;; Emacsclient stuff
+(setq default-frame-scroll-bars nil)
+(setq default-frame-alist '((font . "Iosevka-10" )))
+
 (setq-default inhibit-tabs-mode nil)
 (setq-default tab-width 4)
 (setq
@@ -102,6 +106,8 @@
   
 (use-package magit :ensure)
 
+(use-package lua-mode :ensure)
+
 (use-package evil-commentary
   :ensure
   :config
@@ -158,6 +164,14 @@
   "b p" '(previous-buffer :which-key "Open previous buffer")
   "b n" '(next-buffer :which-key "Open next buffer")
   )
+
+;; Normal mode binds
+(general-nmap
+  "C-e" 'move-end-of-line)
+
+;; Insert mode binds
+(general-imap
+  "C-y" 'evil-paste-after)
 
 ;; Binds without SPC prefix
 (general-define-key
