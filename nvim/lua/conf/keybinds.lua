@@ -3,11 +3,18 @@ local function map(m, k, v)
 end
 
 -- Misc editor binds
-map('i', '<C-E>', '<ESC>A')
-map('i', '<C-A>', '<ESC>I')
+map('i', '<C-e>', '<ESC>A')
+map('i', '<C-a>', '<ESC>I')
+
+-- Compilation bind
+-- map('n', '<leader>c', '<CMD>make<CR>')
+map('n', '<M-c>', '<CMD>make<CR>')
+map('n', '<M-n>', '<CMD>cn<CR>')
+map('n', '<M-p>', '<CMD>cp<CR>')
+map('n', '<M-l>', '<CMD>cl<CR>')
 
 -- Yank whole file
-map('n', '<C-Y>', 'ggVGy')
+map('n', '<C-y>', 'ggVGy')
 
 -- Buffer binds
 map('n', '<leader>[', '<CMD>bn<CR>')
