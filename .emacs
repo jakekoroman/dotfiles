@@ -7,8 +7,6 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (set-frame-font "Iosevka 10" nil t)
-
-;; Emacsclient stuff
 (setq default-frame-scroll-bars nil)
 (setq default-frame-alist '((font . "Iosevka-10" )))
 
@@ -24,6 +22,7 @@
   ring-bell-function 'ignore
   display-line-numbers-type 'relative
   transient-mark-mode nil
+  dired-listing-switches "-alh --group-directories-first"
   )
 (global-display-line-numbers-mode)
 
@@ -121,9 +120,18 @@
   (add-to-list 'compilation-error-regexp-alist '("\\(.+?\\)\(\\([0-9]+\\):\\([0-9]+\\\).*"
                                                  1 2 3)))
 
+(use-package company
+  :ensure
+  :config
+  (setq company-idle-delay nil)
+  (global-company-mode)
+  :bind
+  ("C-<return>" . company-complete))
+
 ;;; Ido
 (setq ido-enable-flex-matching t
-      ido-everywhere t)
+      ido-everywhere t
+	  ido-show-dot-for-dired t)
 (ido-mode 1)
 
 ;;; C-mode
@@ -167,7 +175,9 @@
 
 ;; Normal mode binds
 (general-nmap
-  "C-e" 'move-end-of-line)
+  "C-e" 'move-end-of-line
+  "C-j" 'evil-collection-unimpaired-move-text-down
+  "C-k" 'evil-collection-unimpaired-move-text-up)
 
 ;; Insert mode binds
 (general-imap
