@@ -7,22 +7,28 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (set-frame-font "Iosevka 10" nil t)
-(setq default-frame-scroll-bars nil)
+
+;; Emacs server settings
 (setq default-frame-alist '((font . "Iosevka-10" )))
+(defun my/disable-scroll-bars (frame)
+  (modify-frame-parameters frame
+                           '((vertical-scroll-bars . nil)
+                             (horizontal-scroll-bars . nil))))
+(add-hook 'after-make-frame-functions 'my/disable-scroll-bars)
 
 (setq-default inhibit-tabs-mode nil)
 (setq-default tab-width 4)
-(setq
-  inhibit-splash-screen t
-  inhibit-startup-message t	
-  scroll-step 3
-  auto-save-default nil
-  make-backup-files nil
-  blink-cursor-mode nil
-  ring-bell-function 'ignore
-  display-line-numbers-type 'relative
-  transient-mark-mode nil
-  dired-listing-switches "-alh --group-directories-first"
+(setq inhibit-splash-screen t
+	  inhibit-startup-message t
+	  scroll-step 3
+	  auto-save-default nil
+	  make-backup-files nil
+	  blink-cursor-mode nil
+	  ring-bell-function 'ignore
+	  display-line-numbers-type 'relative
+	  transient-mark-mode nil
+	  dired-listing-switches "-alh --group-directories-first"
+	  compilation-scroll-output t
   )
 (global-display-line-numbers-mode)
 
@@ -49,8 +55,8 @@
 (use-package zenburn-theme
   :ensure
   :config
-  ;;(load-theme 'gruber-darker t)
-  (load-theme 'tango-dark t)
+  (load-theme 'gruber-darker t)
+  ;;(load-theme 'tango-dark t)
   ;;(load-theme 'zenburn t)
   )
 
@@ -102,10 +108,12 @@
 	'(("TODO" . "#FF0000")))
   :init
   (global-hl-todo-mode))
-  
+ 
 (use-package magit :ensure)
 
 (use-package lua-mode :ensure)
+
+(use-package rust-mode :ensure);
 
 (use-package evil-commentary
   :ensure
