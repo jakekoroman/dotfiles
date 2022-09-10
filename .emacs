@@ -52,10 +52,14 @@
 (use-package gruber-darker-theme
   :ensure)
 
+(use-package darkmine-theme
+  :ensure)
+
 (use-package zenburn-theme
   :ensure
   :config
-  (load-theme 'gruber-darker t)
+  ;;(load-theme 'gruber-darker t)
+  (load-theme 'darkmine t)
   ;;(load-theme 'tango-dark t)
   ;;(load-theme 'zenburn t)
   )
