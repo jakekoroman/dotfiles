@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: fprintf
+# key: fpr
+# --
+fprintf($1, "$2");

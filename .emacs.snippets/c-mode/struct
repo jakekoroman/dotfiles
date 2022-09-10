@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: struct
+# key: st
+# --
+typedef struct {
+} $0;

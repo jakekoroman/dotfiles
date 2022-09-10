@@ -96,6 +96,32 @@
   :config
   (which-key-mode))
 
+(use-package company
+  :ensure
+  :config
+  (setq company-idle-delay nil)
+  (global-company-mode)
+  :bind
+  ("C-<return>" . company-complete))
+
+(use-package yasnippet
+  :ensure
+  :config
+  (require 'company)
+  ;; Add yasnippet support for all company backends
+  ;; https://github.com/syl20bnr/spacemacs/pull/179
+  (defvar company-mode/enable-yas t
+	"Enable yasnippet for all backends.")
+
+  (defun company-mode/backend-with-yas (backend)
+	(if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
+		backend
+      (append (if (consp backend) backend (list backend))
+              '(:with company-yasnippet))))
+  (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+  (setq yas-snippet-dirs '("~/.emacs.snippets"))
+  (yas-global-mode 1))
+
 (use-package general
   :ensure
   :config
@@ -128,13 +154,6 @@
   (add-to-list 'compilation-error-regexp-alist '("\\(.+?\\)\(\\([0-9]+\\):\\([0-9]+\\\).*"
                                                  1 2 3)))
 
-(use-package company
-  :ensure
-  :config
-  (setq company-idle-delay nil)
-  (global-company-mode)
-  :bind
-  ("C-<return>" . company-complete))
 
 ;;; Ido
 (setq ido-enable-flex-matching t

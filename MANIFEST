@@ -2,6 +2,7 @@
 .zshrc|symlink|
 .doom.d|symlink|
 .emacs|symlink|
+.emacs.snippets|symlink|
 qtile|symlink|.config/
 dwm|symlink|.config/
 .vimrc|symlink|
