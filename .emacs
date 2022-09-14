@@ -184,11 +184,11 @@
   "o -" '(dired-jump :which-key "Open Dired here")
 
   ;; Compile Binds
-  "c c" '(compile :which-key "Compile")
-  "c C" '(recompile :which-key "Recompile")
-  "c n" '(next-error :which-key "Goto next error")
+  "c" '(compile :which-key "Compile")
+  "C" '(recompile :which-key "Recompile")
 
   ;; Window Binds
+  "w w" '(evil-window-next :which-key "Cycle through windows")
   "w h" '(evil-window-left :which-key "Move left a window")
   "w l" '(evil-window-right :which-key "Move right a window")
   "w j" '(evil-window-down :which-key "Move down a window")
