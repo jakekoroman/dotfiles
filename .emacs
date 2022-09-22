@@ -162,7 +162,8 @@
 ;;; Ido
 (setq ido-enable-flex-matching t
       ido-everywhere t
-	  ido-show-dot-for-dired t)
+	  ido-show-dot-for-dired t
+	  ido-auto-merge-work-directories-length -1)
 (ido-mode 1)
 
 ;;; C-mode
