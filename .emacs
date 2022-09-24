@@ -58,8 +58,8 @@
 (use-package zenburn-theme
   :ensure
   :config
-  ;;(load-theme 'gruber-darker t)
-  (load-theme 'darkmine t)
+  (load-theme 'gruber-darker t)
+  ;;(load-theme 'darkmine t)
   ;;(load-theme 'tango-dark t)
   ;;(load-theme 'zenburn t)
   )
@@ -180,7 +180,9 @@
 ;; Binds with SPC prefix
 (nvmap :keymaps 'override :prefix "SPC"
   "."   '(find-file :which-key "Find File")
+  ">"   '(find-file-other-window :which-key "Open file in other window")
   ","   '(ido-switch-buffer :which-key "Switch Buffer")
+  "<"   '(ido-switch-buffer-other-window :which-key "Open buffer in other window")
   "g g" '(magit :which-key "Magit")
   "o -" '(dired-jump :which-key "Open Dired here")
 
