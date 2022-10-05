@@ -1,4 +1,5 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
+(add-to-list 'custom-theme-load-path "~/.emacs.local")
 (when (file-exists-p custom-file)
   (load custom-file))
 
@@ -6,9 +7,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(set-frame-font "Iosevka 10" nil t)
 
-;; Emacs server settings
 (setq default-frame-alist '((font . "Iosevka-10" )))
 (defun my/disable-scroll-bars (frame)
   (modify-frame-parameters frame
@@ -19,17 +18,19 @@
 (setq-default inhibit-tabs-mode nil)
 (setq-default tab-width 4)
 (setq inhibit-splash-screen t
-	  inhibit-startup-message t
-	  scroll-step 3
-	  auto-save-default nil
-	  make-backup-files nil
-	  blink-cursor-mode nil
-	  ring-bell-function 'ignore
-	  display-line-numbers-type 'relative
-	  transient-mark-mode nil
-	  dired-listing-switches "-alh --group-directories-first"
-	  compilation-scroll-output t
-  )
+      inhibit-startup-message t
+      scroll-step 3
+      auto-save-default nil
+      make-backup-files nil
+      blink-cursor-mode nil
+      ring-bell-function 'ignore
+      display-line-numbers-type 'relative
+      transient-mark-mode nil
+      dired-listing-switches "-alh --group-directories-first"
+      compilation-scroll-output t
+      gc-cons-threshold 100000000
+      )
+(global-hl-line-mode 1)
 (global-display-line-numbers-mode)
 
 ;;; Package installs and configuration
@@ -40,14 +41,11 @@
 (eval-when-compile
   (require 'use-package))
 
-(use-package quelpa :ensure)
+(use-package autothemer
+  :ensure)
 
-(quelpa
- '(quelpa-use-package
-   :fetcher git
-   :url "https://github.com/quelpa/quelpa-use-package.git"))
-(require 'quelpa-use-package)
-(setq use-package-ensure-function 'quelpa)
+(use-package base16-theme
+  :ensure)
 
 (use-package gruber-darker-theme
   :ensure)
@@ -58,10 +56,11 @@
 (use-package zenburn-theme
   :ensure
   :config
-  (load-theme 'gruber-darker t)
-  ;;(load-theme 'darkmine t)
-  ;;(load-theme 'tango-dark t)
-  ;;(load-theme 'zenburn t)
+  (load-theme 'base16-decaf t)
+  ;; (load-theme 'gruber-darker t)
+  ;; (load-theme 'darkmine t)
+  ;; (load-theme 'tango-dark t)
+  ;; (load-theme 'zenburn t)
   )
 
 (use-package undo-fu
@@ -86,6 +85,17 @@
   ;; Sets the colour of the region
   (set-face-background 'iedit-occurrence "#d360d4")
   (evil-multiedit-default-keybinds))
+
+(use-package evil-snipe
+  :ensure
+  :config
+  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
+  (evil-snipe-override-mode 1))
+
+(use-package evil-easymotion
+  :ensure
+  :config
+  (evilem-default-keybindings "SPC"))
 
 (use-package smex
   :ensure
@@ -115,11 +125,11 @@
   ;; Add yasnippet support for all company backends
   ;; https://github.com/syl20bnr/spacemacs/pull/179
   (defvar company-mode/enable-yas t
-	"Enable yasnippet for all backends.")
+    "Enable yasnippet for all backends.")
 
   (defun company-mode/backend-with-yas (backend)
-	(if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
-		backend
+    (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
+        backend
       (append (if (consp backend) backend (list backend))
               '(:with company-yasnippet))))
   (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
@@ -135,10 +145,10 @@
   :ensure
   :config
   (setq hl-todo-keyword-faces
-	'(("TODO" . "#FF0000")))
+        '(("TODO" . "#FF0000")))
   :init
   (global-hl-todo-mode))
- 
+
 (use-package magit :ensure)
 
 (use-package lua-mode :ensure)
@@ -150,20 +160,11 @@
   :config
   (evil-commentary-mode))
 
-(use-package odin-mode
-  :ensure
-  :quelpa (odin-mode :fetcher github :repo "mattt-b/odin-mode")
-  :config
-  (require 'compile)
-  (add-to-list 'compilation-error-regexp-alist '("\\(.+?\\)\(\\([0-9]+\\):\\([0-9]+\\\).*"
-                                                 1 2 3)))
-
-
 ;;; Ido
 (setq ido-enable-flex-matching t
       ido-everywhere t
-	  ido-show-dot-for-dired t
-	  ido-auto-merge-work-directories-length -1)
+      ido-show-dot-for-dired t
+      ido-auto-merge-work-directories-length -1)
 (ido-mode 1)
 
 ;;; C-mode
@@ -172,8 +173,8 @@
 (c-set-offset 'case-label '+)
 
 (font-lock-add-keywords 'c-mode
-			'(("internal" . font-lock-keyword-face)
-			  ("global" . 'font-lock-keyword-face)))
+                        '(("internal" . font-lock-keyword-face)
+                          ("global" . 'font-lock-keyword-face)))
 
 ;;; Keybinds
 
@@ -207,17 +208,42 @@
   "b n" '(next-buffer :which-key "Open next buffer")
   )
 
+(defun previous-blank-line ()
+  "Moves to the previous line containing nothing but whitespace."
+  (interactive)
+  (search-backward-regexp "^[ \t]*\n"))
+
+(defun next-blank-line ()
+  "Moves to the next line containing nothing but whitespace."
+  (interactive)
+  (forward-line)
+  (search-forward-regexp "^[ \t]*\n")
+  (forward-line -1))
+
 ;; Normal mode binds
 (general-nmap
   "C-e" 'move-end-of-line
   "C-j" 'evil-collection-unimpaired-move-text-down
-  "C-k" 'evil-collection-unimpaired-move-text-up)
+  "C-k" 'evil-collection-unimpaired-move-text-up
+  "M-j" 'next-blank-line
+  "M-k" 'previous-blank-line)
 
 ;; Insert mode binds
 (general-imap
-  "C-y" 'evil-paste-after)
+  "C-y" 'evil-paste-after
+  "C-a" 'move-beginning-of-line
+  "C-e" 'move-end-of-line)
 
 ;; Binds without SPC prefix
 (general-define-key
  "M-p" 'previous-error
- "M-n" 'next-error)
+ "M-n" 'next-error
+ "M-o" 'other-window)
+
+;;; Hooks
+(defun indent-buffer ()
+  "Run indent-region on entire buffer"
+  (interactive)
+  (indent-region (point-min) (point-max) nil))
+
+(add-hook 'before-save-hook 'indent-buffer)
