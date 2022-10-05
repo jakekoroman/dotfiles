@@ -5,10 +5,12 @@ end
 -- Misc editor binds
 map('i', '<C-e>', '<ESC>A')
 map('i', '<C-a>', '<ESC>I')
+map('n', '<C-a>', '0')
+map('n', '<C-e>', '$')
 
 -- Compilation bind
 -- map('n', '<leader>c', '<CMD>make<CR>')
-map('n', '<M-c>', '<CMD>make<CR>')
+map('n', '<leader>c', '<CMD>make<CR>')
 map('n', '<M-n>', '<CMD>cn<CR>')
 map('n', '<M-p>', '<CMD>cp<CR>')
 map('n', '<M-l>', '<CMD>cl<CR>')
@@ -19,6 +21,10 @@ map('n', '<C-y>', 'ggVGy')
 -- Buffer binds
 map('n', '<leader>[', '<CMD>bn<CR>')
 map('n', '<leader>]', '<CMD>bp<CR>')
+
+-- Window binds
+map('n', '<leader>w', '<C-w>w')
+map('n', '<leader>k', '<CMD>close<CR>')
 
 -- Move line up and down in NORMAL and VISUAL modes
 -- Reference: https://vim.fandom.com/wiki/Moving_lines_up_or_down

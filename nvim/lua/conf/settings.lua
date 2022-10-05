@@ -5,7 +5,7 @@ g.mapleader = " "
 
 o.termguicolors = true
 o.background = 'dark'
-vim.cmd('colorscheme base16-onedark')
+vim.cmd('colorscheme base16-default-dark')
 
 o.mouse = 'a'
 o.relativenumber = true
