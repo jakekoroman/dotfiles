@@ -145,7 +145,8 @@
   :ensure
   :config
   (setq hl-todo-keyword-faces
-        '(("TODO" . "#FF0000")))
+        '(("TODO" . "#FF0000")
+		  ("NOTE" . "#00FF00")))
   :init
   (global-hl-todo-mode))
 
@@ -153,12 +154,17 @@
 
 (use-package lua-mode :ensure)
 
-(use-package rust-mode :ensure);
+(use-package rust-mode :ensure)
 
 (use-package evil-commentary
   :ensure
   :config
   (evil-commentary-mode))
+
+(use-package org-bullets
+  :ensure
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;;; Ido
 (setq ido-enable-flex-matching t
@@ -206,6 +212,7 @@
   ;; Buffer Binds
   "b p" '(previous-buffer :which-key "Open previous buffer")
   "b n" '(next-buffer :which-key "Open next buffer")
+  "b k" '(kill-current-buffer :which-key "Kill current buffer")
   )
 
 (defun previous-blank-line ()
