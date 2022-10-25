@@ -18,10 +18,12 @@ return require('packer').startup({
 
         -- Theme
         use('RRethy/nvim-base16')
+        use('gosukiwi/vim-atom-dark')
 
         -- Editor
         use('tpope/vim-commentary')
         use('mg979/vim-visual-multi')
+        use('rhysd/clever-f.vim')
 
         -- Misc
         use('sheerun/vim-polyglot')

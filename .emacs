@@ -53,11 +53,14 @@
 (use-package darkmine-theme
   :ensure)
 
+(use-package doom-themes
+  :ensure)
+
 (use-package zenburn-theme
   :ensure
   :config
-  (load-theme 'base16-decaf t)
-  ;; (load-theme 'gruber-darker t)
+  ;; (load-theme 'base16-decaf t)
+  (load-theme 'gruber-darker t)
   ;; (load-theme 'darkmine t)
   ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
@@ -265,3 +268,8 @@
   (split-window-sensibly)
   (other-window 1)
   (gud-gdb (concat "gdb --fullname " input)))
+
+;; Sets the default compile command based on OS
+(if (string= system-type "windows-nt")
+	(setq compile-command "build.bat")
+  (setq compile-command "./build.sh"))
