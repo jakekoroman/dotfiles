@@ -254,3 +254,14 @@
   (indent-region (point-min) (point-max) nil))
 
 (add-hook 'before-save-hook 'indent-buffer)
+
+
+;;; Launch gud-gdb in a new window
+(defun my-gud ()
+  "Run gud-gdb in other window"
+  (interactive)
+  (setq files (directory-files (file-name-directory buffer-file-name)))
+  (setq input (completing-read "executable: " files))
+  (split-window-sensibly)
+  (other-window 1)
+  (gud-gdb (concat "gdb --fullname " input)))
