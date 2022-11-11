@@ -56,14 +56,18 @@
 (use-package doom-themes
   :ensure)
 
+(use-package naysayer-theme
+  :ensure)
+
 (use-package zenburn-theme
   :ensure
   :config
   ;; (load-theme 'base16-decaf t)
-  (load-theme 'gruber-darker t)
+  ;; (load-theme 'gruber-darker t)
   ;; (load-theme 'darkmine t)
   ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
+  (load-theme 'naysayer t)
   )
 
 (use-package undo-fu
@@ -81,6 +85,11 @@
   :ensure
   :init
   (evil-collection-init))
+
+(use-package evil-visual-replace
+  :ensure
+  :init
+  (evil-visual-replace-visual-bindings))
 
 (use-package evil-multiedit
   :ensure
@@ -236,7 +245,8 @@
   "C-j" 'evil-collection-unimpaired-move-text-down
   "C-k" 'evil-collection-unimpaired-move-text-up
   "M-j" 'next-blank-line
-  "M-k" 'previous-blank-line)
+  "M-k" 'previous-blank-line
+  "C-d" 'kill-region)
 
 ;; Insert mode binds
 (general-imap
@@ -246,9 +256,12 @@
 
 ;; Binds without SPC prefix
 (general-define-key
+ :keymaps 'override
+
  "M-p" 'previous-error
  "M-n" 'next-error
- "M-o" 'other-window)
+ "M-o" 'other-window
+ "<f2>" 'imenu)
 
 ;;; Hooks
 (defun indent-buffer ()
