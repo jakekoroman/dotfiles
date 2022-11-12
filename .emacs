@@ -53,7 +53,10 @@
 (use-package doom-themes
   :ensure)
 
-(use-package inkpot-theme
+(use-package kaolin-theme
+  :ensure)
+
+(use-package naysayer-theme
   :ensure)
 
 (use-package zenburn-theme
@@ -61,9 +64,10 @@
   :config
   ;; (load-theme 'base16-decaf t)
   ;; (load-theme 'gruber-darker t)
+  ;; (load-theme 'darkmine t)
+  ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
-  ;; (load-theme 'doom-wilmersdorf t)
-  (load-theme 'kaolin-temple t)
+  (load-theme 'naysayer t)
   )
 
 (use-package undo-fu
@@ -81,6 +85,11 @@
   :ensure
   :init
   (evil-collection-init))
+
+(use-package evil-visual-replace
+  :ensure
+  :init
+  (evil-visual-replace-visual-bindings))
 
 (use-package evil-multiedit
   :ensure
@@ -247,9 +256,12 @@
 
 ;; Binds without SPC prefix
 (general-define-key
+ :keymaps 'override
+
  "M-p" 'previous-error
  "M-n" 'next-error
- "M-o" 'other-window)
+ "M-o" 'other-window
+ "<f2>" 'imenu)
 
 ;;; Hooks
 (defun indent-buffer ()
