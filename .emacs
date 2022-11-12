@@ -53,7 +53,7 @@
 (use-package doom-themes
   :ensure)
 
-(use-package kaolin-theme
+(use-package kaolin-themes
   :ensure)
 
 (use-package naysayer-theme
@@ -67,6 +67,7 @@
   ;; (load-theme 'darkmine t)
   ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
+  ;; (load-theme 'kaolin-temple t)
   (load-theme 'naysayer t)
   )
 
