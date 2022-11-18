@@ -1,5 +1,7 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
+(add-to-list 'load-path "~/.emacs.local")
 (add-to-list 'custom-theme-load-path "~/.emacs.local")
+(load "odin-mode")
 (when (file-exists-p custom-file)
   (load custom-file))
 
