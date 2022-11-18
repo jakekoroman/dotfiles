@@ -52,10 +52,10 @@
 (use-package gruber-darker-theme
   :ensure)
 
-(use-package darkmine-theme
+(use-package doom-themes
   :ensure)
 
-(use-package doom-themes
+(use-package kaolin-themes
   :ensure)
 
 (use-package naysayer-theme
@@ -69,6 +69,7 @@
   ;; (load-theme 'darkmine t)
   ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
+  ;; (load-theme 'kaolin-temple t)
   (load-theme 'naysayer t)
   )
 
@@ -246,9 +247,9 @@
   "C-e" 'move-end-of-line
   "C-j" 'evil-collection-unimpaired-move-text-down
   "C-k" 'evil-collection-unimpaired-move-text-up
+  "C-d" 'kill-region
   "M-j" 'next-blank-line
-  "M-k" 'previous-blank-line
-  "C-d" 'kill-region)
+  "M-k" 'previous-blank-line)
 
 ;; Insert mode binds
 (general-imap
@@ -272,7 +273,6 @@
   (indent-region (point-min) (point-max) nil))
 
 (add-hook 'before-save-hook 'indent-buffer)
-
 
 ;;; Launch gud-gdb in a new window
 (defun my-gud ()
