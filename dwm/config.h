@@ -4,6 +4,7 @@
 /* appearance */
 static const unsigned int borderpx			= 1;						/* border pixel of windows */
 static const unsigned int snap				= 32;						/* snap pixel */
+static const int swallowfloating            = 0;                        /* 1 means swallow floating windows by default */
 static const unsigned int systraypinning	= 1;						/* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft		= 0;						/* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing	= 10;						/* systray spacing */
@@ -27,15 +28,17 @@ static const char *colors[][3]				= {
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
+#define ST "st-256color"
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "feh",      NULL,       NULL,       0,            1,           -1 },
-	{ "Anki",     NULL,       "Add",      0,            1,           -1 },
-	{ "discord",  NULL,       NULL,       1 << 4,       0,            1 },
+	/* class      instance    title       tags mask     isfloating   isterminal	noswallow	monitor */
+	{ "feh",      NULL,       NULL,       0,            1,           0,			0,			-1 },
+	{ "Anki",     NULL,       "Add",      0,            1,           0,			0,			-1 },
+	{ "discord",  NULL,       NULL,       1 << 4,       0,           0,			0,			 1 },
+	{ ST,         NULL,       NULL,       0,            0,           1,         0,			-1 },
 };
 
 /* layout(s) */
