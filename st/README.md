@@ -3,5 +3,6 @@
 ## Patches
 
 * [anysize](https://st.suckless.org/patches/anysize/)
+* [scrollback](https://st.suckless.org/patches/scrollback/)
 
-#### [dwm original repo](https://git.suckless.org/st/)
+#### [st original repo](https://git.suckless.org/st/)
