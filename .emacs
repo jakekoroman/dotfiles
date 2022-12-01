@@ -65,12 +65,12 @@
   :ensure
   :config
   ;; (load-theme 'base16-decaf t)
-  ;; (load-theme 'gruber-darker t)
+  (load-theme 'gruber-darker t)
   ;; (load-theme 'darkmine t)
   ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
   ;; (load-theme 'kaolin-temple t)
-  (load-theme 'naysayer t)
+  ;; (load-theme 'naysayer t)
   )
 
 (use-package undo-fu
