@@ -31,6 +31,7 @@
       dired-listing-switches "-alh --group-directories-first"
       compilation-scroll-output t
       gc-cons-threshold 100000000
+	  compilation-ask-about-save nil
       )
 (global-hl-line-mode 1)
 (global-display-line-numbers-mode)
@@ -272,7 +273,7 @@
   (interactive)
   (indent-region (point-min) (point-max) nil))
 
-(add-hook 'before-save-hook 'indent-buffer)
+;; (add-hook 'before-save-hook 'indent-buffer)
 
 ;;; Launch gud-gdb in a new window
 (defun my-gud ()
