@@ -1,8 +1,6 @@
 # dotfiles #
 
-My configs for my 'commonly' used software.\
-\
-**Contains Submodules** clone with ```--recursive```
+My configs for my 'commonly' used software.
 
 # Software #
 
