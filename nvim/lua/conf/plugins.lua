@@ -17,15 +17,18 @@ return require('packer').startup({
         use('nvim-lua/plenary.nvim')
 
         -- Theme
-        use('RRethy/nvim-base16')
         use('gosukiwi/vim-atom-dark')
+        use('https://gitlab.com/madyanov/gruber.vim')
 
         -- Editor
         use('tpope/vim-commentary')
         use('mg979/vim-visual-multi')
         use('rhysd/clever-f.vim')
+        use({'nvim-telescope/telescope.nvim', tag = '0.1.0'})
+        use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
 
         -- Misc
         use('sheerun/vim-polyglot')
+
     end
 })

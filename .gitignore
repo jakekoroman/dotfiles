@@ -8,3 +8,4 @@ st/st
 st/*.diff
 .doom.d/custom.el
 .vim/plugged/
+nvim/plugin
