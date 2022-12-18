@@ -254,6 +254,12 @@
                           ("global" . 'font-lock-keyword-face)))
 
 ;;; Keybinds
+(defun my-vterm ()
+  "Open vterm in other window"
+  (interactive)
+  (split-window-sensibly)
+  (other-window 1)
+  (vterm))
 
 ;; Binds with SPC prefix
 (nvmap :keymaps 'override :prefix "SPC"
@@ -263,7 +269,8 @@
   "<"   '(ido-switch-buffer-other-window :which-key "Open buffer in other window")
   "g g" '(magit :which-key "Magit")
   "o -" '(dired-jump :which-key "Open Dired here")
-  "o t" '(vterm :which-key "Open vterm")
+  "o t" '(my-vterm :which-key "Open vterm in other window")
+  "o T" '(vterm :which-key "Open vterm here")
 
   ;; Compile Binds
   "c" '(compile :which-key "Compile")
