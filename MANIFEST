@@ -5,8 +5,6 @@
 .emacs.snippets|symlink|
 qtile|symlink|.config/
 dwm|symlink|.config/
-.vimrc|symlink|
-.vim|symlink|
 .zsh_addons|symlink|
 alacritty|symlink|.config/
 nvim|symlink|.config/
