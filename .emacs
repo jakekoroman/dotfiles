@@ -77,6 +77,9 @@
 (use-package undo-fu
   :ensure)
 
+(use-package consult
+  :ensure)
+
 (use-package evil
   :ensure
   :init
@@ -132,7 +135,16 @@
   (setq company-idle-delay nil)
   (global-company-mode)
   :bind
-  ("C-<return>" . company-complete))
+  ("C-<return>" . company-complete)
+  ("C-<tab>"    . dabbrev-expand))
+
+(use-package ripgrep
+  :ensure)
+
+(use-package projectile
+  :ensure
+  :init
+  (projectile-mode +1))
 
 (use-package yasnippet
   :ensure
@@ -254,7 +266,7 @@
                           ("global" . 'font-lock-keyword-face)))
 
 ;;; Keybinds
-(defun my-vterm ()
+(defun my/vterm ()
   "Open vterm in other window"
   (interactive)
   (split-window-sensibly)
@@ -269,7 +281,7 @@
   "<"   '(ido-switch-buffer-other-window :which-key "Open buffer in other window")
   "g g" '(magit :which-key "Magit")
   "o -" '(dired-jump :which-key "Open Dired here")
-  "o t" '(my-vterm :which-key "Open vterm in other window")
+  "o t" '(my/vterm :which-key "Open vterm in other window")
   "o T" '(vterm :which-key "Open vterm here")
 
   ;; Compile Binds
@@ -292,6 +304,13 @@
   "b p" '(previous-buffer :which-key "Open previous buffer")
   "b n" '(next-buffer :which-key "Open next buffer")
   "b k" '(kill-current-buffer :which-key "Kill current buffer")
+
+  ;; Projectile Binds
+  "p f" '(projectile-find-file :which-key "Open a file in the current project")
+  "p F" '(projectile-find-file-other-window :which-key "Open a file in the other window in the current project")
+  "p b" '(projectile-switch-to-buffer :which-key "Open a buffer in the current project")
+  "p B" '(projectile-switch-to-buffer-other-window :which-key "Open a buffer in the other window in the current project")
+  "/"   '(projectile-ripgrep :which-key "Run grep in the current project") 
   )
 
 (defun previous-blank-line ()
@@ -312,6 +331,25 @@
   (indent-region (point-min) (point-max) nil))
 ;; (add-hook 'before-save-hook 'indent-buffer)
 
+(defun find-corresponding-file ()
+  "Finds the file that corresponds to this one and opens it."
+  (interactive)
+  (setq fname (file-name-sans-extension buffer-file-name))
+  (setq result nil)
+  (if (string-match "\\.c" buffer-file-name)
+	  (setq result (concat fname ".h")))
+  (if (string-match "\\.h" buffer-file-name)
+	  (if (file-exists-p (concat fname ".c")) (setq result (concat fname ".c"))
+		(setq result (concat fname ".cpp"))))
+  (if result (find-file result)
+    (error "Unable to find a corresponding file")))
+
+(defun find-corresponding-file-other-window ()
+  "Finds the file that corresponds to this and opens it in the other window."
+  (interactive)
+  (find-file-other-window buffer-file-name)
+  (find-corresponding-file))
+
 ;; Normal mode binds
 (general-nmap
   "C-e" 'move-end-of-line
@@ -319,7 +357,11 @@
   "C-k" 'evil-collection-unimpaired-move-text-up
   "C-d" 'kill-region
   "M-j" 'next-blank-line
-  "M-k" 'previous-blank-line)
+  "M-k" 'previous-blank-line
+  "M-v" 'find-corresponding-file)
+
+;; idk why general mapping doesn't like to bind "M-S-v" so I have to do it the old fashioned way aka the better way
+(global-set-key [(meta shift v)] 'find-corresponding-file-other-window)
 
 ;; Insert mode binds
 (general-imap
