@@ -216,8 +216,8 @@
 
 (use-package popper
   :ensure t ; or :straight t
-  :bind (("C-`"   . popper-toggle-latest)
-         ("M-`"   . popper-cycle)
+  :bind (("M-`"   . popper-toggle-latest)
+         ("C-`"   . popper-cycle)
          ("C-M-`" . popper-toggle-type))
   :init
   (setq popper-reference-buffers
