@@ -62,11 +62,15 @@
 (use-package naysayer-theme
   :ensure)
 
+(use-package color-theme-sanityinc-tomorrow
+  :ensure)
+
 (use-package zenburn-theme
   :ensure
   :config
   ;; (load-theme 'base16-decaf t)
-  (load-theme 'gruber-darker t)
+  (load-theme 'sanityinc-tomorrow-night)
+  ;; (load-theme 'gruber-darker t)
   ;; (load-theme 'darkmine t)
   ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
@@ -266,7 +270,7 @@
                           ("global" . 'font-lock-keyword-face)))
 
 ;;; Keybinds
-(defun my/vterm ()
+(defun my-vterm ()
   "Open vterm in other window"
   (interactive)
   (split-window-sensibly)
@@ -281,7 +285,7 @@
   "<"   '(ido-switch-buffer-other-window :which-key "Open buffer in other window")
   "g g" '(magit :which-key "Magit")
   "o -" '(dired-jump :which-key "Open Dired here")
-  "o t" '(my/vterm :which-key "Open vterm in other window")
+  "o t" '(my-vterm :which-key "Open vterm in other window")
   "o T" '(vterm :which-key "Open vterm here")
 
   ;; Compile Binds
@@ -306,10 +310,11 @@
   "b k" '(kill-current-buffer :which-key "Kill current buffer")
 
   ;; Projectile Binds
-  "p f" '(projectile-find-file :which-key "Open a file in the current project")
-  "p F" '(projectile-find-file-other-window :which-key "Open a file in the other window in the current project")
-  "p b" '(projectile-switch-to-buffer :which-key "Open a buffer in the current project")
-  "p B" '(projectile-switch-to-buffer-other-window :which-key "Open a buffer in the other window in the current project")
+  "p p" '(projectile-switch-project :which-key "Change project")
+  "p ." '(projectile-find-file :which-key "Open a file in the current project")
+  "p >" '(projectile-find-file-other-window :which-key "Open a file in the other window in the current project")
+  "p ," '(projectile-switch-to-buffer :which-key "Open a buffer in the current project")
+  "p <" '(projectile-switch-to-buffer-other-window :which-key "Open a buffer in the other window in the current project")
   "/"   '(projectile-ripgrep :which-key "Run grep in the current project") 
   )
 
