@@ -81,9 +81,6 @@
 (use-package undo-fu
   :ensure)
 
-(use-package consult
-  :ensure)
-
 (use-package evil
   :ensure
   :init
@@ -187,13 +184,17 @@
   :config
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
-(use-package magit :ensure)
+(use-package magit 
+  :ensure)
 
-(use-package vterm :ensure)
+(use-package vterm 
+  :ensure)
 
-(use-package lua-mode :ensure)
+(use-package lua-mode 
+  :ensure)
 
-(use-package rust-mode :ensure)
+(use-package rust-mode 
+  :ensure)
 
 (use-package evil-commentary
   :ensure
@@ -205,12 +206,13 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;;; Ido
-(setq ido-enable-flex-matching t
-      ido-everywhere t
-      ido-show-dot-for-dired t
-      ido-auto-merge-work-directories-length -1)
-(ido-mode 1)
+(use-package ido
+  :config
+  (setq ido-enable-flex-matching t
+		ido-everywhere t
+		ido-show-dot-for-dired t
+		ido-auto-merge-work-directories-length -1)
+  (ido-mode 1))
 
 (defun ido-goto-symbol (&optional symbol-list)
   "Refresh imenu and jump to a place in the buffer using Ido."
@@ -344,7 +346,9 @@
   (if (string-match "\\.c" buffer-file-name)
 	  (setq result (concat fname ".h")))
   (if (string-match "\\.h" buffer-file-name)
-	  (if (file-exists-p (concat fname ".c")) (setq result (concat fname ".c"))
+	  (if (file-exists-p (concat fname ".c"))
+		  (setq result (concat fname ".c")))
+	(if (file-exists-p (concat fname ".cpp"))
 		(setq result (concat fname ".cpp"))))
   (if result (find-file result)
     (error "Unable to find a corresponding file")))
@@ -382,7 +386,6 @@
  "M-o" 'other-window
  "<f2>" 'ido-goto-symbol
  "<f1>" 'indent-buffer)
-
 
 ;;; Launch gud-gdb in a new window
 (defun my-gud ()
