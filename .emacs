@@ -214,6 +214,24 @@
 		ido-auto-merge-work-directories-length -1)
   (ido-mode 1))
 
+(use-package popper
+  :ensure t ; or :straight t
+  :bind (("C-`"   . popper-toggle-latest)
+         ("M-`"   . popper-cycle)
+         ("C-M-`" . popper-toggle-type))
+  :init
+  (setq popper-reference-buffers
+        '("\\*Messages\\*"
+          "Output\\*$"
+          "\\*Async Shell Command\\*"
+          help-mode
+          compilation-mode))
+  (popper-mode +1)
+  (popper-echo-mode +1)
+  :config
+  (setq popper-mode-line nil))
+  ;; (setq popper-window-height 20))
+
 (defun ido-goto-symbol (&optional symbol-list)
   "Refresh imenu and jump to a place in the buffer using Ido."
   (interactive)
@@ -291,8 +309,8 @@
   "o T" '(vterm :which-key "Open vterm here")
 
   ;; Compile Binds
-  "c" '(compile :which-key "Compile")
-  "C" '(recompile :which-key "Recompile")
+  "c" '(recompile :which-key "Recompile")
+  "C" '(compile :which-key "Compile")
 
   ;; Window Binds
   "w w" '(evil-window-next :which-key "Cycle through windows")
