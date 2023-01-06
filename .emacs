@@ -69,8 +69,8 @@
   :ensure
   :config
   ;; (load-theme 'base16-decaf t)
-  (load-theme 'sanityinc-tomorrow-night)
-  ;; (load-theme 'gruber-darker t)
+  ;; (load-theme 'sanityinc-tomorrow-night)
+  (load-theme 'gruber-darker t)
   ;; (load-theme 'darkmine t)
   ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
@@ -142,11 +142,6 @@
 (use-package ripgrep
   :ensure)
 
-(use-package projectile
-  :ensure
-  :init
-  (projectile-mode +1))
-
 (use-package yasnippet
   :ensure
   :config
@@ -175,7 +170,8 @@
   :config
   (setq hl-todo-keyword-faces
         '(("TODO" . "#FF0000")
-		  ("NOTE" . "#00FF00")))
+		  ("NOTE" . "#00FF00")
+		  ("IMPORTANT" . "#FFFF00")))
   :init
   (global-hl-todo-mode))
 
@@ -226,8 +222,8 @@
           "\\*Async Shell Command\\*"
           help-mode
           compilation-mode))
-  (popper-mode +1)
-  (popper-echo-mode +1)
+  ;; (popper-mode +1)
+  ;; (popper-echo-mode +1)
   :config
   (setq popper-mode-line nil))
   ;; (setq popper-window-height 20))
@@ -328,14 +324,6 @@
   "b p" '(previous-buffer :which-key "Open previous buffer")
   "b n" '(next-buffer :which-key "Open next buffer")
   "b k" '(kill-current-buffer :which-key "Kill current buffer")
-
-  ;; Projectile Binds
-  "p p" '(projectile-switch-project :which-key "Change project")
-  "p ." '(projectile-find-file :which-key "Open a file in the current project")
-  "p >" '(projectile-find-file-other-window :which-key "Open a file in the other window in the current project")
-  "p ," '(projectile-switch-to-buffer :which-key "Open a buffer in the current project")
-  "p <" '(projectile-switch-to-buffer-other-window :which-key "Open a buffer in the other window in the current project")
-  "/"   '(projectile-ripgrep :which-key "Run grep in the current project") 
   )
 
 (defun previous-blank-line ()
