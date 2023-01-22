@@ -33,7 +33,7 @@
       gc-cons-threshold 100000000
 	  compilation-ask-about-save nil
       )
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 (global-display-line-numbers-mode)
 
 ;;; Package installs and configuration
@@ -65,12 +65,16 @@
 (use-package color-theme-sanityinc-tomorrow
   :ensure)
 
+(use-package dracula-theme
+  :ensure)
+
 (use-package zenburn-theme
   :ensure
   :config
+  (load-theme 'dracula t)
   ;; (load-theme 'base16-decaf t)
   ;; (load-theme 'sanityinc-tomorrow-night)
-  (load-theme 'gruber-darker t)
+  ;; (load-theme 'gruber-darker t)
   ;; (load-theme 'darkmine t)
   ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)

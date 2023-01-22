@@ -19,6 +19,8 @@ return require('packer').startup({
         -- Theme
         use('gosukiwi/vim-atom-dark')
         use('https://gitlab.com/madyanov/gruber.vim')
+        use({'srcery-colors/srcery-vim', as = 'srcery'})
+        use('Mofiqul/dracula.nvim')
 
         -- Editor
         use('tpope/vim-commentary')

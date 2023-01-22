@@ -4,7 +4,7 @@ local g = vim.g
 g.mapleader = " "
 
 o.termguicolors = true
-vim.cmd('colorscheme gruber')
+vim.cmd('colorscheme dracula')
 
 o.mouse = 'a'
 o.relativenumber = true
