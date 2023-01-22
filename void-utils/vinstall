@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# This script helps automate installing packages from source
+# from the void-packages repo
+
+set -e
+
+dmenu_cmd='dmenu -F -i -c -l 16 -p ''Package:'' -nb ''#222222'' -sb ''#535d6c'''
+
+build_source() {
+    cd ~/void-packages
+    pkg=$(ls -l srcpkgs/ | awk '{print $9}' | $dmenu_cmd)
+    echo "Selected package: $(echo $pkg)"
+    ./xbps-src pkg $pkg
+    xi $pkg
+}
+
+install() {
+    pkg=$(ls -l ~/void-packages/srcpkgs/ | awk '{print $9}' | $dmenu_cmd)
+    echo "Selected package: $(echo $pkg)"
+    sudo xbps-install $pkg
+}
+
+if [[ "$0" == *"vinstall"* ]]; then
+    build_source
+else
+    install
+fi
