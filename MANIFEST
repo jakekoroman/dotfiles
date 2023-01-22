@@ -2,9 +2,11 @@
 .zshrc|symlink|
 .doom.d|symlink|
 .emacs|symlink|
+.emacs.local|symlink|
 .emacs.snippets|symlink|
 qtile|symlink|.config/
 dwm|symlink|.config/
 .zsh_addons|symlink|
 alacritty|symlink|.config/
 nvim|symlink|.config/
+awesome|symlink|.config/

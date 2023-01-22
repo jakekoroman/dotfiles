@@ -1,70 +1,48 @@
-# Shows screenfetch on launch
-# screenfetch
-
-# Shows neofetch on launch
-#neofetch
-
 echo "¯\_(ツ)_/¯"
+echo ""
 
-# enables the starship prompt
-eval "$(starship init zsh)"
-
-#export PS1=$'[\e[0;32m%~\e[m] $ '
-
-# History stuff
+# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt HIST_IGNORE_ALL_DUPS
-
-# Key binds to keep my sanity
-bindkey -e
-bindkey \^U backward-kill-line
-bindkey "^[[3~" delete-char
-# for urxvt
-bindkey "^[^[[D" backward-word
-bindkey "^[^[[C" forward-word
-# for alacritty
-bindkey "^[[1;3D" backward-word
-bindkey "^[[1;3C" forward-word
-
+HISTSIZE=5000
+SAVEHIST=5000
+# End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
+zstyle :compinstall filename '/home/jake/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of compinstall
+# End of lines added by compinstall
 
-# Aliases
-alias ll="ls -al --color=auto"
-alias ls="ls --color=auto"
-alias la='ls -A --color=auto'
-alias ..='cd ..'
+git_branch() {
+    if out="$(git -C . rev-parse > /dev/null 2>&1)"; then
+        printf " $%s$(git branch | pcregrep -o1 "\*[\s]*(.*)")"
+    fi
+}
+
+set_prompt() {
+    branch="$(git_branch)"
+    NEWLINE=$'\n'
+    PROMPT="%F{white}┌[%f%F{blue}%~%f%F{white}]%f${NEWLINE}%F{white}└[%f%F{green}%n%f%F{yellow}@%f%F{blue}%m%f%F{red}%}${branch}%F{white}]:%f "
+}
+
+precmd_functions+=(set_prompt)
+set_prompt
+
+export PATH=$PATH:$HOME/.local/bin
+
+alias ls='ls --color=auto'
+alias grep='grep --color=always'
+alias cs='ssh jake@10.0.0.162'
+alias l='exa --long --all --group-directories-first'
+alias tree='tree -C'
+alias n='nvim'
 alias gs='git status'
 alias gl='git log'
 alias gc='git commit -m'
-alias blueon='bluetoothctl power on'
-alias blueoff='bluetoothctl power off'
 
-# SSH alias for alacritty to use the right colours
-# terminfo pepehands
-alias ssh='TERM=xterm-256color ssh'
-
-# tmux alias to keep the right colours
-alias tmux='tmux new "export TERM=xterm-256color; zsh"'
-
-# Safety aliases
-#alias rm='rm -i'
-#alias rmd='rm -rfi'
-#alias mv='mv -i'
-
-# Path vars
-export PATH=~/go/bin:~/.emacs.d/bin/:~/.local/bin:$PATH
-export GOPATH=~/go
-
-# addons
-source ~/.zsh_addons/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh_addons/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Interesting live complete plugin, to crazy for me but cool
-# source ~/.zsh_addons/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+bindkey -e
+# Key binds to keep my sanity
+bindkey -e
+bindkey \^U backward-kill-line
+bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word

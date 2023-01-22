@@ -6,9 +6,11 @@ My configs for my 'commonly' used software.
 
 Most used
 * dwm
+* awesome
 * st
 * Emacs
 * neovim
+* dmenu
 
 
 Mainly just here for archiving purposes on the off chance I want to return to
