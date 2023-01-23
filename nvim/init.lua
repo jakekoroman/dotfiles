@@ -38,7 +38,7 @@ api.nvim_create_autocmd({ "VimEnter" }, {
 -- Tree sitter settings
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "rust" },
+  ensure_installed = { "c", "lua", "rust", "python" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

@@ -260,8 +260,10 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey,           }, "b", function () awful.spawn("firefox") end,
               {description = "open firefox", group = "launcher"}),
+    awful.key({ modkey,           }, "e", function () awful.spawn("emacs") end,
+              {description = "open emacs", group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("screenshot") end,
-              {description = "open firefox", group = "launcher"}),
+              {description = "take a screenshot and save to clipboard", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -479,6 +481,7 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
+          "Friends List",  -- Steam friends list
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.

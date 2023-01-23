@@ -21,8 +21,10 @@ map('n', '<M-l>', '<CMD>cl<CR>')
 -- Buffer binds
 map('n', '<leader>[', '<CMD>bn<CR>')
 map('n', '<leader>]', '<CMD>bp<CR>')
+
 -- Window binds
 map('n', '<leader>ww', '<C-w>w')
+map('n', '<M-o>', '<C-w>w')
 map('n', '<leader>wc', '<CMD>close<CR>')
 
 -- Move line up and down in NORMAL and VISUAL modes

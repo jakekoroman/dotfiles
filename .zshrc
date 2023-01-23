@@ -1,5 +1,4 @@
 echo "¯\_(ツ)_/¯"
-echo ""
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -22,7 +21,7 @@ git_branch() {
 set_prompt() {
     branch="$(git_branch)"
     NEWLINE=$'\n'
-    PROMPT="%F{white}┌[%f%F{blue}%~%f%F{white}]%f${NEWLINE}%F{white}└[%f%F{green}%n%f%F{yellow}@%f%F{blue}%m%f%F{red}%}${branch}%F{white}]:%f "
+    PROMPT="${NEWLINE}%F{white}┌[%f%F{blue}%~%f%F{white}]%f${NEWLINE}%F{white}└[%f%F{green}%n%f%F{yellow}@%f%F{blue}%m%f%F{red}%}${branch}%F{white}]:%f "
 }
 
 precmd_functions+=(set_prompt)
