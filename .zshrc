@@ -24,7 +24,12 @@ set_prompt() {
     PROMPT="%F{white}┌[%f%F{blue}%~%f%F{white}]%f${NEWLINE}%F{white}└[%f%F{green}%n%f%F{yellow}@%f%F{blue}%m%f%F{red}%}${branch}%F{white}]:%f "
 }
 
+make_space() {
+    print ""
+}
+
 precmd_functions+=(set_prompt)
+precmd_functions+=(make_space)
 set_prompt
 
 export PATH=$PATH:$HOME/.local/bin
