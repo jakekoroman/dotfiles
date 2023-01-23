@@ -47,22 +47,18 @@
 (use-package autothemer
   :ensure)
 
-(use-package base16-theme
-  :ensure)
-
 (use-package gruber-darker-theme
   :ensure)
+
+(use-package doom-modeline
+  :ensure
+  :config
+  (doom-modeline-mode))
 
 (use-package doom-themes
   :ensure)
 
-(use-package kaolin-themes
-  :ensure)
-
 (use-package naysayer-theme
-  :ensure)
-
-(use-package color-theme-sanityinc-tomorrow
   :ensure)
 
 (use-package dracula-theme
@@ -71,19 +67,22 @@
 (use-package zenburn-theme
   :ensure
   :config
-  (load-theme 'dracula t)
-  ;; (load-theme 'base16-decaf t)
-  ;; (load-theme 'sanityinc-tomorrow-night)
+  ;; (load-theme 'dracula t)
+  ;; (load-theme 'doom-dracula t)
+  (load-theme 'doom-nord-aurora t)
   ;; (load-theme 'gruber-darker t)
-  ;; (load-theme 'darkmine t)
-  ;; (load-theme 'tango-dark t)
   ;; (load-theme 'zenburn t)
-  ;; (load-theme 'kaolin-temple t)
   ;; (load-theme 'naysayer t)
   )
 
 (use-package undo-fu
   :ensure)
+
+(use-package eglot
+  :ensure
+  :config
+  (add-hook 'eglot-managed-mode-hook '(lambda () (flymake-mode -1)))
+  (add-hook 'c-mode-hook 'eglot-ensure))
 
 (use-package evil
   :ensure
