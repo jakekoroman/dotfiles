@@ -67,9 +67,9 @@
 (use-package zenburn-theme
   :ensure
   :config
-  ;; (load-theme 'dracula t)
+  (load-theme 'dracula t)
   ;; (load-theme 'doom-dracula t)
-  (load-theme 'doom-nord-aurora t)
+  ;; (load-theme 'doom-nord-aurora t)
   ;; (load-theme 'gruber-darker t)
   ;; (load-theme 'zenburn t)
   ;; (load-theme 'naysayer t)
