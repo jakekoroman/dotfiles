@@ -474,7 +474,8 @@ awful.rules.rules = {
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
-          "xtightvncviewer"},
+          "xtightvncviewer",
+          "feh"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
@@ -550,6 +551,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 --- {{{ Naughty
 naughty.config.defaults.timeout = 2
+naughty.config.defaults.icon_size = 50
 -- }}}
 
 awful.spawn.with_shell(gears.filesystem.get_configuration_dir().."autorun.sh")

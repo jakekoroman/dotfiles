@@ -5,6 +5,7 @@ g.mapleader = " "
 
 o.termguicolors = true
 vim.cmd('colorscheme dracula')
+g.airline_theme = 'base16_dracula'
 
 o.mouse = 'a'
 o.relativenumber = true

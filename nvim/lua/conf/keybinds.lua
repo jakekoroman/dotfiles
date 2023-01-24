@@ -19,11 +19,13 @@ map('n', '<M-p>', '<CMD>cp<CR>')
 map('n', '<M-l>', '<CMD>cl<CR>')
 
 -- Buffer binds
-map('n', '<leader>[', '<CMD>bn<CR>')
-map('n', '<leader>]', '<CMD>bp<CR>')
+map('n', '<leader>bp', '<CMD>bn<CR>')
+map('n', '<leader>bn', '<CMD>bp<CR>')
 
 -- Window binds
 map('n', '<leader>ww', '<C-w>w')
+map('n', '<leader>wn', '<C-w>n')
+map('n', '<leader>wv', '<C-w>v')
 map('n', '<M-o>', '<C-w>w')
 map('n', '<leader>wc', '<CMD>close<CR>')
 
