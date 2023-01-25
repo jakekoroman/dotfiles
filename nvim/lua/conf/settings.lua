@@ -4,8 +4,8 @@ local g = vim.g
 g.mapleader = " "
 
 o.termguicolors = true
-vim.cmd('colorscheme dracula')
-g.airline_theme = 'base16_dracula'
+vim.cmd('colorscheme gruber')
+g.airline_theme = 'zenburn'
 
 o.mouse = 'a'
 o.relativenumber = true

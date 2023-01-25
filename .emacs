@@ -68,10 +68,10 @@
   :ensure
   :config
   ;; (load-theme 'dracula t)
-  (load-theme 'doom-one t)
+  ;; (load-theme 'doom-one t)
   ;; (load-theme 'doom-dracula t)
   ;; (load-theme 'doom-nord-aurora t)
-  ;; (load-theme 'gruber-darker t)
+  (load-theme 'gruber-darker t)
   ;; (load-theme 'zenburn t)
   ;; (load-theme 'naysayer t)
   )
@@ -82,7 +82,7 @@
 (use-package eglot
   :ensure
   :config
-  (add-hook 'eglot-managed-mode-hook '(lambda () (flymake-mode -1)))
+  (add-hook 'eglot-managed-mode-hook #'(lambda () (flymake-mode -1)))
   (add-hook 'c-mode-hook 'eglot-ensure))
 
 (use-package evil
@@ -213,7 +213,7 @@
 (use-package org-bullets
   :ensure
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (add-hook 'org-mode-hook #'(lambda () (org-bullets-mode 1))))
 
 (use-package ido
   :config

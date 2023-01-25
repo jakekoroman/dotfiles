@@ -105,35 +105,60 @@ unsigned int tabspaces = 4;
 /* bg opacity */
 float alpha = 1.0;
 
-/* Terminal colors (16 first used in escape sequence) */
+/* gruber-darker */
 static const char *colorname[] = {
-
-  /* 8 normal colors */
-  [0] = "#282a36", /* black   */
-  [1] = "#ff5555", /* red     */
-  [2] = "#50fa7b", /* green   */
-  [3] = "#f1fa8c", /* yellow  */
-  [4] = "#BD93F9", /* blue    */
-  [5] = "#FF79C6", /* magenta */
-  [6] = "#8be9fd", /* cyan    */
-  [7] = "#f8f8f2", /* white   */
-
-  /* 8 bright colors */
-  [8]  = "#6272A4", /* black   */
-  [9]  = "#FF6E6E", /* red     */
-  [10] = "#69FF94", /* green   */
-  [11] = "#FFFFA5", /* yellow  */
-  [12] = "#D6ACFF", /* blue    */
-  [13] = "#FF92DF", /* magenta */
-  [14] = "#A4FFFF", /* cyan    */
-  [15] = "#ffffff", /* white   */
+  [0] =  "#2E3436",
+  [1] =  "#a40000",
+  [2] =  "#4E9A06",
+  [3] =  "#C4A000",
+  [4] =  "#3465A4",
+  [5] =  "#75507B",
+  [6] =  "#ce5c00",
+  [7] =  "#babdb9",
+  [8] =  "#555753",
+  [9] =  "#EF2929",
+  [10] = "#8AE234",
+  [11] = "#FCE94F",
+  [12] = "#729FCF",
+  [13] = "#AD7FA8",
+  [14] = "#fcaf3e",
+  [15] = "#EEEEEC",
 
   [255] = 0,
 
-  /* special colors */
-  [256] = "#282a36", /* background */
-  [257] = "#f8f8f2", /* foreground */
+  [256] = "#181818",
+  [257] = "#e4e4ef",
 };
+
+/* Terminal colors (16 first used in escape sequence) */
+/* static const char *colorname[] = { */
+
+/*   /1* 8 normal colors *1/ */
+/*   [0] = "#282a36", /1* black   *1/ */
+/*   [1] = "#ff5555", /1* red     *1/ */
+/*   [2] = "#50fa7b", /1* green   *1/ */
+/*   [3] = "#f1fa8c", /1* yellow  *1/ */
+/*   [4] = "#BD93F9", /1* blue    *1/ */
+/*   [5] = "#FF79C6", /1* magenta *1/ */
+/*   [6] = "#8be9fd", /1* cyan    *1/ */
+/*   [7] = "#f8f8f2", /1* white   *1/ */
+
+/*   /1* 8 bright colors *1/ */
+/*   [8]  = "#6272A4", /1* black   *1/ */
+/*   [9]  = "#FF6E6E", /1* red     *1/ */
+/*   [10] = "#69FF94", /1* green   *1/ */
+/*   [11] = "#FFFFA5", /1* yellow  *1/ */
+/*   [12] = "#D6ACFF", /1* blue    *1/ */
+/*   [13] = "#FF92DF", /1* magenta *1/ */
+/*   [14] = "#A4FFFF", /1* cyan    *1/ */
+/*   [15] = "#ffffff", /1* white   *1/ */
+
+/*   [255] = 0, */
+
+/*   /1* special colors *1/ */
+/*   [256] = "#282a36", /1* background *1/ */
+/*   [257] = "#f8f8f2", /1* foreground *1/ */
+/* }; */
 
 
 /*
