@@ -205,6 +205,9 @@
 (use-package rust-mode 
   :ensure)
 
+(use-package glsl-mode
+  :ensure)
+
 (use-package evil-commentary
   :ensure
   :config
