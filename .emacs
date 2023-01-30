@@ -82,8 +82,7 @@
 (use-package eglot
   :ensure
   :config
-  (add-hook 'eglot-managed-mode-hook #'(lambda () (flymake-mode -1)))
-  (add-hook 'c-mode-hook 'eglot-ensure))
+  (add-hook 'eglot-managed-mode-hook #'(lambda () (flymake-mode -1))))
 
 (use-package evil
   :ensure
