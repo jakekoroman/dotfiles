@@ -6,6 +6,11 @@ dwm/*.diff
 st/*.o
 st/st
 st/*.diff
+dmenu/*.o
+dmenu/dmenu
+dmenu/dmenu_run
+dmenu/dmenu_path
+dmenu/stest
 .doom.d/custom.el
 .vim/plugged/
 nvim/plugin
