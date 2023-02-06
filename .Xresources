@@ -1,29 +1,38 @@
-! Sets font
-URxvt*font: xft:Iosevka:size=10:antialias=true
-URxvt*boldFont: xft:Iosevka:bold:size=10:antialias=true
+Xft.dpi:                        109
+URxvt*font:                     xft:DejavuSansMono:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
+URxvt*termName:                 rxvt-256color
+dxvt.depth:                     0
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*saveLines:		65535
+URxvt*loginShell:               true
+URxvt.perl-ext-common:          default,clipboard,bell-command
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.clipboard.autocopy:       true
 
-! Removes stupid scrollbar
-URxvt.scrollBar: false
 
-! Restore 'normal' copy & paste funcitonality
-! (Ctrl + Shift + C) - Copy
-! (Ctrl + Shift + V) - Paste
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+! gruber colour scheme
+*background: #181818
+*foreground: #e4e4ef
+*color0:     #2E3436
+*color1:     #a40000
+*color2:     #4E9A06
+*color3:     #C4A000
+*color4:     #3465A4
+*color5:     #75507B
+*color6:     #ce5c00
+*color7:     #babdb9
+*color8:     #555753
+*color9:     #EF2929
+*color10:    #8AE234
+*color11:    #FCE94F
+*color12:    #729FCF
+*color13:    #AD7FA8
+*color14:    #fcaf3e
+*color15:    #EEEEEC
 
-! Disables other stupid (Ctrl + Shift) iso shit that is so dumb I can"'"t even comprehend
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-
-urxvt*background: #000000
-urxvt*foreground: #e5e5e5
-
-! Perl Stuff
-URxvt.perl-ext-common: default,matcher,resize-font
-
-! Url Configuration
-URxvt.url-launcher: firefox
-URxvt.matcher.button: 1
-URxvt.matcher.rend.0: Uline Bold fg6
-
-! End of Perl Stuff
