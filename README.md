@@ -4,22 +4,25 @@ My configs for my 'commonly' used software.
 
 # Software #
 
-Most used
+## Tiling Window Managers
 * dwm
 * awesome
-* st
-* Emacs
-* neovim
-* dmenu
-
-
-Mainly just here for archiving purposes on the off chance I want to return to
-them
-* Doom Emacs
-* vim 
-* zsh
-* Alacritty
+* i3
 * qtile
+
+## Terminals
+* st
+* Alacritty
+
+## Editors
+* Emacs
+* Doom Emacs
+* neovim
+* vim 
+
+## Misc
+* dmenu
+* zsh
 
 # Deployment #
 

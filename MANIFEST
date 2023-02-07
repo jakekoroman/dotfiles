@@ -10,3 +10,5 @@ dwm|symlink|.config/
 alacritty|symlink|.config/
 nvim|symlink|.config/
 awesome|symlink|.config/
+i3|symlink|.config/
+i3status|symlink|.config/
