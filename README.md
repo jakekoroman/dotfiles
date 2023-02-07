@@ -23,6 +23,7 @@ My configs for my 'commonly' used software.
 ## Misc
 * dmenu
 * zsh
+* Xresources
 
 # Deployment #
 
