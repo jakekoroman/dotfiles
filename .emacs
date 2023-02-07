@@ -53,6 +53,7 @@
 (use-package doom-modeline
   :ensure
   :config
+  (column-number-mode)
   (doom-modeline-mode))
 
 (use-package doom-themes

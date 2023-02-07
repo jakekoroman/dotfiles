@@ -203,8 +203,8 @@ static unsigned int defaultattr = 11;
 /*
  * Xresources preferences to load at startup
  */
-ResourcePref resources[] = {
 #if 0
+ResourcePref resources[] = {
                { "font",         STRING,  &font },
                { "fontalt0",     STRING,  &font2[0] },
                { "color0",       STRING,  &colorname[0] },
@@ -238,8 +238,8 @@ ResourcePref resources[] = {
                { "chscale",      FLOAT,   &chscale },
                { "alpha",        FLOAT,   &alpha },
                { "ximspot_update_interval", INTEGER, &ximspot_update_interval },
-#endif
 };
+#endif
 
 /*
  * Internal mouse shortcuts.
