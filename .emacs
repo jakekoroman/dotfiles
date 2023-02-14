@@ -31,8 +31,9 @@
       dired-listing-switches "-alh --group-directories-first"
       compilation-scroll-output t
       gc-cons-threshold 100000000
-	  compilation-ask-about-save nil
+      compilation-ask-about-save nil
       )
+
 ;; (global-hl-line-mode 1)
 (global-display-line-numbers-mode)
 
@@ -44,37 +45,14 @@
 (eval-when-compile
   (require 'use-package))
 
-(use-package autothemer
-  :ensure)
-
 (use-package gruber-darker-theme
-  :ensure)
-
-(use-package doom-modeline
-  :ensure
-  :config
-  (column-number-mode)
-  (doom-modeline-mode))
-
-(use-package doom-themes
-  :ensure)
-
-(use-package naysayer-theme
-  :ensure)
-
-(use-package dracula-theme
   :ensure)
 
 (use-package zenburn-theme
   :ensure
   :config
-  ;; (load-theme 'dracula t)
-  ;; (load-theme 'doom-one t)
-  ;; (load-theme 'doom-dracula t)
-  ;; (load-theme 'doom-nord-aurora t)
   (load-theme 'gruber-darker t)
   ;; (load-theme 'zenburn t)
-  ;; (load-theme 'naysayer t)
   )
 
 (use-package undo-fu
@@ -98,16 +76,11 @@
   :init
   (evil-collection-init))
 
-(use-package evil-visual-replace
-  :ensure
-  :init
-  (evil-visual-replace-visual-bindings))
-
 (use-package evil-multiedit
   :ensure
   :config
   ;; Sets the colour of the region
-  (set-face-background 'iedit-occurrence "#d360d4")
+  (set-face-background 'iedit-occurrence "blue")
   (evil-multiedit-default-keybinds))
 
 (use-package evil-snipe
@@ -115,20 +88,6 @@
   :config
   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
   (evil-snipe-override-mode 1))
-
-(use-package evil-easymotion
-  :ensure
-  :config
-  (evilem-default-keybindings "SPC"))
-
-;; (use-package tree-sitter
-;;   :ensure
-;;   :config
-;;   (global-tree-sitter-mode)
-;;   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
-
-;; (use-package tree-sitter-langs
-;;   :ensure)
 
 (use-package smex
   :ensure
@@ -151,9 +110,6 @@
   :bind
   ("C-<return>" . company-complete)
   ("C-<tab>"    . dabbrev-expand))
-
-(use-package ripgrep
-  :ensure)
 
 (use-package yasnippet
   :ensure
@@ -183,8 +139,8 @@
   :config
   (setq hl-todo-keyword-faces
         '(("TODO" . "#FF0000")
-		  ("NOTE" . "#00FF00")
-		  ("IMPORTANT" . "#FFFF00")))
+          ("NOTE" . "#00FF00")
+          ("IMPORTANT" . "#FFFF00")))
   :init
   (global-hl-todo-mode))
 
@@ -221,28 +177,10 @@
 (use-package ido
   :config
   (setq ido-enable-flex-matching t
-		ido-everywhere t
-		ido-show-dot-for-dired t
-		ido-auto-merge-work-directories-length -1)
+        ido-everywhere t
+        ido-show-dot-for-dired t
+        ido-auto-merge-work-directories-length -1)
   (ido-mode 1))
-
-(use-package popper
-  :ensure t ; or :straight t
-  :bind (("M-`"   . popper-toggle-latest)
-         ("C-`"   . popper-cycle)
-         ("C-M-`" . popper-toggle-type))
-  :init
-  (setq popper-reference-buffers
-        '("\\*Messages\\*"
-          "Output\\*$"
-          "\\*Async Shell Command\\*"
-          help-mode
-          compilation-mode))
-  ;; (popper-mode +1)
-  ;; (popper-echo-mode +1)
-  :config
-  (setq popper-mode-line nil))
-  ;; (setq popper-window-height 20))
 
 (defun ido-goto-symbol (&optional symbol-list)
   "Refresh imenu and jump to a place in the buffer using Ido."
@@ -264,7 +202,7 @@
                (setq imenu--index-alist nil)
                (ido-goto-symbol (imenu--make-index-alist))
                (setq selected-symbol
-                     (ido-completing-read "Symbol? " symbol-names))
+                     (ido-completing-read "Goto: " symbol-names))
                (string= (car imenu--rescan-item) selected-symbol)))
       (unless (and (boundp 'mark-active) mark-active)
         (push-mark nil t nil))
@@ -293,8 +231,10 @@
           (add-to-list 'name-and-pos (cons name position))))))))
 
 ;;; C-mode
-(setq c-default-style "linux"
-      c-basic-offset 4)
+(setq-default c-basic-offset 4
+			  c-default-style '((java-mode . "java")
+								(awk-mode . "awk")
+								(other . "bsd")))
 (c-set-offset 'case-label '+)
 
 (font-lock-add-keywords 'c-mode
@@ -311,30 +251,31 @@
 
 ;; Binds with SPC prefix
 (nvmap :keymaps 'override :prefix "SPC"
-  "."   '(find-file :which-key "Find File")
-  ">"   '(find-file-other-window :which-key "Open file in other window")
-  ","   '(ido-switch-buffer :which-key "Switch Buffer")
-  "<"   '(ido-switch-buffer-other-window :which-key "Open buffer in other window")
-  "g g" '(magit :which-key "Magit")
-  "o -" '(dired-jump :which-key "Open Dired here")
-  "o t" '(my-vterm :which-key "Open vterm in other window")
-  "o T" '(vterm :which-key "Open vterm here")
+  "."			'(find-file :which-key "Find File")
+  ">"			'(find-file-other-window :which-key "Open file in other window")
+  ","			'(ido-switch-buffer :which-key "Switch Buffer")
+  "<"			'(ido-switch-buffer-other-window :which-key "Open buffer in other window")
+  "/"           '(grep-find :which-key "Run grep-find")
+  "g g"			'(magit :which-key "Magit")
+  "o -"			'(dired-jump :which-key "Open Dired here")
+  "o t"			'(my-vterm :which-key "Open vterm in other window")
+  "o T"			'(vterm :which-key "Open vterm here")
 
   ;; Compile Binds
-  "c" '(recompile :which-key "Recompile")
-  "C" '(compile :which-key "Compile")
+  "c"			'(recompile :which-key "Recompile")
+  "C"			'(compile :which-key "Compile")
 
   ;; Window Binds
-  "w w" '(evil-window-next :which-key "Cycle through windows")
-  "w h" '(evil-window-left :which-key "Move left a window")
-  "w l" '(evil-window-right :which-key "Move right a window")
-  "w j" '(evil-window-down :which-key "Move down a window")
-  "w k" '(evil-window-up :which-key "Move up a window")
-  "w m" '(delete-other-windows :which-key "Maximize current window")
-  "w n" '(evil-window-new :which-key "Open a new window")
-  "w c" '(evil-window-delete :which-key "Close active window")
-  "w s" '(evil-window-split :which-key "Split current window horizontally")
-  "w v" '(evil-window-vsplit :which-key "Split current window vertically")
+  "w w"			'(evil-window-next :which-key "Cycle through windows")
+  "w h"			'(evil-window-left :which-key "Move left a window")
+  "w l"			'(evil-window-right :which-key "Move right a window")
+  "w j"			'(evil-window-down :which-key "Move down a window")
+  "w k"			'(evil-window-up :which-key "Move up a window")
+  "w m"			'(delete-other-windows :which-key "Maximize current window")
+  "w n"			'(evil-window-new :which-key "Open a new window")
+  "w c"			'(evil-window-delete :which-key "Close active window")
+  "w s"			'(evil-window-split :which-key "Split current window horizontally")
+  "w v"			'(evil-window-vsplit :which-key "Split current window vertically")
 
   ;; Buffer Binds
   "b p" '(previous-buffer :which-key "Open previous buffer")
@@ -366,12 +307,12 @@
   (setq fname (file-name-sans-extension buffer-file-name))
   (setq result nil)
   (if (string-match "\\.c" buffer-file-name)
-	  (setq result (concat fname ".h")))
+      (setq result (concat fname ".h")))
   (if (string-match "\\.h" buffer-file-name)
-	  (if (file-exists-p (concat fname ".c"))
-		  (setq result (concat fname ".c")))
-	(if (file-exists-p (concat fname ".cpp"))
-		(setq result (concat fname ".cpp"))))
+      (if (file-exists-p (concat fname ".c"))
+          (setq result (concat fname ".c")))
+    (if (file-exists-p (concat fname ".cpp"))
+        (setq result (concat fname ".cpp"))))
   (if result (find-file result)
     (error "Unable to find a corresponding file")))
 
@@ -421,5 +362,5 @@
 
 ;; Sets the default compile command based on OS
 (if (string= system-type "windows-nt")
-	(setq compile-command "build.bat")
+    (setq compile-command "build.bat")
   (setq compile-command "./build.sh"))
