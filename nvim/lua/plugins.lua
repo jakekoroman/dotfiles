@@ -21,6 +21,7 @@ return require('packer').startup({
         use('https://gitlab.com/madyanov/gruber.vim')
         use({'srcery-colors/srcery-vim', as = 'srcery'})
         use('Mofiqul/dracula.nvim')
+        use('phha/zenburn.nvim')
         -- use('vim-airline/vim-airline')
         -- use('vim-airline/vim-airline-themes')
 

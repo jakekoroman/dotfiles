@@ -10,7 +10,8 @@ vim.keymap.set('i', '<C-a>', '<ESC>I')
 vim.keymap.set('i', '<C-e>', '<ESC>A')
 vim.keymap.set('n', '<M-j>', '}')
 vim.keymap.set('n', '<M-k>', '{')
-vim.keymap.set('n', '<C-b>', '<C-a>')
+vim.keymap.set('v', '<M-j>', '}')
+vim.keymap.set('v', '<M-k>', '{')
 
 -- emacs user at heart
 vim.keymap.set('n', '<M-x>', ':')

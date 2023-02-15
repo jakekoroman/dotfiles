@@ -4,7 +4,7 @@ local g = vim.g
 g.mapleader = " "
 
 o.termguicolors = true
-vim.cmd('colorscheme gruber')
+vim.cmd('colorscheme clean')
 -- g.airline_theme = 'zenburn'
 
 o.mouse = 'a'
@@ -17,7 +17,7 @@ o.softtabstop = 4
 o.expandtab = true
 o.swapfile = false
 o.backup = false
-o.scrolloff = 8
+-- o.scrolloff = 8
 
 o.ignorecase = true
 o.smartcase = true
