@@ -5,11 +5,12 @@ g.mapleader = " "
 
 o.termguicolors = true
 vim.cmd('colorscheme gruber')
-g.airline_theme = 'zenburn'
+-- g.airline_theme = 'zenburn'
 
 o.mouse = 'a'
 o.relativenumber = true
 o.number = true
+o.expandtab = true
 o.tabstop = 4
 o.shiftwidth = 4
 o.softtabstop = 4

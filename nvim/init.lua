@@ -1,6 +1,6 @@
-require('conf.plugins')
-require('conf.settings')
-require('conf.keybinds')
+require('plugins')
+require('settings')
+require('keybinds')
 
 local api = vim.api
 local fn = vim.fn
@@ -38,7 +38,7 @@ api.nvim_create_autocmd({ "VimEnter" }, {
 -- Tree sitter settings
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "rust", "python" },
+  ensure_installed = { "c", "lua", "python" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
