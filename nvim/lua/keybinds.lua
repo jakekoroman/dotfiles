@@ -1,44 +1,41 @@
 local telescope = require('telescope.builtin')
-local function map(m, k, v)
-    vim.keymap.set(m, k, v, { silent = true })
-end
 
 -- General Editor binds
-map('n', '<leader>,', telescope.buffers)
-map('n', '<leader>.', telescope.find_files)
-map('n', '<leader>/', telescope.live_grep)
-map('n', '<C-a>', '0')
-map('n', '<C-e>', '$')
-map('i', '<C-a>', '<ESC>I')
-map('i', '<C-e>', '<ESC>A')
-map('n', '<M-j>', '}')
-map('n', '<M-k>', '{')
-map('n', '<C-b>', '<C-a>')
+vim.keymap.set('n', '<leader>,', telescope.buffers)
+vim.keymap.set('n', '<leader>.', telescope.find_files)
+vim.keymap.set('n', '<leader>/', telescope.live_grep)
+vim.keymap.set('n', '<C-a>', '0')
+vim.keymap.set('n', '<C-e>', '$')
+vim.keymap.set('i', '<C-a>', '<ESC>I')
+vim.keymap.set('i', '<C-e>', '<ESC>A')
+vim.keymap.set('n', '<M-j>', '}')
+vim.keymap.set('n', '<M-k>', '{')
+vim.keymap.set('n', '<C-b>', '<C-a>')
 
 -- emacs user at heart
-map('n', '<M-x>', ':')
+vim.keymap.set('n', '<M-x>', ':')
 
 -- Compilation bind
-map('n', '<leader>c', '<CMD>make<CR>')
-map('n', '<M-n>', '<CMD>cn<CR>')
-map('n', '<M-p>', '<CMD>cp<CR>')
-map('n', '<M-l>', '<CMD>cl<CR>')
+vim.keymap.set('n', '<leader>c', '<CMD>make<CR>')
+vim.keymap.set('n', '<M-n>', '<CMD>cn<CR>')
+vim.keymap.set('n', '<M-p>', '<CMD>cp<CR>')
+vim.keymap.set('n', '<M-l>', '<CMD>cl<CR>')
 
 -- Buffer binds
-map('n', '<leader>bp', '<CMD>bn<CR>')
-map('n', '<leader>bn', '<CMD>bp<CR>')
+vim.keymap.set('n', '<leader>bp', '<CMD>bn<CR>')
+vim.keymap.set('n', '<leader>bn', '<CMD>bp<CR>')
 
 -- Window binds
-map('n', '<leader>ww', '<C-w>w')
-map('n', '<leader>wn', '<C-w>n')
-map('n', '<leader>wv', '<C-w>v')
-map('n', '<leader>wm', '<CMD>only<CR>')
-map('n', '<M-o>', '<C-w>w')
-map('n', '<leader>wc', '<CMD>close<CR>')
+vim.keymap.set('n', '<leader>ww', '<C-w>w')
+vim.keymap.set('n', '<leader>wn', '<C-w>n')
+vim.keymap.set('n', '<leader>wv', '<C-w>v')
+vim.keymap.set('n', '<leader>wm', '<CMD>only<CR>')
+vim.keymap.set('n', '<M-o>', '<C-w>w')
+vim.keymap.set('n', '<leader>wc', '<CMD>close<CR>')
 
 -- Move line up and down in NORMAL and VISUAL modes
 -- Reference: https://vim.fandom.com/wiki/Moving_lines_up_or_down
-map('n', '<C-j>', '<CMD>move .+1<CR>')
-map('n', '<C-k>', '<CMD>move .-2<CR>')
-map('v', '<C-j>', ":move '>+1<CR>gv=gv")
-map('v', '<C-k>', ":move '<-2<CR>gv=gv")
+vim.keymap.set('n', '<C-j>', '<CMD>move .+1<CR>')
+vim.keymap.set('n', '<C-k>', '<CMD>move .-2<CR>')
+vim.keymap.set('v', '<C-j>', ":move '>+1<CR>gv=gv")
+vim.keymap.set('v', '<C-k>', ":move '<-2<CR>gv=gv")
