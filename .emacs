@@ -9,6 +9,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(load-theme 'clean t)
 
 (setq default-frame-alist '((font . "Iosevka-10" )))
 (defun my/disable-scroll-bars (frame)
@@ -45,15 +46,14 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package autothemer
+  :ensure)
+
 (use-package gruber-darker-theme
   :ensure)
 
 (use-package zenburn-theme
-  :ensure
-  :config
-  (load-theme 'gruber-darker t)
-  ;; (load-theme 'zenburn t)
-  )
+  :ensure)
 
 (use-package undo-fu
   :ensure)
@@ -364,3 +364,4 @@
 (if (string= system-type "windows-nt")
     (setq compile-command "build.bat")
   (setq compile-command "./build.sh"))
+
