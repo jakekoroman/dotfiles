@@ -19,7 +19,6 @@ o.swapfile = false
 o.backup = false
 -- o.scrolloff = 8
 
-o.ignorecase = true
 o.smartcase = true
 
 o.clipboard = 'unnamedplus'
