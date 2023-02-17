@@ -20,6 +20,7 @@
   (font-lock-comment-face          (:foreground clean-gray))
   (font-lock-keyword-face          (:foreground clean-orange))
   (font-lock-constant-face         (:foreground clean-white))
+  (font-lock-preprocessor-face     (:foreground clean-white))
   (font-lock-variable-name-face    (:foreground clean-white))
   (font-lock-function-name-face    (:foreground clean-white))
   (font-lock-string-face           (:foreground clean-green))
