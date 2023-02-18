@@ -23,9 +23,12 @@
   (font-lock-preprocessor-face     (:foreground clean-white))
   (font-lock-variable-name-face    (:foreground clean-white))
   (font-lock-function-name-face    (:foreground clean-white))
+  (font-lock-warning-face          (:foreground clean-red))
+  (compilation-error               (:foreground clean-red))
   (font-lock-string-face           (:foreground clean-green))
   (font-lock-type-face             (:foreground clean-blue))
   (show-paren-match                (:foreground clean-red))
+  (show-paren-mismatch             (:foreground clean-red))
   ))
 
 (provide-theme 'clean-darker)
