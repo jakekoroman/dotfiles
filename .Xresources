@@ -1,15 +1,12 @@
 /* Xft.dpi:                        109 */
 URxvt*font:                     xft:monospace:pixelsize=12
 URxvt*termName:                 rxvt-256color
-dxvt.depth:                     0
 URxvt*lineSpace:                1
 URxvt.letterSpace:              -1
 URxvt.iso14755:                 false
 URxvt.iso14755_52:              false
-URxvt*geometry:                 65x17
 URxvt.scrollBar:                false
 URxvt*saveLines:		        65535
-URxvt*loginShell:               true
 URxvt.perl-ext-common:          default,clipboard,bell-command
 URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 URxvt.keysym.Shift-Control-V:   perl:clipboard:paste

@@ -2,4 +2,4 @@
 # name: note
 # key: note
 # --
-// NOTE(jake): $0
+/* NOTE(jake): $0 */

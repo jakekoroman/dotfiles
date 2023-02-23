@@ -235,7 +235,7 @@
 			  c-default-style '((java-mode . "java")
 								(awk-mode . "awk")
 								(other . "bsd")))
-(c-set-offset 'case-label '+)
+;;(c-set-offset 'case-label '+)
 
 (font-lock-add-keywords 'c-mode
                         '(("internal" . font-lock-keyword-face)
