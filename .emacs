@@ -328,8 +328,8 @@
   "C-j" 'evil-collection-unimpaired-move-text-down
   "C-k" 'evil-collection-unimpaired-move-text-up
   "C-d" 'kill-region
-  "M-j" 'next-blank-line
-  "M-k" 'previous-blank-line
+  "M-j" 'evil-forward-paragraph
+  "M-k" 'evil-backward-paragraph
   "M-v" 'find-corresponding-file)
 
 ;; idk why general mapping doesn't like to bind "M-S-v" so I have to do it the old fashioned way aka the better way
