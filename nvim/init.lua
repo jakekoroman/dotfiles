@@ -32,7 +32,14 @@ end
 
 -- Attempts to set build tool in makeprg when nvim starts
 api.nvim_create_autocmd({ "VimEnter" }, {
-    callback = locate_build,
+  callback = locate_build,
+})
+
+-- Auto save when running :make
+api.nvim_create_autocmd({ "QuickFixCmdPre" }, {
+  callback = function()
+    vim.cmd ":w"
+  end,
 })
 
 -- Tree sitter settings
