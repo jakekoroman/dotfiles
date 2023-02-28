@@ -59,3 +59,13 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
 }
+
+-- Snippet settings
+require('snippets').snippets = {
+  _global = {
+    todo = "/* TODO(jake): $0 */";
+    note = "/* NOTE(jake): $0 */";
+    inc  = "#include <$0>";
+    incq  = "#include \"$0\"";
+  }
+}
