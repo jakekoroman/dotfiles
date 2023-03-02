@@ -1,0 +1,3 @@
+#!/bin/sh
+
+while true; do sl; sl -a; sl -d; sl -F; sl -e; sl -l; done

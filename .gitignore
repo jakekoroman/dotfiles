@@ -6,6 +6,9 @@ dwm/*.diff
 st/*.o
 st/st
 st/*.diff
+dank-st/*.o
+dank-st/st
+dank-st/*.diff
 dmenu/*.o
 dmenu/dmenu
 dmenu/stest

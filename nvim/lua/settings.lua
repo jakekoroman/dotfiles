@@ -4,6 +4,7 @@ local g = vim.g
 g.mapleader = " "
 
 o.termguicolors = true
+g.srcery_black = '000000'
 vim.cmd('colorscheme srcery')
 -- g.airline_theme = 'zenburn'
 

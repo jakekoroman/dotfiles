@@ -5,6 +5,7 @@ My configs for my 'commonly' used software.
 # Software #
 
 ## Tiling Window Managers
+* spectrwm
 * dwm
 * awesome
 * i3

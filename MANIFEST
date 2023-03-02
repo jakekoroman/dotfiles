@@ -12,3 +12,5 @@ nvim|symlink|.config/
 awesome|symlink|.config/
 i3|symlink|.config/
 i3status|symlink|.config/
+spectrwm|symlink|.config/
+Scripts|symlink|
