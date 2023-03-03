@@ -2,7 +2,7 @@
 
 winclass="$(xdotool search --class scratchpad)";
 if [ -z "$winclass" ]; then
-    st -c scratchpad
+    st -g 144x52 -c scratchpad
 else
     if [ ! -f /tmp/scratchpad ]; then
         touch /tmp/scratchpad && xdo hide "$winclass"
