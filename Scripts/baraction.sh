@@ -12,7 +12,7 @@ clock() {
 }
 
 while :; do
-    echo "$(clock) | $(volume) "
+    echo "$(volume) | $(clock) "
     sleep 60s &
     wait $!
 done
