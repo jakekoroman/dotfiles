@@ -32,7 +32,8 @@
       compilation-scroll-output t
       gc-cons-threshold 100000000
       compilation-ask-about-save nil
-      )
+	  frame-resize-pixelwise t
+	  )
 
 ;; (global-hl-line-mode 1)
 (global-display-line-numbers-mode)
