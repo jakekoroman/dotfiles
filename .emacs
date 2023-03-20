@@ -9,7 +9,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(load-theme 'clean t)
 
 (setq default-frame-alist '((font . "Iosevka-10" )))
 (defun my/disable-scroll-bars (frame)
@@ -47,7 +46,9 @@
   (require 'use-package))
 
 (use-package autothemer
-  :ensure)
+  :ensure
+  :init
+  (load-theme 'clean t))
 
 (use-package gruber-darker-theme
   :ensure)
