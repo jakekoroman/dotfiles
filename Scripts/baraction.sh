@@ -11,8 +11,12 @@ clock() {
     echo "$(LANG=fr_CA.utf8 date +'%A, %B %d, %H:%M')"
 }
 
+free_space() {
+    echo "Avail: $(df -h | awk 'NR==2{print $4}')"
+}
+
 while :; do
-    echo "$(volume) | $(clock) "
+    echo "$(free_space) | $(volume) | $(clock)"
     sleep 60s &
     wait $!
 done
