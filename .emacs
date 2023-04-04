@@ -366,4 +366,3 @@
 (if (string= system-type "windows-nt")
     (setq compile-command "build.bat")
   (setq compile-command "./build.sh"))
-

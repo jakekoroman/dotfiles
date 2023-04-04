@@ -11,7 +11,8 @@ URxvt.perl-ext-common:          default,clipboard,bell-command
 URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
 URxvt.clipboard.autocopy:       true
-
+URxvt*scrollWithBuffer:         true
+URxvt*scrollTtyKeypress:        true
 
 ! gruber colour scheme
 *background: #181818
@@ -32,4 +33,3 @@ URxvt.clipboard.autocopy:       true
 *color13:    #AD7FA8
 *color14:    #fcaf3e
 *color15:    #EEEEEC
-
