@@ -1,6 +1,10 @@
 local telescope = require('telescope.builtin')
 local snippets = require('snippets')
 
+local change_scale_factor = function(delta)
+  vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+end
+
 -- General Editor binds
 vim.keymap.set('n', '<leader>,', telescope.buffers)
 vim.keymap.set('n', '<leader>.', telescope.find_files)
@@ -14,6 +18,16 @@ vim.keymap.set('n', '<M-k>', '{')
 vim.keymap.set('v', '<M-j>', '}')
 vim.keymap.set('v', '<M-k>', '{')
 vim.keymap.set('i', '<C-k>', snippets.expand_or_advance)
+
+vim.keymap.set("n", "<C-=>", function()
+  change_scale_factor(1.25)
+end)
+vim.keymap.set("n", "<C-->", function()
+  change_scale_factor(1/1.25)
+end)
+vim.keymap.set("n", "<C-0>", function()
+  vim.g.neovide_scale_factor = 1.0
+end)
 
 -- emacs user at heart
 vim.keymap.set('n', '<M-x>', ':')

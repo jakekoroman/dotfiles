@@ -22,6 +22,7 @@ return require('packer').startup({
         use({'srcery-colors/srcery-vim', as = 'srcery'})
         use('Mofiqul/dracula.nvim')
         use('phha/zenburn.nvim')
+        use('ellisonleao/gruvbox.nvim')
         -- use('vim-airline/vim-airline')
         -- use('vim-airline/vim-airline-themes')
 
@@ -32,6 +33,8 @@ return require('packer').startup({
         use({'nvim-telescope/telescope.nvim', tag = '0.1.0'})
         use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
         use('norcalli/snippets.nvim')
+        use('rbgrouleff/bclose.vim');
+        use('francoiscabrol/ranger.vim');
 
         -- Misc
         use('sheerun/vim-polyglot')

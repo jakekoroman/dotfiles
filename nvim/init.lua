@@ -69,3 +69,4 @@ require('snippets').snippets = {
     incq  = "#include \"$0\"";
   }
 }
+
