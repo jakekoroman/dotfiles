@@ -48,11 +48,13 @@
 
 (use-package autothemer
   :ensure
-  :init
-  (load-theme 'clean t))
+  :init)
+  ;; (load-theme 'clean t))
 
 (use-package gruber-darker-theme
-  :ensure)
+  :ensure
+  :init
+  (load-theme 'gruber-darker t))
 
 (use-package zenburn-theme
   :ensure)
