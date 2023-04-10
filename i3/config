@@ -128,6 +128,8 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+bindsym $mod+Shift+Delete exec i3lock -c 000000
+
 # focus the child container
 #bindsym $mod+d focus child
 

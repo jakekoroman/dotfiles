@@ -1,4 +1,9 @@
-/* Xft.dpi:                        109 */
+Xft.dpi:                        96
+Xft.antialias:                  1
+Xft.hinting:                    1
+Xft.hintstyle:                  hintmedium
+
+URxvt*depth:                    32
 URxvt*font:                     xft:monospace:pixelsize=12
 URxvt*termName:                 rxvt-256color
 URxvt*lineSpace:                1
@@ -7,12 +12,31 @@ URxvt.iso14755:                 false
 URxvt.iso14755_52:              false
 URxvt.scrollBar:                false
 URxvt*saveLines:		        65535
-URxvt.perl-ext-common:          default,clipboard,bell-command
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
-URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
-URxvt.clipboard.autocopy:       true
-URxvt*scrollWithBuffer:         true
-URxvt*scrollTtyKeypress:        true
+URxvt.perl-ext-common:          default,font-size
+
+URxvt.keysym.C-equal:           font-size:increase
+URxvt.keysym.C-minus:           font-size:increase
+URxvt.keysym.C-0:               font-size:reset
+
+! classic scheme
+/* URxvt*background: #000000 */
+/* URxvt*foreground: #B2B2B2 */
+/* URxvt*color0:  #000000 */
+/* URxvt*color8:  #686868 */
+/* URxvt*color1:  #B21818 */
+/* URxvt*color9:  #FF5454 */
+/* URxvt*color2:  #18B218 */
+/* URxvt*color10: #54FF54 */
+/* URxvt*color3:  #B26818 */
+/* URxvt*color11: #FFFF54 */
+/* URxvt*color4:  #1818B2 */
+/* URxvt*color12: #5454FF */
+/* URxvt*color5:  #B218B2 */
+/* URxvt*color13: #FF54FF */
+/* URxvt*color6:  #18B2B2 */
+/* URxvt*color14: #54FFFF */
+/* URxvt*color7:  #B2B2B2 */
+/* URxvt*color15: #FFFFFF */
 
 ! gruber colour scheme
 *background: #181818
