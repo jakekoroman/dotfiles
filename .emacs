@@ -47,14 +47,10 @@
   (require 'use-package))
 
 (use-package autothemer
-  :ensure
-  :init)
-  ;; (load-theme 'clean t))
+  :ensure)
 
 (use-package gruber-darker-theme
-  :ensure
-  :init
-  (load-theme 'gruber-darker t))
+  :ensure)
 
 (use-package zenburn-theme
   :ensure)
@@ -368,3 +364,20 @@
 (if (string= system-type "windows-nt")
     (setq compile-command "build.bat")
   (setq compile-command "./build.sh"))
+
+(defun disable-all-themes ()
+  "Disables all active themes."
+  (dolist (i custom-enabled-themes)
+    (disable-theme i)))
+
+(defun update-theme ()
+  "Set theme based on time of day"
+  (interactive)
+  (let ((hour (nth 2 (parse-time-string (current-time-string)))))
+	(disable-all-themes)
+	(if (and (> hour 9)
+			 (< hour 18))
+		(load-theme 'zenburn t)
+	  (load-theme 'gruber-darker t))))
+
+(update-theme)
