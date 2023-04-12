@@ -380,4 +380,13 @@
 		(load-theme 'zenburn t)
 	  (load-theme 'gruber-darker t))))
 
+(defun swap-theme ()
+  "Swaps theme to either zenburn or gruber-darker"
+  (interactive)
+  (let ((theme (nth 0 custom-enabled-themes)))
+	(disable-all-themes)
+	(if (string= theme "gruber-darker")
+		(load-theme 'zenburn t)
+	  (load-theme 'gruber-darker t))))
+
 (update-theme)
