@@ -68,14 +68,17 @@ bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# launch firefox
-bindsym $mod+b exec firefox
+# launch browser
+bindsym $mod+b exec librewolf
 
 # launch emacs
 bindsym $mod+e exec emacs
 
 # screenshot
 bindsym $mod+Shift+s exec screenshot
+
+# passmenu
+bindsym $mod+p exec passmenu-otp
 
 # change focus
 bindsym $mod+h focus left
