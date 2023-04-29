@@ -5,8 +5,7 @@ g.mapleader = " "
 
 o.termguicolors = true
 -- g.srcery_black = '000000'
-vim.cmd('colorscheme srcery')
--- g.airline_theme = 'zenburn'
+vim.cmd('colorscheme desert')
 
 o.mouse = 'a'
 o.relativenumber = true
@@ -15,6 +14,7 @@ o.expandtab = true
 o.tabstop = 4
 o.shiftwidth = 4
 o.autochdir = true
+o.guifont = "Iosevka:h10"
 
 -- my super cool c indentation style
 o.cindent = true
@@ -27,9 +27,5 @@ o.backup = false
 o.smartcase = true
 
 o.clipboard = 'unnamedplus'
-
--- neovide settings
-o.guifont = 'Iosevka:h10'
-g.neovide_cursor_trail_size = 0.8
 
 g.ranger_replace_netrw = true

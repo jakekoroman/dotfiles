@@ -19,16 +19,6 @@ vim.keymap.set('v', '<M-j>', '}')
 vim.keymap.set('v', '<M-k>', '{')
 vim.keymap.set('i', '<C-k>', snippets.expand_or_advance)
 
-vim.keymap.set("n", "<C-=>", function()
-  change_scale_factor(1.25)
-end)
-vim.keymap.set("n", "<C-->", function()
-  change_scale_factor(1/1.25)
-end)
-vim.keymap.set("n", "<C-0>", function()
-  vim.g.neovide_scale_factor = 1.0
-end)
-
 -- emacs user at heart
 vim.keymap.set('n', '<M-x>', ':')
 
