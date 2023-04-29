@@ -58,11 +58,6 @@
 (use-package undo-fu
   :ensure)
 
-(use-package eglot
-  :ensure
-  :config
-  (add-hook 'eglot-managed-mode-hook #'(lambda () (flymake-mode -1))))
-
 (use-package evil
   :ensure
   :init
@@ -150,9 +145,6 @@
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
 (use-package magit 
-  :ensure)
-
-(use-package vterm 
   :ensure)
 
 (use-package lua-mode 
@@ -377,7 +369,7 @@
 	(disable-all-themes)
 	(if (and (> hour 9)
 			 (< hour 18))
-		(load-theme 'zenburn t)
+		(load-theme 'desert t)
 	  (load-theme 'gruber-darker t))))
 
 (defun swap-theme ()
@@ -386,7 +378,7 @@
   (let ((theme (nth 0 custom-enabled-themes)))
 	(disable-all-themes)
 	(if (string= theme "gruber-darker")
-		(load-theme 'zenburn t)
+		(load-theme 'desert t)
 	  (load-theme 'gruber-darker t))))
 
 (update-theme)
