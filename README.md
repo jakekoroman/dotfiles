@@ -10,10 +10,12 @@ My configs for my 'commonly' used software.
 * awesome
 * i3
 * qtile
+* sway
 
 ## Terminals
 * st
 * Alacritty
+* foot
 
 ## Editors
 * Emacs
