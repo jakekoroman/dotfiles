@@ -30,11 +30,9 @@ return require('packer').startup({
         use('tpope/vim-commentary')
         use('mg979/vim-visual-multi')
         use('rhysd/clever-f.vim')
-        use({'nvim-telescope/telescope.nvim', tag = '0.1.0'})
         use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
         use('norcalli/snippets.nvim')
         use('rbgrouleff/bclose.vim');
-        use('francoiscabrol/ranger.vim');
 
         -- Misc
         use('sheerun/vim-polyglot')

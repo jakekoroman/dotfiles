@@ -3,9 +3,7 @@ local g = vim.g
 
 g.mapleader = " "
 
-o.termguicolors = true
--- g.srcery_black = '000000'
-vim.cmd('colorscheme desert')
+-- o.termguicolors = true
 
 o.mouse = 'a'
 o.relativenumber = true
@@ -18,14 +16,12 @@ o.guifont = "Iosevka:h10"
 
 -- my super cool c indentation style
 o.cindent = true
-o.cino = ":0,l1,t0,(0"
+o.cino = ":0,l1,t0,(0" -- :0 will align case to the switch statement
 
 o.swapfile = false
 o.backup = false
 -- o.scrolloff = 8
 
-o.smartcase = true
+osmartcase = true
 
 o.clipboard = 'unnamedplus'
-
-g.ranger_replace_netrw = true

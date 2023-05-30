@@ -1,4 +1,3 @@
-local telescope = require('telescope.builtin')
 local snippets = require('snippets')
 
 local change_scale_factor = function(delta)
@@ -6,21 +5,11 @@ local change_scale_factor = function(delta)
 end
 
 -- General Editor binds
-vim.keymap.set('n', '<leader>,', telescope.buffers)
-vim.keymap.set('n', '<leader>.', telescope.find_files)
-vim.keymap.set('n', '<leader>/', telescope.live_grep)
-vim.keymap.set('n', '<C-a>', '0')
-vim.keymap.set('n', '<C-e>', '$')
-vim.keymap.set('i', '<C-a>', '<ESC>I')
-vim.keymap.set('i', '<C-e>', '<ESC>A')
 vim.keymap.set('n', '<M-j>', '}')
 vim.keymap.set('n', '<M-k>', '{')
 vim.keymap.set('v', '<M-j>', '}')
 vim.keymap.set('v', '<M-k>', '{')
 vim.keymap.set('i', '<C-k>', snippets.expand_or_advance)
-
--- emacs user at heart
-vim.keymap.set('n', '<M-x>', ':')
 
 -- Compilation bind
 vim.keymap.set('n', '<leader>c', '<CMD>make<CR>')
