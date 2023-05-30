@@ -150,7 +150,9 @@
   :ensure)
 
 (use-package zig-mode
-  :ensure)
+  :ensure
+  :config
+  (setq zig-format-on-save nil))
 
 (use-package glsl-mode
   :ensure)
@@ -380,7 +382,7 @@
 	(disable-all-themes)
 	(if (and (> hour 9)
 			 (< hour 18))
-		(load-theme 'desert t)
+		(load-theme 'zenburn t)
 	  (load-theme 'gruber-darker t))))
 
 (defun swap-theme ()
@@ -389,7 +391,7 @@
   (let ((theme (nth 0 custom-enabled-themes)))
 	(disable-all-themes)
 	(if (string= theme "gruber-darker")
-		(load-theme 'desert t)
+		(load-theme 'zenburn t)
 	  (load-theme 'gruber-darker t))))
 
 ;; (list-colors-display) for a color picker
