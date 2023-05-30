@@ -1,7 +1,5 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (add-to-list 'load-path "~/.emacs.local")
-(add-to-list 'custom-theme-load-path "~/.emacs.local")
-(load "odin-mode")
 (when (file-exists-p custom-file)
   (load custom-file))
 
@@ -10,7 +8,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(setq default-frame-alist '((font . "Iosevka-10" )))
+;; (setq default-frame-alist '((font . "Iosevka Nerd Font-10")))
+(setq default-frame-alist '((font . "Liberation Mono-10")))
 (defun my/disable-scroll-bars (frame)
   (modify-frame-parameters frame
                            '((vertical-scroll-bars . nil)
@@ -46,9 +45,6 @@
 (eval-when-compile
   (require 'use-package))
 
-(use-package autothemer
-  :ensure)
-
 (use-package gruber-darker-theme
   :ensure)
 
@@ -75,7 +71,7 @@
   :ensure
   :config
   ;; Sets the colour of the region
-  (set-face-background 'iedit-occurrence "blue")
+  (set-face-background 'iedit-occurrence "medium blue")
   (evil-multiedit-default-keybinds))
 
 (use-package evil-snipe
@@ -164,8 +160,16 @@
   :config
   (evil-commentary-mode))
 
+(use-package org
+  :defer t
+  :config
+  (set-face-attribute 'org-table nil :foreground "burlywood3")
+  (set-face-attribute 'org-level-1 nil :foreground "DarkGoldenrod3")
+  (set-face-attribute 'org-link nil :foreground "CadetBlue3"))
+
 (use-package org-bullets
   :ensure
+  :after ('org)
   :config
   (add-hook 'org-mode-hook #'(lambda () (org-bullets-mode 1))))
 
@@ -230,7 +234,7 @@
 			  c-default-style '((java-mode . "java")
 								(awk-mode . "awk")
 								(other . "bsd")))
-;;(c-set-offset 'case-label '+)
+(c-set-offset 'case-label '+)
 
 (font-lock-add-keywords 'c-mode
                         '(("internal" . font-lock-keyword-face)
@@ -297,19 +301,23 @@
 ;; (add-hook 'before-save-hook 'indent-buffer)
 
 (defun find-corresponding-file ()
-  "Finds the file that corresponds to this one and opens it."
+  "Find the file that corresponds to this one."
   (interactive)
-  (setq fname (file-name-sans-extension buffer-file-name))
-  (setq result nil)
+  (setq CorrespondingFileName nil)
+  (setq BaseFileName (file-name-sans-extension buffer-file-name))
   (if (string-match "\\.c" buffer-file-name)
-      (setq result (concat fname ".h")))
+	  (setq CorrespondingFileName (concat BaseFileName ".h")))
   (if (string-match "\\.h" buffer-file-name)
-      (if (file-exists-p (concat fname ".c"))
-          (setq result (concat fname ".c")))
-    (if (file-exists-p (concat fname ".cpp"))
-        (setq result (concat fname ".cpp"))))
-  (if result (find-file result)
-    (error "Unable to find a corresponding file")))
+	  (if (file-exists-p (concat BaseFileName ".c")) (setq CorrespondingFileName (concat BaseFileName ".c"))
+		(setq CorrespondingFileName (concat BaseFileName ".cpp"))))
+  (if (string-match "\\.hin" buffer-file-name)
+	  (setq CorrespondingFileName (concat BaseFileName ".cin")))
+  (if (string-match "\\.cin" buffer-file-name)
+	  (setq CorrespondingFileName (concat BaseFileName ".hin")))
+  (if (string-match "\\.cpp" buffer-file-name)
+	  (setq CorrespondingFileName (concat BaseFileName ".h")))
+  (if CorrespondingFileName (find-file CorrespondingFileName)
+	(error "Unable to find a corresponding file")))
 
 (defun find-corresponding-file-other-window ()
   "Finds the file that corresponds to this and opens it in the other window."
@@ -384,4 +392,44 @@
 		(load-theme 'desert t)
 	  (load-theme 'gruber-darker t))))
 
-(update-theme)
+;; (list-colors-display) for a color picker
+(defun my-new-fancy-theme ()
+  "Loads my custom theme"
+  (interactive)
+  (disable-all-themes)
+  (set-face-attribute 'font-lock-builtin-face nil :foreground "#DAB98F")
+  (set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
+  (set-face-attribute 'font-lock-constant-face nil :foreground "olive drab")
+  (set-face-attribute 'font-lock-doc-face nil :foreground "gray50")
+  (set-face-attribute 'font-lock-function-name-face nil :foreground "burlywood3")
+  (set-face-attribute 'font-lock-keyword-face nil :foreground "DarkGoldenrod3")
+  (set-face-attribute 'font-lock-string-face nil :foreground "olive drab")
+  (set-face-attribute 'font-lock-type-face nil :foreground "burlywood3")
+  (set-face-attribute 'font-lock-variable-name-face nil :foreground "burlywood3")
+  (set-face-attribute 'region nil :background "dark blue")
+  (set-face-attribute 'ido-subdir nil :foreground "cyan")
+  (set-foreground-color "burlywood3")
+  ;; (set-background-color "#2F2F2F")
+  (set-background-color "#181818")
+  (set-cursor-color "#40FF40"))
+
+(defun never-split-a-window ()
+  "Never, ever split a window.  Why would anyone EVER want you to do that??"
+  nil)
+(setq split-window-preferred-function 'never-split-a-window)
+
+(my-new-fancy-theme)
+(split-window-horizontally)
+(toggle-frame-maximized)
+
+;; ;; Startup time
+;; (defun efs/display-startup-time ()
+;;   (message
+;;    "Emacs loaded in %s with %d garbage collections."
+;;    (format
+;; 	"%.2f seconds"
+;; 	(float-time
+;; 	 (time-subtract after-init-time before-init-time)))
+;;    gcs-done))
+
+;; (add-hook 'emacs-startup-hook #'efs/display-startup-time)
