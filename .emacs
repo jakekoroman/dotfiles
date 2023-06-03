@@ -408,6 +408,7 @@
   (set-face-attribute 'font-lock-string-face nil :foreground "olive drab")
   (set-face-attribute 'font-lock-type-face nil :foreground "burlywood3")
   (set-face-attribute 'font-lock-variable-name-face nil :foreground "burlywood3")
+  ;; (set-face-attribute 'font-lock-type-face nil :foreground "DarkGoldenrod3")
   (set-face-attribute 'region nil :background "dark blue")
   (set-face-attribute 'ido-subdir nil :foreground "cyan")
   (set-foreground-color "burlywood3")
@@ -423,6 +424,7 @@
 (my-new-fancy-theme)
 (split-window-horizontally)
 (toggle-frame-maximized)
+(set-default 'truncate-lines t)
 
 ;; ;; Startup time
 ;; (defun efs/display-startup-time ()
