@@ -54,6 +54,11 @@ input "9610:8231:Glorious_Model_O_PRO_Wireless" {
 	pointer_accel -0.15
 }
 
+input "5426:123:Razer_Razer_Viper_Ultimate_Dongle" {
+	accel_profile "flat"
+	pointer_accel -0.15
+}
+
 ### Key bindings
 #
 # Basics:
@@ -89,6 +94,8 @@ input "9610:8231:Glorious_Model_O_PRO_Wireless" {
     bindsym XF86AudioPrev exec playerctl previous
 
     bindsym $mod+Shift+Delete exec swaylock -c 000000
+
+	bindsym $mod+p exec passmenu
 
 #
 # Moving around:
@@ -213,7 +220,7 @@ bar {
     status_command i3status
 
     font pango:Deja Vu 8
-    tray_output primary
+    tray_output DP-2
 
     colors {
         statusline #ffffff
