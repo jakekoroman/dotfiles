@@ -17,7 +17,8 @@ return require('packer').startup({
         use('nvim-lua/plenary.nvim')
 
         -- Theme
-        use('gosukiwi/vim-atom-dark')
+        use('joshdick/onedark.vim')
+        use('arcticicestudio/nord-vim')
         use('https://gitlab.com/madyanov/gruber.vim')
         use({'srcery-colors/srcery-vim', as = 'srcery'})
         use('Mofiqul/dracula.nvim')

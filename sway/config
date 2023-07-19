@@ -59,6 +59,8 @@ input "5426:123:Razer_Razer_Viper_Ultimate_Dongle" {
 	pointer_accel -0.15
 }
 
+input type:tablet_tool map_to_output DP-2
+
 ### Key bindings
 #
 # Basics:

@@ -102,6 +102,9 @@
   ("C-<return>" . company-complete)
   ("C-<tab>"    . dabbrev-expand))
 
+(use-package eglot
+  :ensure)
+
 (use-package yasnippet
   :ensure
   :config
@@ -352,8 +355,7 @@
  "M-p" 'previous-error
  "M-n" 'next-error
  "M-o" 'other-window
- "<f2>" 'ido-goto-symbol
- "<f1>" 'indent-buffer)
+ "<f2>" 'ido-goto-symbol)
 
 ;;; Launch gud-gdb in a new window
 (defun my-gud ()
