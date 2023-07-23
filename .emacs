@@ -410,6 +410,7 @@
   (set-face-attribute 'font-lock-string-face nil :foreground "olive drab")
   (set-face-attribute 'font-lock-type-face nil :foreground "burlywood3")
   (set-face-attribute 'font-lock-variable-name-face nil :foreground "burlywood3")
+  (set-face-attribute 'font-lock-constant-face nil :foreground "burlywood3")
   ;; (set-face-attribute 'font-lock-type-face nil :foreground "DarkGoldenrod3")
   (set-face-attribute 'region nil :background "dark blue")
   (set-face-attribute 'ido-subdir nil :foreground "cyan")
