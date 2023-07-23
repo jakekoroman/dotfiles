@@ -3,32 +3,6 @@ require('settings')
 require('keybinds')
 
 local api = vim.api
-local fn = vim.fn
-
--- Returns an array of filenames in given directory
-function scan_dir(dir)
-    local i, t, popen = 0, {}, io.popen
-    local pfile = popen('ls -a "'..dir..'"')
-    for filename in pfile:lines() do
-        i = i + 1
-        t[i] = filename
-    end
-    pfile:close()
-    return t
-end
-
--- Function searchs directory for build tools and
--- sets makeprg to it if possible
-function locate_build()
-    local cwd = fn.getcwd()
-    local files = scan_dir(cwd)
-
-    for _, file in pairs(files) do
-        if file == 'build.sh' then
-            api.nvim_command('set makeprg=./build.sh')
-        end
-    end
-end
 
 -- Attempts to set build tool in makeprg when nvim starts
 api.nvim_create_autocmd({ "VimEnter" }, {
@@ -70,3 +44,31 @@ require('snippets').snippets = {
   }
 }
 
+require('marks').setup {
+  -- whether to map keybinds or not. default true
+  default_mappings = true,
+  -- whether movements cycle back to the beginning/end of buffer. default true
+  cyclic = true,
+  -- how often (in ms) to redraw signs/recompute mark positions. 
+  -- higher values will have better performance but may cause visual lag, 
+  -- while lower values may cause performance penalties. default 150.
+  refresh_interval = 250,
+  -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
+  -- marks, and bookmarks.
+  -- can be either a table with all/none of the keys, or a single number, in which case
+  -- the priority applies to all marks.
+  -- default 10.
+  sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
+  -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
+  -- sign/virttext. Bookmarks can be used to group together positions and quickly move
+  -- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
+  -- default virt_text is "".
+  bookmark_0 = {
+    sign = "⚑",
+    virt_text = "hello world",
+    -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
+    -- defaults to false.
+    annotate = false,
+  },
+  mappings = {}
+}

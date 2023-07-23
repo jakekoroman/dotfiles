@@ -16,27 +16,12 @@ return require('packer').startup({
         use('wbthomason/packer.nvim')
         use('nvim-lua/plenary.nvim')
 
-        -- Theme
-        use('joshdick/onedark.vim')
-        use('arcticicestudio/nord-vim')
-        use('https://gitlab.com/madyanov/gruber.vim')
-        use({'srcery-colors/srcery-vim', as = 'srcery'})
-        use('Mofiqul/dracula.nvim')
-        use('phha/zenburn.nvim')
-        use('ellisonleao/gruvbox.nvim')
-        -- use('vim-airline/vim-airline')
-        -- use('vim-airline/vim-airline-themes')
-
-        -- Editor
         use('tpope/vim-commentary')
         use('mg979/vim-visual-multi')
         use('rhysd/clever-f.vim')
         use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
         use('norcalli/snippets.nvim')
-        use('rbgrouleff/bclose.vim');
-
-        -- Misc
-        use('sheerun/vim-polyglot')
-
-    end
+        use('rbgrouleff/bclose.vim')
+        use('chentoast/marks.nvim')
+      end
 })

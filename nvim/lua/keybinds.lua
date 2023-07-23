@@ -10,6 +10,7 @@ vim.keymap.set('n', '<M-k>', '{')
 vim.keymap.set('v', '<M-j>', '}')
 vim.keymap.set('v', '<M-k>', '{')
 vim.keymap.set('i', '<C-k>', snippets.expand_or_advance)
+vim.keymap.set('n', '<leader>e', '<CMD>Lexplore<CR>')
 
 -- Compilation bind
 vim.keymap.set('n', '<leader>c', '<CMD>make<CR>')

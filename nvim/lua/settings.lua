@@ -2,9 +2,14 @@ local o = vim.o
 local g = vim.g
 
 g.mapleader = " "
+g.netrw_keepdir = 0
+g.netrw_banner = 0
+g.netrw_winsize = 30
+g.netrw_localcopydircmd = 'cp -r'
 
 o.termguicolors = true
-vim.cmd('colorscheme quiet')
+vim.cmd('colorscheme darkblue')
+vim.cmd('set makeprg=./build.sh')
 
 o.mouse = 'a'
 o.relativenumber = true
