@@ -23,5 +23,6 @@ return require('packer').startup({
         use('norcalli/snippets.nvim')
         use('rbgrouleff/bclose.vim')
         use('chentoast/marks.nvim')
+        use('chaoren/vim-wordmotion')
       end
 })
