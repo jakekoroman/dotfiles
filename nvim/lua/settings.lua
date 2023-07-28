@@ -6,8 +6,9 @@ g.netrw_keepdir = 0
 g.netrw_banner = 0
 g.netrw_winsize = 15
 g.netrw_localcopydircmd = 'cp -r'
-
 o.termguicolors = true
+g.zig_fmt_autosave = 0
+
 vim.cmd('colorscheme darkblue')
 vim.cmd('set makeprg=./build.sh')
 
