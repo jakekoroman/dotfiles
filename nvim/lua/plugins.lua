@@ -19,10 +19,10 @@ return require('packer').startup({
         use('tpope/vim-commentary')
         use('mg979/vim-visual-multi')
         use('rhysd/clever-f.vim')
-        use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+        -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
         use('norcalli/snippets.nvim')
         use('rbgrouleff/bclose.vim')
         use('chentoast/marks.nvim')
-        use('chaoren/vim-wordmotion')
+        -- use('chaoren/vim-wordmotion')
       end
 })
