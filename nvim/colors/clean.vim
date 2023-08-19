@@ -1,3 +1,5 @@
+" to get font face under cursor: :echo synIDattr(synID(line("."), col("."), 1), "name")
+
 hi clear
 syntax reset
 let g:colors_name = 'clean'
