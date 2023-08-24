@@ -77,5 +77,16 @@ hi vimHigroup guifg=#cdaa7d guibg=#181818 gui=NONE cterm=NONE
 hi vimGroup guifg=#cdaa7d guibg=#181818 gui=NONE cterm=NONE
 
 hi zigVarDecl guifg=#cd950c guibg=NONE gui=NONE cterm=NONE
+hi zigMacro guifg=#cd950c guibg=NONE gui=NONE cterm=NONE
+hi zigOperator guifg=#cdaa7d guibg=NONE gui=NONE cterm=NONE
+hi zigType guifg=#cdaa7d guibg=NONE gui=NONE cterm=NONE
+hi zigPreProc guifg=#cd950c guibg=NONE gui=NONE cterm=NONE
+hi zigConstant guifg=#cdaa7d guibg=NONE gui=NONE cterm=NONE
+hi zigBoolean guifg=#cdaa7d guibg=NONE gui=NONE cterm=NONE
+hi zigBuiltinFn guifg=#f77454 guibg=#181818 gui=NONE cterm=NONE
+hi zigNull guifg=#cdaa7d guibg=#181818 gui=NONE cterm=NONE
+
+hi shVariable guifg=#cdaa7d guibg=#181818 gui=NONE cterm=NONE
+hi shDerefSimple guifg=#f77454 guibg=#181818 gui=NONE cterm=NONE
 
 hi luaConstant guifg=#cdaa7d guibg=#181818 gui=NONE cterm=NONE

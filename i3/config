@@ -19,7 +19,8 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 8
 
-exec --no-startup-id xsetroot -solid "#000000"
+# exec --no-startup-id xsetroot -solid "#000000"
+exec --no-startup-id feh --bg-center /usr/share/wallpapers/default-1920x1080.jpg
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -133,7 +134,9 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-bindsym $mod+Shift+Delete exec i3lock -c 000000
+bindsym $mod+Delete exec i3lock -c 000000
+
+bindsym $mod+Shift+Delete exec i3lock -c 000000 && systemctl suspend
 
 # focus the child container
 #bindsym $mod+d focus child
