@@ -16,7 +16,7 @@
                              (horizontal-scroll-bars . nil))))
 (add-hook 'after-make-frame-functions 'my/disable-scroll-bars)
 
-(setq-default inhibit-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq inhibit-splash-screen t
       inhibit-startup-message t
@@ -32,6 +32,7 @@
       gc-cons-threshold 100000000
       compilation-ask-about-save nil
 	  frame-resize-pixelwise t
+	  mouse-drag-mode-line-buffer 1
 	  )
 
 ;; (global-hl-line-mode 1)
@@ -101,9 +102,6 @@
   :bind
   ("C-<return>" . company-complete)
   ("C-<tab>"    . dabbrev-expand))
-
-(use-package eglot
-  :ensure)
 
 (use-package yasnippet
   :ensure
