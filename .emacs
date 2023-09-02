@@ -1,5 +1,6 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (add-to-list 'load-path "~/.emacs.local")
+(add-to-list 'custom-theme-load-path "~/.emacs.local")
 (when (file-exists-p custom-file)
   (load custom-file))
 
@@ -244,12 +245,12 @@
                           ("global" . 'font-lock-keyword-face)))
 
 ;;; Keybinds
-(defun my-vterm ()
-  "Open vterm in other window"
+(defun my/eshell ()
+  "Open eshell in other window"
   (interactive)
   (split-window-sensibly)
   (other-window 1)
-  (vterm))
+  (eshell))
 
 ;; Binds with SPC prefix
 (nvmap :keymaps 'override :prefix "SPC"
@@ -260,8 +261,8 @@
   "/"           '(grep-find :which-key "Run grep-find")
   "g g"			'(magit :which-key "Magit")
   "o -"			'(dired-jump :which-key "Open Dired here")
-  "o t"			'(my-vterm :which-key "Open vterm in other window")
-  "o T"			'(vterm :which-key "Open vterm here")
+  "o t"			'(eshell :which-key "Open eshell in other window")
+  "o T"			'(my/eshell :which-key "Open eshell here")
 
   ;; Compile Binds
   "c"			'(recompile :which-key "Recompile")
@@ -282,8 +283,7 @@
   ;; Buffer Binds
   "b p" '(previous-buffer :which-key "Open previous buffer")
   "b n" '(next-buffer :which-key "Open next buffer")
-  "b k" '(kill-current-buffer :which-key "Kill current buffer")
-  )
+  "b k" '(kill-current-buffer :which-key "Kill current buffer"))
 
 (defun previous-blank-line ()
   "Moves to the previous line containing nothing but whitespace."
@@ -356,7 +356,7 @@
  "<f2>" 'ido-goto-symbol)
 
 ;;; Launch gud-gdb in a new window
-(defun my-gud ()
+(defun my/gud ()
   "Run gud-gdb in other window"
   (interactive)
   (setq files (directory-files (file-name-directory buffer-file-name)))
@@ -394,40 +394,17 @@
 		(load-theme 'zenburn t)
 	  (load-theme 'gruber-darker t))))
 
-;; (list-colors-display) for a color picker
-(defun my-new-fancy-theme ()
-  "Loads my custom theme"
-  (interactive)
-  (disable-all-themes)
-  ;; (set-face-attribute 'font-lock-builtin-face nil :foreground "#DAB98F")
-  ;; (set-face-attribute 'font-lock-builtin-face nil :foreground "dark orange")
-  (set-face-attribute 'font-lock-builtin-face nil :foreground "burlywood3")
-  (set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
-  (set-face-attribute 'font-lock-constant-face nil :foreground "olive drab")
-  (set-face-attribute 'font-lock-doc-face nil :foreground "gray50")
-  (set-face-attribute 'font-lock-function-name-face nil :foreground "burlywood3")
-  (set-face-attribute 'font-lock-keyword-face nil :foreground "DarkGoldenrod3")
-  (set-face-attribute 'font-lock-string-face nil :foreground "olive drab")
-  (set-face-attribute 'font-lock-type-face nil :foreground "burlywood3")
-  (set-face-attribute 'font-lock-variable-name-face nil :foreground "burlywood3")
-  (set-face-attribute 'font-lock-constant-face nil :foreground "burlywood3")
-  ;; (set-face-attribute 'font-lock-type-face nil :foreground "DarkGoldenrod3")
-  (set-face-attribute 'region nil :background "dark blue")
-  (set-face-attribute 'ido-subdir nil :foreground "cyan")
-  (set-foreground-color "burlywood3")
-  ;; (set-background-color "#2F2F2F")
-  (set-background-color "#181818")
-  (set-cursor-color "#40FF40"))
 
 (defun never-split-a-window ()
   "Never, ever split a window.  Why would anyone EVER want you to do that??"
   nil)
 (setq split-window-preferred-function 'never-split-a-window)
 
-(my-new-fancy-theme)
 (split-window-horizontally)
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
+;; (list-colors-display) for a color picker
+(load-theme 'handmade t)
 
 ;; ;; Startup time
 ;; (defun efs/display-startup-time ()
@@ -438,5 +415,5 @@
 ;; 	(float-time
 ;; 	 (time-subtract after-init-time before-init-time)))
 ;;    gcs-done))
-
 ;; (add-hook 'emacs-startup-hook #'efs/display-startup-time)
+
