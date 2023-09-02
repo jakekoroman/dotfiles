@@ -42,6 +42,8 @@
  `(ido-first-match ((t (:foreground "#ffff00"))))
  `(ido-only-match ((t (:foreground "#00ff00"))))
  `(ido-subdir ((t (:foreground "#00ffff"))))
+ ;; iedit
+ `(iedit-occurrence ((t (:background "#441ea4"))))
  ;; Whitespace
  `(whitespace-space ((t (:foreground "#595959"))))
  ;; Yasnippet

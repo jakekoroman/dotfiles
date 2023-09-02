@@ -107,7 +107,6 @@
   :ensure
   :config
   ;; Sets the colour of the region
-  (set-face-background 'iedit-occurrence "medium blue")
   (evil-multiedit-default-keybinds))
 
 (use-package evil-snipe
