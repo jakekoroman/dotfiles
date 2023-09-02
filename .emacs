@@ -86,9 +86,12 @@
       '((consult-grep buffer))))
 
 (use-package marginalia
-  :ensure t
+  :ensure
   :init
   (marginalia-mode))
+
+(use-package consult
+  :ensure)
 
 (use-package evil
   :ensure
@@ -426,7 +429,6 @@
 	(if (string= theme "gruber-darker")
 		(load-theme 'zenburn t)
 	  (load-theme 'gruber-darker t))))
-
 
 (defun never-split-a-window ()
   "Never, ever split a window.  Why would anyone EVER want you to do that??"
