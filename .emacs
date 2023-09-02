@@ -56,6 +56,40 @@
 (use-package undo-fu
   :ensure)
 
+(use-package savehist
+  :init
+  (savehist-mode))
+
+(use-package vertico
+  :ensure
+  :init
+  (vertico-mode)
+  (setq vertico-cycle t)
+  :config
+  (setq vertico-multiform-categories
+      '((consult-grep
+         buffer
+         (vertico-buffer-display-action . (display-buffer-same-window))))))
+
+(use-package orderless
+  :ensure
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
+  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion))))
+  :config
+  (vertico-multiform-mode)
+  (setq vertico-multiform-categories
+      '((consult-grep buffer))))
+
+(use-package marginalia
+  :ensure t
+  :init
+  (marginalia-mode))
+
 (use-package evil
   :ensure
   :init
@@ -82,13 +116,13 @@
   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
   (evil-snipe-override-mode 1))
 
-(use-package smex
-  :ensure
-  :config
-  (smex-initialize)
-  :bind
-  ("M-x" . smex)
-  ("M-X" . smex-major-mode-commands))
+;; (use-package smex
+;;   :ensure
+;;   :config
+;;   (smex-initialize)
+;;   :bind
+;;   ("M-x" . smex)
+;;   ("M-X" . smex-major-mode-commands))
 
 (use-package which-key
   :ensure
@@ -183,7 +217,7 @@
         ido-everywhere t
         ido-show-dot-for-dired t
         ido-auto-merge-work-directories-length -1)
-  (ido-mode 1))
+  (ido-mode 0))
 
 (defun ido-goto-symbol (&optional symbol-list)
   "Refresh imenu and jump to a place in the buffer using Ido."
@@ -258,7 +292,7 @@
   ">"			'(find-file-other-window :which-key "Open file in other window")
   ","			'(ido-switch-buffer :which-key "Switch Buffer")
   "<"			'(ido-switch-buffer-other-window :which-key "Open buffer in other window")
-  "/"           '(grep-find :which-key "Run grep-find")
+  "/"           '(consult-grep :which-key "Run grep in cwd")
   "g g"			'(magit :which-key "Magit")
   "o -"			'(dired-jump :which-key "Open Dired here")
   "o t"			'(eshell :which-key "Open eshell in other window")
@@ -404,7 +438,7 @@
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
 ;; (list-colors-display) for a color picker
-(load-theme 'handmade t)
+(load-theme 'toxi t)
 
 ;; ;; Startup time
 ;; (defun efs/display-startup-time ()
