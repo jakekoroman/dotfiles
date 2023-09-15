@@ -10,11 +10,12 @@
 (scroll-bar-mode -1)
 
 ;; (setq default-frame-alist '((font . "Iosevka Nerd Font-10")))
-(setq default-frame-alist '((font . "Liberation Mono-10")))
+(setq default-frame-alist '((font . "Liberation Mono-12")))
 (defun my/disable-scroll-bars (frame)
   (modify-frame-parameters frame
                            '((vertical-scroll-bars . nil)
                              (horizontal-scroll-bars . nil))))
+
 (add-hook 'after-make-frame-functions 'my/disable-scroll-bars)
 
 (setq-default indent-tabs-mode nil)
@@ -60,6 +61,10 @@
   :init
   (savehist-mode))
 
+(use-package eat
+  :ensure)
+  ;; (add-hook 'eshell-first-time-mode-hook #'eat-eshell-mode))
+
 (use-package vertico
   :ensure
   :init
@@ -67,9 +72,9 @@
   (setq vertico-cycle t)
   :config
   (setq vertico-multiform-categories
-      '((consult-grep
-         buffer
-         (vertico-buffer-display-action . (display-buffer-same-window))))))
+        '((consult-grep
+           buffer
+           (vertico-buffer-display-action . (display-buffer-same-window))))))
 
 (use-package orderless
   :ensure
@@ -83,7 +88,7 @@
   :config
   (vertico-multiform-mode)
   (setq vertico-multiform-categories
-      '((consult-grep buffer))))
+        '((consult-grep buffer))))
 
 (use-package marginalia
   :ensure
@@ -430,16 +435,22 @@
 		(load-theme 'zenburn t)
 	  (load-theme 'gruber-darker t))))
 
-(defun never-split-a-window ()
-  "Never, ever split a window.  Why would anyone EVER want you to do that??"
-  nil)
-(setq split-window-preferred-function 'never-split-a-window)
+(defun transparency (value)
+  "Sets the transparency of the frame window. 0=transparent/100=opaque"
+  (interactive "nTransparency Value 0 - 100 opaque:")
+  (set-frame-parameter (selected-frame) 'alpha value))
+
+;; (defun never-split-a-window ()
+;;   "Never, ever split a window.  Why would anyone EVER want you to do that??"
+;;   nil)
+;; (setq split-window-preferred-function 'never-split-a-window)
 
 (split-window-horizontally)
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
 ;; (list-colors-display) for a color picker
-(load-theme 'toxi t)
+(load-theme 'modus-vivendi t)
+(transparency 85)
 
 ;; ;; Startup time
 ;; (defun efs/display-startup-time ()
@@ -451,4 +462,3 @@
 ;; 	 (time-subtract after-init-time before-init-time)))
 ;;    gcs-done))
 ;; (add-hook 'emacs-startup-hook #'efs/display-startup-time)
-
