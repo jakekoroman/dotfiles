@@ -1242,6 +1242,8 @@ monocle(Monitor *m)
 	unsigned int n = 0;
 	Client *c;
 
+    noborder = 1;
+
 	for (c = m->clients; c; c = c->next)
 		if (ISVISIBLE(c))
 			n++;
@@ -1896,6 +1898,8 @@ tile(Monitor *m)
 {
 	unsigned int i, n, h, g = 0, mw, my, ty;
 	Client *c;
+
+    noborder = 0;
 
 	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
 	if (n == 0)

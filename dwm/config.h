@@ -12,7 +12,7 @@ static const int systraypinningfailfirst	= 1;						/* 1: if pinning fails, displ
 static const int showsystray				= 1;						/* 0 means no systray */
 static const int showbar					= 1;						/* 0 means no bar */
 static const int topbar						= 1;						/* 0 means bottom bar */
-static const int noborder                   = 0;                        /* 1 means noborder is enabled */
+static int noborder                         = 0;                        /* 1 means noborder is enabled, disables in tile mode and enabled in monocle mode */
 static const char *fonts[]					= { "FiraCode Nerd Font:size=12" };	/* Noto Sans Mono */
 static const char dmenufont[]				= "FiraCode Nerd Font:size=12";		/* Noto Sans Mono */
 static const char col_gray1[]				= "#222222";
