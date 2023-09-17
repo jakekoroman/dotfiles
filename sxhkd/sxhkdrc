@@ -1,0 +1,11 @@
+XF86AudioLowerVolume:
+	$HOME/dotfiles/Scripts/volume_adjust output 2%-
+
+XF86AudioRaiseVolume:
+	$HOME/dotfiles/Scripts/volume_adjust output 2%+
+
+XF86MonBrightnessDown:
+	brightnessctl set 5%-
+
+XF86MonBrightnessUp:
+	brightnessctl set 5%+
