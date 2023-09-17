@@ -1,0 +1,23 @@
+#!/bin/bash
+
+items="poweroff
+reboot
+suspend
+logout"
+
+sel=$(printf '%s' "$items" | dmenu)
+
+case $sel in
+    poweroff)
+        systemctl poweroff
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    suspend)
+        systemctl suspend
+        ;;
+    logout)
+        loginctl kill-user $USER
+        ;;
+esac

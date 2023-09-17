@@ -5,8 +5,8 @@
 static const unsigned int borderpx			= 3;						/* border pixel of windows */
 static const unsigned int gappx             = 15;                       /* gap pixel between windows */
 static const unsigned int snap				= 32;						/* snap pixel */
-static const unsigned int systraypinning	= 1;						/* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft		= 0;						/* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systraypinning	= 1;						/* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing	= 10;						/* systray spacing */
 static const int systraypinningfailfirst	= 1;						/* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray				= 1;						/* 0 means no systray */
@@ -59,19 +59,21 @@ static const Layout layouts[] = {
 { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} }
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]	= { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]	= { "st", NULL };
-static const char *emacscmd[]	= { "emacsclient", "-c", "-a","emacs", NULL };
-static const char *firefoxcmd[]	= { "firefox", NULL };
-static const char *pcmanfmcmd[] = { "pcmanfm", NULL };
+static const char *dmenucmd[]	 = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *termcmd[]	 = { "st", NULL };
+static const char *emacscmd[]	 = { "emacsclient", "-c", "-a","emacs", NULL };
+static const char *firefoxcmd[]	 = { "firefox", NULL };
+static const char *pcmanfmcmd[]  = { "pcmanfm", NULL };
 static const char *passmenucmd[] = { "passmenu-otp", NULL };
+static const char *lockcmd[]     = { "betterlockscreen", "-l", "-q", NULL };
+static const char *xlogoutcmd[]  = { "xlogout", NULL };
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
@@ -82,6 +84,8 @@ static Key keys[] = {
     { MODKEY,                       XK_b,      spawn,          {.v = firefoxcmd } },
     { MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("maim -s -u | xclip -selection clipboard -t image/png -i") },
     { MODKEY,                       XK_v,      spawn,          {.v = pcmanfmcmd } },
+    { MODKEY,                       XK_Delete, spawn,          {.v = lockcmd } },
+    { MODKEY|ShiftMask,             XK_Delete, spawn,          {.v = xlogoutcmd } },
     { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -109,16 +113,16 @@ static Key keys[] = {
     { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
     { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
     { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
-    TAGKEYS(                        XK_1,                      0)
-        TAGKEYS(                        XK_2,                      1)
-        TAGKEYS(                        XK_3,                      2)
-        TAGKEYS(                        XK_4,                      3)
-        TAGKEYS(                        XK_5,                      4)
-        TAGKEYS(                        XK_6,                      5)
-        TAGKEYS(                        XK_7,                      6)
-        TAGKEYS(                        XK_8,                      7)
-        TAGKEYS(                        XK_9,                      8)
-        { MODKEY|ControlMask,           XK_q,      quit,           {0} },
+    TAGKEYS(                        XK_1,                      0),
+    TAGKEYS(                        XK_2,                      1),
+    TAGKEYS(                        XK_3,                      2),
+    TAGKEYS(                        XK_4,                      3),
+    TAGKEYS(                        XK_5,                      4),
+    TAGKEYS(                        XK_6,                      5),
+    TAGKEYS(                        XK_7,                      6),
+    TAGKEYS(                        XK_8,                      7),
+    TAGKEYS(                        XK_9,                      8),
+    { MODKEY|ControlMask,           XK_q,      quit,           {0} },
 };
 
 /* button definitions */
