@@ -445,11 +445,11 @@
 ;;   nil)
 ;; (setq split-window-preferred-function 'never-split-a-window)
 
-(split-window-horizontally)
+;; (split-window-horizontally)
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
 ;; (list-colors-display) for a color picker
-(load-theme 'modus-vivendi t)
+(load-theme 'handmade t)
 (transparency 85)
 
 ;; ;; Startup time
