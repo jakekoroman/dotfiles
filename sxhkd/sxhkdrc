@@ -9,3 +9,6 @@ XF86MonBrightnessDown:
 
 XF86MonBrightnessUp:
 	brightnessctl set 5%+
+
+XF86AudioPlay
+    playerctl play-pause

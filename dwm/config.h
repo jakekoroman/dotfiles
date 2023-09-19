@@ -13,8 +13,8 @@ static const int showsystray				= 1;						/* 0 means no systray */
 static const int showbar					= 1;						/* 0 means no bar */
 static const int topbar						= 1;						/* 0 means bottom bar */
 static int noborder                         = 0;                        /* 1 means noborder is enabled, disables in tile mode and enabled in monocle mode */
-static const char *fonts[]					= { "FiraCode Nerd Font:size=12" };	/* Noto Sans Mono */
-static const char dmenufont[]				= "FiraCode Nerd Font:size=12";		/* Noto Sans Mono */
+static const char *fonts[]					= { "FiraCode Nerd Font:size=10" };	/* Noto Sans Mono */
+static const char dmenufont[]				= "FiraCode Nerd Font:size=10";		/* Noto Sans Mono */
 static const char col_gray1[]				= "#222222";
 static const char col_gray2[]				= "#444444";
 static const char col_gray3[]				= "#bbbbbb";
@@ -34,10 +34,12 @@ static const Rule rules[] = {
      *	WM_CLASS(STRING) = instance, class
      *	WM_NAME(STRING) = title
      */
-    /* class      instance    title       tags mask     isfloating   monitor */
-    { "feh",      NULL,       NULL,       0,            1,           -1 },
-    { "Anki",     NULL,       "Add",      0,            1,           -1 },
-    { "discord",  NULL,       NULL,       1 << 4,       0,            1 },
+    /* class          instance    title                 tags mask     iscentered   isfloating     monitor */
+    { "feh",          NULL,       NULL,                 0,            0,           1,             -1 },
+    { "Anki",         NULL,       "Add",                0,            0,           1,             -1 },
+    { "discord",      NULL,       NULL,                 1 << 4,       0,           0,              1 },
+    { "Pavucontrol",  NULL,       NULL,                 0,            1,           1,             -1 },
+    { "steam",        NULL,       "Friends List",       0,            1,           1,             -1 },
 };
 
 /* layout(s) */
@@ -71,6 +73,7 @@ static const char *termcmd[]	 = { "st", NULL };
 static const char *emacscmd[]	 = { "emacsclient", "-c", "-a","emacs", NULL };
 static const char *firefoxcmd[]	 = { "firefox", NULL };
 static const char *pcmanfmcmd[]  = { "pcmanfm", NULL };
+static const char *pavuctlcmd[]  = { "pavucontrol", NULL };
 static const char *passmenucmd[] = { "passmenu-otp", NULL };
 static const char *lockcmd[]     = { "betterlockscreen", "-l", "-q", NULL };
 static const char *xlogoutcmd[]  = { "xlogout", NULL };
@@ -82,8 +85,9 @@ static Key keys[] = {
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
     { MODKEY,                       XK_b,      spawn,          {.v = firefoxcmd } },
+    { MODKEY,                       XK_a,      spawn,          {.v = pcmanfmcmd } },
     { MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("maim -s -u | xclip -selection clipboard -t image/png -i") },
-    { MODKEY,                       XK_v,      spawn,          {.v = pcmanfmcmd } },
+    { MODKEY,                       XK_v,      spawn,          {.v = pavuctlcmd } },
     { MODKEY,                       XK_Delete, spawn,          {.v = lockcmd } },
     { MODKEY|ShiftMask,             XK_Delete, spawn,          {.v = xlogoutcmd } },
     { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
