@@ -4,11 +4,14 @@ XF86AudioLowerVolume:
 XF86AudioRaiseVolume:
 	$HOME/dotfiles/Scripts/volume_adjust output 2%+
 
+XF86AudioMute
+    amixer set Master toggle
+
 XF86MonBrightnessDown:
-	brightnessctl set 5%-
+	brightnessctl set 5%- && pkill -10 baraction.sh
 
 XF86MonBrightnessUp:
-	brightnessctl set 5%+
+	brightnessctl set 5%+ && pkill -10 baraction.sh
 
 XF86AudioPlay
     playerctl play-pause

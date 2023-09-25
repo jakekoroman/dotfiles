@@ -19,6 +19,9 @@
  `(font-lock-type-face ((t (:foreground "burlywood3"))))
  `(font-lock-variable-name-face ((t (:foreground "burlywood3"))))
  `(font-lock-constant-face ((t (:foreground "burlywood3"))))
+ ;; dired
+ `(dired-directory ((t (:foreground "DarkGoldenrod3"))))
+ `(dired-symlink ((t (:foreground "cyan"))))
  ;; vertico
  `(vertico-current ((t (:background "navy"))))
  ;; ido
