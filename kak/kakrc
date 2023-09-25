@@ -1,0 +1,6 @@
+set-option global tabstop 4
+set-option global makecmd ./build.sh
+colorscheme plain
+
+map global normal '#' :comment-line<ret>
+add-highlighter global/ number-lines -relative
