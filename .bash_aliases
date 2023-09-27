@@ -5,7 +5,13 @@ alias ll='ls -la'
 
 alias e='nvim'
 alias cs='ssh jake@mainframe'
-alias sw='$HOME/dotfiles/Scripts/swallow'
+
+if [ -z $I3SOCK ]; then
+    alias sw='$HOME/dotfiles/Scripts/myswallow'
+else
+	alias sw='swallow'
+fi
+
 alias sudo='sudo '
 
 alias dwmd='cd ~/dotfiles/dwm'
