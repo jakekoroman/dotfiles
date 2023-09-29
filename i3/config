@@ -17,13 +17,12 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+font pango:Terminus 8
 
 exec --no-startup-id feh --bg-center ~/.wallpapers/meditate.png
 # exec --no-startup-id xsetroot -solid "#000000"
 
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id picom
 
 # Rebind caps lock to escape
 exec_always --no-startup-id xmodmap -e "clear lock"
@@ -37,7 +36,8 @@ exec --no-startup-id dex --autostart --environment i3
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-set $i3lock_cmd i3lock --nofork -e -i ~/.wallpapers/meditate.png -c 000000
+# set $i3lock_cmd i3lock --nofork -e -i ~/.wallpapers/meditate.png -c 000000
+set $i3lock_cmd betterlockscreen -l -q
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -70,7 +70,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty # i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -149,7 +149,7 @@ bindsym $mod+a focus parent
 
 bindsym $mod+Delete exec --no-startup-id $i3lock_cmd
 
-bindsym $mod+Shift+Delete exec loginctl suspend
+bindsym $mod+Shift+Delete exec --no-startup-id xlogout
 
 # focus the child container
 #bindsym $mod+d focus child

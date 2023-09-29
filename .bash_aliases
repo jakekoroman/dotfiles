@@ -17,4 +17,4 @@ alias sudo='sudo '
 alias dwmd='cd ~/dotfiles/dwm'
 alias std='cd ~/dotfiles/st-instantos'
 
-alias work='$HOME/dotfiles/Scripts/swallow gvncviewer 10.0.0.243'
+alias work='sw gvncviewer 10.0.0.243'
