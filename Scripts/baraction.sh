@@ -28,7 +28,7 @@ dpy_brightness() {
 }
 
 while :; do
-    xsetroot -name "$(free_space) | $(dpy_brightness) | $(volume) | $(battery) | $(clock)"
+    xsetroot -name "$(free_space) | $(volume) | $(clock)"
     sleep 60s &
     wait $!
 done

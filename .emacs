@@ -10,7 +10,7 @@
 (scroll-bar-mode -1)
 
 ;; (setq default-frame-alist '((font . "Iosevka Nerd Font-10")))
-(setq default-frame-alist '((font . "FiraCode Nerd Font-12")))
+(setq default-frame-alist '((font . "FiraCode Nerd Font-10")))
 (defun my/disable-scroll-bars (frame)
   (modify-frame-parameters frame
                            '((vertical-scroll-bars . nil)
