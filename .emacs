@@ -51,6 +51,9 @@
 (use-package gruber-darker-theme
   :ensure)
 
+(use-package naysayer-theme
+  :ensure)
+
 (use-package zenburn-theme
   :ensure)
 
@@ -437,7 +440,7 @@
 
 (defun transparency (value)
   "Sets the transparency of the frame window. 0=transparent/100=opaque"
-  (interactive "nTransparency Value 0 - 100 opaque:")
+  (interactive "nTransparency Value 0 - 100 opaque: ")
   (set-frame-parameter (selected-frame) 'alpha value))
 
 ;; (defun never-split-a-window ()
