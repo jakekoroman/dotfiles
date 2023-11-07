@@ -10,7 +10,7 @@
 (scroll-bar-mode -1)
 
 ;; (setq default-frame-alist '((font . "Iosevka Nerd Font-10")))
-(setq default-frame-alist '((font . "FiraCode Nerd Font-10")))
+(setq default-frame-alist '((font . "Liberation Mono-14")))
 (defun my/disable-scroll-bars (frame)
   (modify-frame-parameters frame
                            '((vertical-scroll-bars . nil)
@@ -35,7 +35,8 @@
       compilation-ask-about-save nil
 	  frame-resize-pixelwise t
 	  mouse-drag-mode-line-buffer 1
-	  )
+      display-time-24hr-format t
+)
 
 ;; (global-hl-line-mode 1)
 (global-display-line-numbers-mode)
@@ -50,6 +51,17 @@
 
 (use-package gruber-darker-theme
   :ensure)
+
+(use-package doom-modeline
+  :ensure
+  :config
+  (setq doom-modeline-buffer-encoding nil)
+  (setq doom-modeline-modal nil)
+  (setq doom-modeline-minor-modes nil)
+  :init
+  (display-time-mode 1)
+  (display-battery-mode 1)
+  (doom-modeline-mode 1))
 
 (use-package naysayer-theme
   :ensure)
@@ -452,8 +464,8 @@
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
 ;; (list-colors-display) for a color picker
-(load-theme 'handmade t)
-(transparency 85)
+(load-theme 'zenburn t)
+(transparency 100)
 
 ;; ;; Startup time
 ;; (defun efs/display-startup-time ()
