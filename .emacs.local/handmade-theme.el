@@ -1,5 +1,5 @@
 (unless (<= 24 emacs-major-version)
-  (error "toxi-theme requires Emacs 24 or later."))
+  (error "handmade-theme requires Emacs 24 or later."))
  
 (deftheme handmade
   "Dark theme based on Casey Muratori's handmade hero theme")
