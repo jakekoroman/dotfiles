@@ -9,13 +9,13 @@ sel=$(printf '%s' "$items" | dmenu)
 
 case $sel in
     poweroff)
-        systemctl poweroff
+        doas /sbin/poweroff
         ;;
     reboot)
-        systemctl reboot
+        doas /sbin/reboot
         ;;
     suspend)
-        systemctl suspend
+        loginctl suspend
         ;;
     logout)
         loginctl kill-user $USER

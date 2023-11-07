@@ -9,8 +9,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; (setq default-frame-alist '((font . "Iosevka Nerd Font-10")))
-(setq default-frame-alist '((font . "Liberation Mono-14")))
+;; (setq default-frame-alist '((font . "Iosevka-10")))
+(setq default-frame-alist '((font . "Liberation Mono-10")))
 (defun my/disable-scroll-bars (frame)
   (modify-frame-parameters frame
                            '((vertical-scroll-bars . nil)

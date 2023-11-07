@@ -12,4 +12,4 @@ source $HOME/.bash_aliases
 
 export PATH=$HOME/.local/bin:$HOME/dotfiles/Scripts:$PATH
 
-PS1='[\u@\h \W]\$ '
+# PS1='[\u@\h \W]\$ '

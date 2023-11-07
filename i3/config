@@ -196,6 +196,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 for_window [class="steam" title="Friends List"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="feh"] floating enable
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload

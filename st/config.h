@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "LiterationMono Nerd Font:size=12:antialias=false:autohint=false";
+static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -96,7 +96,6 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-#if 0
 	"black",
 	"red3",
 	"green3",
@@ -105,19 +104,8 @@ static const char *colorname[] = {
 	"magenta3",
 	"cyan3",
 	"gray90",
-#else
-	"#171421",
-	"#C01C28",
-	"#26A269",
-	"#A2734C",
-	"#12488B",
-	"#A347BA",
-	"#2AA1B3",
-	"#D0CFCC",
-#endif
 
 	/* 8 bright colors */
-#if 0
 	"gray50",
 	"red",
 	"green",
@@ -126,24 +114,14 @@ static const char *colorname[] = {
 	"magenta",
 	"cyan",
 	"white",
-#else
-	"#5E5C64",
-	"#F66151",
-	"#33D17A",
-	"#E9AD0C",
-	"#2A7BDE",
-	"#C061CB",
-	"#33C7DE",
-	"#FFFFFF",
-#endif
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"#CDAA7D", /* default foreground colour */
-	"#181818", /* default background colour */
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
 };
 
 
@@ -217,9 +195,9 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+	{ ControlMask,          XK_equal,       zoom,           {.f = +1} },
+	{ ControlMask,          XK_minus,       zoom,           {.f = -1} },
+	{ ControlMask,          XK_0,           zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },

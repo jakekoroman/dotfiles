@@ -9,12 +9,15 @@ alias cs='ssh jake@mainframe'
 if [ -z $I3SOCK ]; then
     alias sw='$HOME/dotfiles/Scripts/myswallow'
 else
-	alias sw='swallow'
+    alias sw='swallow'
 fi
 
 alias sudo='sudo '
 
+alias poweroff='doas /sbin/poweroff'
+alias reboot='doas /sbin/reboot'
+
 alias dwmd='cd ~/dotfiles/dwm'
 alias std='cd ~/dotfiles/st-instantos'
 
-alias work='gvncviewer 10.0.0.241'
+alias work='vncviewer -passwd ~/.vnc/passwd 10.0.0.249'
