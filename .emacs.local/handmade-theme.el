@@ -19,6 +19,7 @@
  `(font-lock-type-face ((t (:foreground "burlywood3"))))
  `(font-lock-variable-name-face ((t (:foreground "burlywood3"))))
  `(font-lock-constant-face ((t (:foreground "burlywood3"))))
+ `(mode-line ((t (:background "#242424"))))
  ;; dired
  `(dired-directory ((t (:foreground "DarkGoldenrod3"))))
  `(dired-symlink ((t (:foreground "cyan"))))
