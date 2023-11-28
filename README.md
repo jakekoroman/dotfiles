@@ -14,8 +14,8 @@ My configs for my 'commonly' used software.
 
 ## Terminals
 * st
-* Alacritty
 * foot
+* Alacritty
 
 ## Editors
 * Emacs
@@ -25,6 +25,7 @@ My configs for my 'commonly' used software.
 
 ## Misc
 * dmenu
+* bash
 * zsh
 * Xresources
 
