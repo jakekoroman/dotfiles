@@ -5,8 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Iosevka:size=10:antialias=true:autohint=true";
 static int borderpx = 2;
+#define THEME_SOLARIZED
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -95,6 +96,7 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+#if defined(THEME_DEFAULT)
 	/* 8 normal colors */
 	"black",
 	"red3",
@@ -122,6 +124,58 @@ static const char *colorname[] = {
 	"#555555",
 	"gray90", /* default foreground colour */
 	"black", /* default background colour */
+#elif defined(THEME_MOONFLY)
+    [0] = "#323437",
+    [1] = "#ff5454",
+    [2] = "#8cc85f",
+    [3] = "#e3c78a",
+    [4] = "#80a0ff",
+    [5] = "#d183e8",
+    [6] = "#79dac8",
+    [7] = "#a1aab8",
+
+    [8] = "#7c8f8f",
+    [9] = "#ff5189",
+    [10] = "#36c692",
+    [11] = "#bfbf97",
+    [12] = "#74b2ff",
+    [13] = "#ae81ff",
+    [14] = "#85dc85",
+    [15] = "#e2637f",
+
+    [255] = 0,
+
+    [256] = "#ffffff", 
+    [257] = "#f8f8f2",
+    [258]= "#eeeeee",
+    [259] = "#080808",
+#elif defined(THEME_SOLARIZED)
+	/* solarized dark */
+	"#073642",  /*  0: black    */
+	"#dc322f",  /*  1: red      */
+	"#859900",  /*  2: green    */
+	"#b58900",  /*  3: yellow   */
+	"#268bd2",  /*  4: blue     */
+	"#d33682",  /*  5: magenta  */
+	"#2aa198",  /*  6: cyan     */
+	"#eee8d5",  /*  7: white    */
+
+	"#002b36",  /*  8: brblack  */
+	"#cb4b16",  /*  9: brred    */
+	"#586e75",  /* 10: brgreen  */
+	"#657b83",  /* 11: bryellow */
+	"#839496",  /* 12: brblue   */
+	"#6c71c4",  /* 13: brmagenta*/
+	"#93a1a1",  /* 14: brcyan   */
+	"#fdf6e3",  /* 15: brwhite  */
+
+    [255] = 0,
+
+    [256] = "#93a1a1",
+    [257] = "#fdf6e3",
+    [258] = "#839496",
+    [259] = "#002b36",
+#endif
 };
 
 
