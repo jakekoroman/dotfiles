@@ -11,7 +11,7 @@
  `(region ((t (:background "dark blue"))))
  `(font-lock-builtin-face ((t (:foreground "burlywood3"))))
  `(font-lock-comment-face ((t (:foreground "gray50"))))
- `(font-lock-constant-face ((t (:foreground "olive drab"))))
+ ;; `(font-lock-constant-face ((t (:foreground "olive drab"))))
  `(font-lock-doc-face ((t (:foreground "gray50"))))
  `(font-lock-function-name-face ((t (:foreground "burlywood3"))))
  `(font-lock-keyword-face ((t (:foreground "DarkGoldenrod3"))))

@@ -36,7 +36,7 @@
 	  frame-resize-pixelwise t
 	  mouse-drag-mode-line-buffer 1
       display-time-24hr-format t
-)
+      )
 
 ;; (global-hl-line-mode 1)
 (global-display-line-numbers-mode)
@@ -64,6 +64,12 @@
   (doom-modeline-mode 1))
 
 (use-package naysayer-theme
+
+  :ensure)
+(use-package wildcharm-theme
+  :ensure)
+
+(use-package wildcharm-light-theme
   :ensure)
 
 (use-package zenburn-theme
@@ -464,7 +470,7 @@
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
 ;; (list-colors-display) for a color picker
-(load-theme 'zenburn t)
+(load-theme 'gruber-darker t)
 (transparency 100)
 
 ;; ;; Startup time
