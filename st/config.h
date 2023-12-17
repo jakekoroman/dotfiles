@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka:size=10:antialias=true:autohint=true";
+static char *font = "Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
-#define THEME_SOLARIZED
+#define THEME_CATPPUCCIN_MOCHA
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -175,6 +175,77 @@ static const char *colorname[] = {
     [257] = "#fdf6e3",
     [258] = "#839496",
     [259] = "#002b36",
+#elif defined(THEME_GRUBER)
+    "#2E3436",
+    "#a40000",
+    "#4E9A06",
+    "#C4A000",
+    "#3465A4",
+    "#75507B",
+    "#ce5c00",
+    "#babdb9",
+    "#555753",
+    "#EF2929",
+    "#8AE234",
+    "#FCE94F",
+    "#729FCF",
+    "#AD7FA8",
+    "#fcaf3e",
+    "#EEEEEC",
+
+    [255] = 0,
+    "#93a1a1",
+    "#fdf6e3",
+    "#e4e4e4",
+    "#181818",
+#elif defined(THEME_CATPPUCCIN_MACH)
+    "#494D64",
+	"#ED8796",
+	"#A6DA95",
+	"#EED49F",
+	"#8AADF4",
+	"#F5BDE6",
+	"#8BD5CA",
+	"#B8C0E0",
+	"#5B6078",
+	"#ED8796",
+	"#A6DA95",
+	"#EED49F",
+	"#8AADF4",
+	"#F5BDE6",
+	"#8BD5CA",
+	"#A5ADCB",
+
+    [255] = 0,
+
+    [256] = "#F4DBD6",
+    [257] = "#F4DBD6",
+    [258] = "#CAD3F5",
+    [259] = "#24273A",
+#elif defined(THEME_CATPPUCCIN_MOCHA)
+	"#45475A",
+	"#F38BA8",
+	"#A6E3A1",
+	"#F9E2AF",
+	"#89B4FA",
+	"#F5C2E7",
+	"#94E2D5",
+	"#BAC2DE",
+	"#585B70",
+	"#F38BA8",
+	"#A6E3A1",
+	"#F9E2AF",
+	"#89B4FA",
+	"#F5C2E7",
+	"#94E2D5",
+	"#A6ADC8",
+
+    [255] = 0,
+
+    [256] = "#F5E0DC",
+    [257] = "#F5E0DC",
+    [258] = "#CDD6F4",
+    [259] = "#1E1E2E",
 #endif
 };
 

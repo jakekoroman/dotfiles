@@ -24,5 +24,6 @@ return require('packer').startup({
         use('rbgrouleff/bclose.vim')
         use('chentoast/marks.nvim')
         -- use('chaoren/vim-wordmotion')
+        use { "catppuccin/nvim", as = "catppuccin" }
       end
 })
