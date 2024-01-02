@@ -64,12 +64,6 @@
   (doom-modeline-mode 1))
 
 (use-package naysayer-theme
-
-  :ensure)
-(use-package wildcharm-theme
-  :ensure)
-
-(use-package wildcharm-light-theme
   :ensure)
 
 (use-package zenburn-theme
