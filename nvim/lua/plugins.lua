@@ -25,5 +25,7 @@ return require('packer').startup({
         use('chentoast/marks.nvim')
         -- use('chaoren/vim-wordmotion')
         use { "catppuccin/nvim", as = "catppuccin" }
+        use('zekzekus/menguless')
+
       end
 })

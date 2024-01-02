@@ -87,10 +87,14 @@ bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 # launch browser
 bindsym $mod+b exec firefox
 
+# bookmark script
 bindsym $mod+Shift+b exec bookmarks
 
+# emacs
+bindsym $mod+e exec emacs
+
 # launch pcmanfm
-bindsym $mod+e exec pcmanfm
+bindsym $mod+F2 exec pcmanfm
 
 # screenshot
 bindsym $mod+Shift+s exec screenshot
@@ -100,9 +104,6 @@ bindsym $mod+p exec passmenu-otp
 
 # pavucontrol
 bindsym $mod+F1 exec pavucontrol
-
-# emacs
-bindsym $mod+F2 exec emacs
 
 # change focus
 bindsym $mod+h focus left
