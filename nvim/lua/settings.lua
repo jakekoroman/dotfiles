@@ -9,7 +9,8 @@ g.netrw_localcopydircmd = 'cp -r'
 -- o.termguicolors = true
 g.zig_fmt_autosave = 0
 
-vim.cmd('colorscheme catppuccin')
+vim.cmd('set termguicolors')
+vim.cmd('colorscheme GruberDarker')
 vim.cmd('set wrap!')
 vim.cmd('set makeprg=./build.sh')
 

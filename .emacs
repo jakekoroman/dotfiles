@@ -9,8 +9,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; (setq default-frame-alist '((font . "Iosevka-10")))
-(setq default-frame-alist '((font . "Liberation Mono-10")))
+(setq default-frame-alist '((font . "Iosevka-12")))
+;; (setq default-frame-alist '((font . "Liberation Mono-10")))
 (defun my/disable-scroll-bars (frame)
   (modify-frame-parameters frame
                            '((vertical-scroll-bars . nil)
@@ -205,6 +205,9 @@
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
 (use-package magit 
+  :ensure)
+
+(use-package go-mode 
   :ensure)
 
 (use-package lua-mode 

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+bookmarks=()
+readarray -t bookmarks < ~/.bookmarks
+
+url=$(printf '%s\n' "${bookmarks[@]}" | dmenu -p "Bookmark" -i -l 32 | sed 's/^.*: //g')
+
+[[ ! -z "$url" ]] && firefox --new-tab $url

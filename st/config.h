@@ -7,7 +7,7 @@
  */
 static char *font = "Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
-#define THEME_CATPPUCCIN_MOCHA
+#define THEME_GRUBER
 
 /*
  * What program is execed by st depends of these precedence rules:
