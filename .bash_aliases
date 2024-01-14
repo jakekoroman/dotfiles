@@ -23,5 +23,5 @@ alias reboot='doas /sbin/reboot'
 alias dwmd='cd ~/dotfiles/dwm'
 alias std='cd ~/dotfiles/st-instantos'
 
-alias work='vncviewer -passwd ~/.vnc/passwd 10.0.0.243'
+alias work='vncviewer -passwd ~/.vnc/passwd 192.168.0.247'
 alias nas='doas mount /media/nas && cd /media/nas'
