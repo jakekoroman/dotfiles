@@ -90,6 +90,9 @@ bindsym $mod+b exec firefox
 # bookmark script
 bindsym $mod+Shift+b exec bookmarks
 
+# ssh-client script
+bindsym $mod+Shift+Return exec sshmenu
+
 # emacs
 bindsym $mod+e exec emacs
 

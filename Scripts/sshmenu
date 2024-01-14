@@ -1,0 +1,8 @@
+#!/bin/sh
+
+servers=()
+readarray -t servers < ~/.sshmenu
+
+server=$(printf '%s\n' "${servers[@]}" | dmenu -p "Server" -i -l 32 | sed 's/^.*: //g')
+
+[[ ! -z "$server" ]] && st -e ssh -Y -X $server
