@@ -226,13 +226,30 @@
 (use-package org
   :defer t
   :config
-  (set-face-attribute 'org-table nil :foreground "burlywood3")
-  (set-face-attribute 'org-level-1 nil :foreground "DarkGoldenrod3")
-  (set-face-attribute 'org-link nil :foreground "CadetBlue3"))
+  (if (eq 0 1)
+      ((set-face-attribute 'org-table nil :foreground "burlywood3")
+       (set-face-attribute 'org-level-1 nil :foreground "DarkGoldenrod3")
+       (set-face-attribute 'org-link nil :foreground "CadetBlue3"))))
+
+(use-package org-download
+  :ensure
+  :after (org)
+  :init
+  ;; remove the stupid #+DOWNLOADED annotation
+  (defun dummy-org-download-annotate-function (link)
+    "")
+  (setq org-download-annotate-function #'dummy-org-download-annotate-function)
+
+  (setq org-download-method 'directory)
+  (setq org-download-image-dir (concat (file-name-sans-extension (buffer-file-name)) "-images"))
+  (setq org-download-image-org-width 600)
+  (setq org-download-link-format "[[file:%s]]\n")
+  (setq org-download-abbreviate-filename-function #'file-relative-name)
+  (setq org-download-link-format-function #'org-download-link-format-function-default))
 
 (use-package org-bullets
+  :disabled
   :ensure
-  :after ('org)
   :config
   (add-hook 'org-mode-hook #'(lambda () (org-bullets-mode 1))))
 
