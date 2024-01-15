@@ -1,3 +1,5 @@
+;;; https://github.com/hrs/dotfiles/blob/main/emacs/.config/emacs/configuration.org
+
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (add-to-list 'load-path "~/.emacs.local")
 (add-to-list 'custom-theme-load-path "~/.emacs.local")
@@ -52,16 +54,22 @@
 (use-package gruber-darker-theme
   :ensure)
 
-(use-package doom-modeline
-  :ensure
+
+(use-package minions
+  :ensure t
+
+  :custom
+  (minions-mode-line-delimiters (cons "" ""))
+
   :config
-  (setq doom-modeline-buffer-encoding nil)
-  (setq doom-modeline-modal nil)
-  (setq doom-modeline-minor-modes nil)
-  :init
+  (defun +set-minions-mode-line-lighter ()
+    (setq minions-mode-line-lighter
+          (if (display-graphic-p) "⚙" "#")))
+
+  (add-hook 'server-after-make-frame-hook #'+set-minions-mode-line-lighter)
   (display-time-mode 1)
   (display-battery-mode 1)
-  (doom-modeline-mode 1))
+  (minions-mode 1))
 
 (use-package naysayer-theme
   :ensure)
@@ -104,6 +112,15 @@
   (vertico-multiform-mode)
   (setq vertico-multiform-categories
         '((consult-grep buffer))))
+
+(use-package dired
+  :config
+  (setq dired-clean-up-buffers-too t
+        dired-dwim-target t
+        dired-recursive-copies 'always
+        dired-recursive-deletes 'top
+        global-auto-revert-non-file-buffers t
+        auto-revert-verbose nil))
 
 (use-package marginalia
   :ensure
@@ -484,7 +501,7 @@
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
 ;; (list-colors-display) for a color picker
-(load-theme 'gruber-darker t)
+(load-theme 'naysayer t)
 (transparency 100)
 
 ;; ;; Startup time
