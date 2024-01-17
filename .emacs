@@ -54,7 +54,6 @@
 (use-package gruber-darker-theme
   :ensure)
 
-
 (use-package minions
   :ensure t
 
@@ -137,6 +136,11 @@
   (setq evil-undo-system 'undo-fu)
   :config
   (evil-mode 1))
+
+(use-package evil-surround
+  :ensure
+  :config
+  (global-evil-surround-mode 1))
 
 (use-package evil-collection
   :ensure
@@ -263,6 +267,12 @@
   (setq org-download-link-format "[[file:%s]]\n")
   (setq org-download-abbreviate-filename-function #'file-relative-name)
   (setq org-download-link-format-function #'org-download-link-format-function-default))
+
+(use-package org-tempo
+  :after (org)
+  :config
+  (add-to-list 'org-structure-template-alist
+               '("el" . "src emacs-lisp")))
 
 (use-package org-bullets
   :disabled
@@ -501,7 +511,7 @@
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
 ;; (list-colors-display) for a color picker
-(load-theme 'naysayer t)
+(load-theme 'gruber-darker t)
 (transparency 100)
 
 ;; ;; Startup time
