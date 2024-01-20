@@ -274,6 +274,14 @@
   (add-to-list 'org-structure-template-alist
                '("el" . "src emacs-lisp")))
 
+(use-package evil-org
+  :ensure t
+  :after org
+  :hook (org-mode . (lambda () evil-org-mode))
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+
 (use-package org-bullets
   :disabled
   :ensure
