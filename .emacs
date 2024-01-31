@@ -447,10 +447,8 @@
   "C-d" 'kill-region
   "M-j" 'evil-forward-paragraph
   "M-k" 'evil-backward-paragraph
-  "M-v" 'find-corresponding-file)
-
-;; idk why general mapping doesn't like to bind "M-S-v" so I have to do it the old fashioned way aka the better way
-(global-set-key [(meta shift v)] 'find-corresponding-file-other-window)
+  "M-v" 'find-corresponding-file
+  [(meta shift v)] 'find-corresponding-file-other-window)
 
 ;; Insert mode binds
 (general-imap
@@ -458,11 +456,16 @@
   "C-a" 'move-beginning-of-line
   "C-e" 'move-end-of-line)
 
+(general-imap
+  :keymaps 'eshell-mode-map
+  "M-p" 'eshell-previous-matching-input-from-input
+  "M-n" 'eshell-next-matching-input-from-input)
+
 ;; Binds without SPC prefix
 (general-define-key
  :keymaps 'override
- "M-p" 'previous-error
- "M-n" 'next-error
+ "M-N" 'previous-error
+ "M-P" 'next-error
  "M-o" 'other-window
  "<f2>" 'ido-goto-symbol)
 
@@ -483,6 +486,7 @@
 
 (defun disable-all-themes ()
   "Disables all active themes."
+  (interactive)
   (dolist (i custom-enabled-themes)
     (disable-theme i)))
 
@@ -510,16 +514,11 @@
   (interactive "nTransparency Value 0 - 100 opaque: ")
   (set-frame-parameter (selected-frame) 'alpha value))
 
-;; (defun never-split-a-window ()
-;;   "Never, ever split a window.  Why would anyone EVER want you to do that??"
-;;   nil)
-;; (setq split-window-preferred-function 'never-split-a-window)
-
 ;; (split-window-horizontally)
 (toggle-frame-maximized)
 (set-default 'truncate-lines t)
 ;; (list-colors-display) for a color picker
-(load-theme 'gruber-darker t)
+(load-theme 'toxi t)
 (transparency 100)
 
 ;; ;; Startup time
