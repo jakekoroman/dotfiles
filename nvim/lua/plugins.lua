@@ -26,6 +26,6 @@ return require('packer').startup({
         -- use('chaoren/vim-wordmotion')
         use { "catppuccin/nvim", as = "catppuccin" }
         use('zekzekus/menguless')
-
+        use('chrisbra/Colorizer')
       end
 })
