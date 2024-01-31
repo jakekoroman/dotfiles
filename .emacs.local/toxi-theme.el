@@ -28,6 +28,7 @@
  `(font-lock-warning-face ((t (:bold t :foreground "#ff0055"))))
  ;; dired
  `(dired-directory ((t (:bold t :foreground "#ffff00"))))
+ `(dired-symlink ((t (:bold t :foreground "#00ffff"))))
  ;; rainbow-delimiters
  `(rainbow-delimiters-depth-1-face ((t (:foreground "#990000"))))
  `(rainbow-delimiters-depth-2-face ((t (:foreground "#383838"))))
