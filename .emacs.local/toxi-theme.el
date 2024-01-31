@@ -2,11 +2,11 @@
   (error "toxi-theme requires Emacs 24 or later."))
  
 (deftheme toxi
-  "toxi's dark color theme")
+  "toxi's dark color theme - forked to my liking")
  
 (custom-theme-set-faces
  'toxi
- ;; Frame
+ ;; frame
  `(default ((t (:foreground "#a4ffd8" :background "#0b1210"))))
  `(cursor ((t (:foreground "white"))))
  `(hl-line ((t (:background "#272822"))))
@@ -15,7 +15,7 @@
  `(modeline-inactive ((t (:background "#162223" :foreground "#355e6b"))))
  `(region ((t (:background "#441ea4"))))
  `(show-paren-match-face ((t (:background "#ffff00"))))
- ;; Main
+ ;; main
  `(font-lock-builtin-face ((t (:foreground "#00ffff"))))
  `(font-lock-comment-face ((t (:foreground "#7d7d7d"))))
  `(font-lock-constant-face ((t (:foreground "#f2ee81"))))
@@ -38,16 +38,22 @@
  `(rainbow-delimiters-depth-7-face ((t (:foreground "#c4c4c4"))))
  `(rainbow-delimiters-depth-8-face ((t (:foreground "#e1e1e1"))))
  `(rainbow-delimiters-depth-9-face ((t (:foreground "#ffffff"))))
- ;; IDO
+ ;; ido
  `(ido-first-match ((t (:foreground "#ffff00"))))
  `(ido-only-match ((t (:foreground "#00ff00"))))
  `(ido-subdir ((t (:foreground "#00ffff"))))
  ;; iedit
  `(iedit-occurrence ((t (:background "#441ea4"))))
- ;; Whitespace
+ ;; whitespace
  `(whitespace-space ((t (:foreground "#595959"))))
- ;; Yasnippet
- `(yas/field-highlight-face ((t (:background "#383830")))))
+ ;; yasnippet
+ `(yas/field-highlight-face ((t (:background "#383830"))))
+ ;; vertico
+ `(vertico-current ((t (:background "#441ea4"))))
+ ;; org
+ `(org-hide ((t (:foreground "#0b1210"))))
+ `(org-block ((t (:background "#1b2220"))))
+ `(org-link ((t (:foreground "#56cff2" :underline t)))))
  
 ;;;###autoload
 (when load-file-name
