@@ -7,6 +7,7 @@
  */
 static char *font = "Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
+#define THEME_GRUBER_NICE_HTOP
 #define THEME_GRUBER
 
 /*
@@ -93,6 +94,9 @@ char *termname = "st-256color";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
+
+/* bg opacity */
+float alpha = 0.9;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -182,7 +186,11 @@ static const char *colorname[] = {
     "#C4A000",
     "#3465A4",
     "#75507B",
+#ifdef THEME_GRUBER_NICE_HTOP
+    "#417F9A",
+#else
     "#ce5c00",
+#endif
     "#babdb9",
     "#555753",
     "#EF2929",

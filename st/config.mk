@@ -16,6 +16,7 @@ INCS = `$(PKG_CONFIG) --cflags x11` \
 LIBS = `$(PKG_CONFIG) --libs x11` \
        `$(PKG_CONFIG) --libs fontconfig` \
        `$(PKG_CONFIG) --libs xft` \
+       `$(PKG_CONFIG) --libs xrender` \
        `$(PKG_CONFIG) --libs freetype2`
 
 # flags
